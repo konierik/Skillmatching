@@ -30,6 +30,7 @@ public class JSONReader {
 	//public static JsonString jsonString;
 	
 	private JsonReader reader;
+	private JsonStructure jsonStructure;
 	
 	/*public static void main (String[] args) throws URISyntaxException, IOException {
 		//read();
@@ -54,11 +55,13 @@ public class JSONReader {
 		URL fileURL= new URL(file);
 		BufferedReader read= new BufferedReader(new InputStreamReader(fileURL.openStream()));
 		reader = Json.createReader(read);//new FileReader(file))
+		jsonStructure=reader.read();
 		//return reader;
 	}
 	//open json reader from local json file location
 	public void openDoc(String file) throws IOException {
 		reader = Json.createReader(new FileReader(file));//new FileReader(file))
+		jsonStructure=reader.read();
 		//return reader;
 	}
 	
@@ -69,9 +72,11 @@ public class JSONReader {
 	
 	
 	//parsing a pointer with array markers "~"
-	public ArrayList<ArrayList<String>> parsePointer(String input){
+	public ArrayList<ArrayList<String>> parsePointer(String uebergabe){
+		String input= uebergabe;
 		//create Array for json reading and data cache
-		JsonStructure jsonStructure = reader.read();
+		
+		//JsonStructure jsonStructure=null;// = reader.read();
 		JsonPointer jsonPointer = null;// = Json.createPointer(pointer);
 		JsonArray data=null;
 		//creating lists for output
@@ -80,32 +85,53 @@ public class JSONReader {
 		ArrayList<String> outPartTwo = new ArrayList<String>();//
 		//count the '~' char, that marks an array in the pointer
 		int count= (int) input.chars().filter(cha->cha=='~').count();
-				
-		if (count==0) {
+		System.out.println(count+" mal '~' gezählt.");		
+		if (count<1) {
+			//jsonStructure=reader.read();
 			jsonPointer=Json.createPointer(input);
 			//check if the pointer exists:
 			if(jsonPointer.containsValue(jsonStructure)) {
-				data=jsonPointer.getValue(jsonStructure).asJsonArray();
-				for (int i=0;i<data.size();i++) {
+				//data=jsonPointer.getValue(jsonStructure).toString();
+				//for (int i=0;i<data.size();i++) {
+				System.out.println("Getting value for: "+input);
+				System.out.println("Value is: "+jsonPointer.getValue(jsonStructure).toString()+"\n");
+				if(jsonPointer.getValue(jsonStructure).toString()!="") {	
 					outPartOne.add(input);
-					outPartTwo.add(data.get(i).toString());
+					outPartTwo.add(jsonPointer.getValue(jsonStructure).toString());
 				}
+			}else {
+				System.out.println("JsonPointer: "+input+"\nFound status: "+jsonPointer.containsValue(jsonStructure));
 			}
+			//closing the reader
+			//reader.close();
 		}else {
 			//getting the array of the first array marker '~'
-			String newInput= input.substring(0, input.indexOf('~'));
-			jsonPointer=Json.createPointer(newInput);
+			String newArray= input.substring(0, input.indexOf("~")-1);
+			System.out.println("New Array data from "+newArray);
+			//jsonStructure=reader.read();
+			jsonPointer=Json.createPointer(newArray);
 			data=jsonPointer.getValue(jsonStructure).asJsonArray();
-			//running through the array:
-			for (int i=0; i<data.size();i++) {
-				//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
-				out.addAll(parsePointer(newInput+i+input.substring(input.lastIndexOf('~'))));
+			//close the reader since the recursive function will open it again
+			close(reader);
+			System.out.println("Array size: "+data.size());
+			if(data.size()>0) {
+				//running through the array:
+				for (int i=0; i<data.size();i++) {
+					System.out.println("i="+i+". Replace first ~. New pointer: "+input.replaceFirst("~", ""+i+""));
+					//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
+					String newInput= input.replaceFirst("~", ""+i+"");
+					System.out.println("parsePointer("+newInput+")");
+					out.addAll(parsePointer(input.replaceFirst("~", ""+i+"")));
+					
+				}
 			}
 			
 		}
-		//write into the arrays:
-		out.add(0, outPartOne);
-		out.add(1, outPartTwo);
+		//write into the arrays if there was a value for the searched key:
+		if(outPartTwo.size()>0) {
+			out.add(0, outPartOne);
+			out.add(1, outPartTwo);
+		}
 		return out;
 	}
 	
