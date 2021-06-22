@@ -72,8 +72,7 @@ public class JSONReader {
 	
 	
 	//parsing a pointer with array markers "~"
-	public ArrayList<ArrayList<String>> parsePointer(String uebergabe){
-		String input= uebergabe;
+	public ArrayList<ArrayList<String>> parsePointer(String input){
 		//create Array for json reading and data cache
 		
 		//JsonStructure jsonStructure=null;// = reader.read();
@@ -84,21 +83,14 @@ public class JSONReader {
 		ArrayList<String> outPartOne = new ArrayList<String>();//
 		ArrayList<String> outPartTwo = new ArrayList<String>();//
 		//count the '~' char, that marks an array in the pointer
-		int count= (int) input.chars().filter(cha->cha=='~').count();
-		System.out.println(count+" mal '~' gezählt.");		
+		int count= (int) input.chars().filter(cha->cha=='~').count();	
+		//if there was no array marker found, then the pointer gets to a value
 		if (count<1) {
-			//jsonStructure=reader.read();
 			jsonPointer=Json.createPointer(input);
 			//check if the pointer exists:
 			if(jsonPointer.containsValue(jsonStructure)) {
-				//data=jsonPointer.getValue(jsonStructure).toString();
-				//for (int i=0;i<data.size();i++) {
-				System.out.println("Getting value for: "+input);
-				System.out.println("Value is: "+jsonPointer.getValue(jsonStructure).toString()+"\n");
-				if(jsonPointer.getValue(jsonStructure).toString()!="") {	
 					outPartOne.add(input);
-					outPartTwo.add(jsonPointer.getValue(jsonStructure).toString());
-				}
+					outPartTwo.add(jsonPointer.getValue(jsonStructure).toString().replace("\"", ""));
 			}else {
 				System.out.println("JsonPointer: "+input+"\nFound status: "+jsonPointer.containsValue(jsonStructure));
 			}
@@ -107,25 +99,18 @@ public class JSONReader {
 		}else {
 			//getting the array of the first array marker '~'
 			String newArray= input.substring(0, input.indexOf("~")-1);
-			System.out.println("New Array data from "+newArray);
 			//jsonStructure=reader.read();
 			jsonPointer=Json.createPointer(newArray);
 			data=jsonPointer.getValue(jsonStructure).asJsonArray();
 			//close the reader since the recursive function will open it again
-			close(reader);
-			System.out.println("Array size: "+data.size());
+			//close(reader);
 			if(data.size()>0) {
 				//running through the array:
 				for (int i=0; i<data.size();i++) {
-					System.out.println("i="+i+". Replace first ~. New pointer: "+input.replaceFirst("~", ""+i+""));
 					//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
-					String newInput= input.replaceFirst("~", ""+i+"");
-					System.out.println("parsePointer("+newInput+")");
 					out.addAll(parsePointer(input.replaceFirst("~", ""+i+"")));
-					
 				}
-			}
-			
+			}	
 		}
 		//write into the arrays if there was a value for the searched key:
 		if(outPartTwo.size()>0) {
@@ -138,7 +123,7 @@ public class JSONReader {
 	//gets an JsonArray for a respective input pointer string
 	public JsonArray instantiate(JsonReader reader, String pointer) throws IOException {
 		//reader=open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
-		JsonStructure jsonStructure = reader.read();
+		//JsonStructure jsonStructure = reader.read();
 		JsonPointer jsonPointer = Json.createPointer(pointer);
 		JsonArray jsonArray=null;
 		//check if pointer is existent in json-inputfile
@@ -157,7 +142,7 @@ public class JSONReader {
 	// gets ident for classes
 	public ArrayList<String> getClassInstances(JsonReader reader, String pointer, String identifier){
 		//to read the json
-		JsonStructure jsonStructure = reader.read();
+		//JsonStructure jsonStructure = reader.read();
 		JsonPointer jsonPointer = Json.createPointer(pointer);
 		JsonArray jsonArray=null;
 		//cache list
