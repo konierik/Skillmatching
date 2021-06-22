@@ -29,7 +29,7 @@ public class JSONReader {
 	//public static JsonObject jsonObject;
 	//public static JsonString jsonString;
 	
-	private static JsonReader reader;
+	private JsonReader reader;
 	
 	/*public static void main (String[] args) throws URISyntaxException, IOException {
 		//read();
@@ -49,13 +49,14 @@ public class JSONReader {
 		return identifier.replaceAll(pointer,"");
 		
 	}
-	//open a json reader from json file location
+	//open a json reader from URL json file location
 	public void open(String file) throws IOException {
 		URL fileURL= new URL(file);
 		BufferedReader read= new BufferedReader(new InputStreamReader(fileURL.openStream()));
 		reader = Json.createReader(read);//new FileReader(file))
 		//return reader;
 	}
+	//open json reader from local json file location
 	public void openDoc(String file) throws IOException {
 		reader = Json.createReader(new FileReader(file));//new FileReader(file))
 		//return reader;
@@ -64,6 +65,48 @@ public class JSONReader {
 	//close the reader
 	public void close(JsonReader reader) {
 		reader.close();
+	}
+	
+	
+	//parsing a pointer with array markers "~"
+	public ArrayList<ArrayList<String>> parsePointer(String input){
+		//create Array for json reading and data cache
+		JsonStructure jsonStructure = reader.read();
+		JsonPointer jsonPointer = null;// = Json.createPointer(pointer);
+		JsonArray data=null;
+		//creating lists for output
+		ArrayList<ArrayList<String>> out = new ArrayList<ArrayList<String>>();
+		ArrayList<String> outPartOne = new ArrayList<String>();//
+		ArrayList<String> outPartTwo = new ArrayList<String>();//
+		//count the '~' char, that marks an array in the pointer
+		int count= (int) input.chars().filter(cha->cha=='~').count();
+				
+		if (count==0) {
+			jsonPointer=Json.createPointer(input);
+			//check if the pointer exists:
+			if(jsonPointer.containsValue(jsonStructure)) {
+				data=jsonPointer.getValue(jsonStructure).asJsonArray();
+				for (int i=0;i<data.size();i++) {
+					outPartOne.add(input);
+					outPartTwo.add(data.get(i).toString());
+				}
+			}
+		}else {
+			//getting the array of the first array marker '~'
+			String newInput= input.substring(0, input.indexOf('~'));
+			jsonPointer=Json.createPointer(newInput);
+			data=jsonPointer.getValue(jsonStructure).asJsonArray();
+			//running through the array:
+			for (int i=0; i<data.size();i++) {
+				//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
+				out.addAll(parsePointer(newInput+i+input.substring(input.lastIndexOf('~'))));
+			}
+			
+		}
+		//write into the arrays:
+		out.add(0, outPartOne);
+		out.add(1, outPartTwo);
+		return out;
 	}
 	
 	//gets an JsonArray for a respective input pointer string
