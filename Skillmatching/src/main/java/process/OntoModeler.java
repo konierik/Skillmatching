@@ -45,7 +45,9 @@ public class OntoModeler {
 	private OWLOntology onto;
 	private OWLOntologyManager onto_man;
 	private OWLDataFactory onto_df;
+	//Variables for iri information
 	private IRI iri;
+	private String IRIstring = "https://github.com/konierik/O-N/raw/master/ontology/Family2.owl";
 	private IRI docIRI; //for local ontology creation
 	/**Annotation property that has json pointers to keys that are instantiated as the relating class.*/
 	private OWLAnnotationProperty classmapping;
@@ -56,7 +58,7 @@ public class OntoModeler {
 	/**Annotation property that has json pointers to keys that are the domain of a relating data- or objectproperty.*/
 	private OWLAnnotationProperty identifier;
 	
-	private String IRIstring = "https://github.com/konierik/O-N/raw/master/ontology/Family2.owl";
+	
 	
 
 	/**This method system.out.prints the content of any ArrayList(ArrayList(String)). 
@@ -84,6 +86,7 @@ public class OntoModeler {
 	     onto_df = onto_man.getOWLDataFactory();
 	     onto = onto_man.loadOntologyFromOntologyDocument(new File(FileLocationAndName));
 	     iri =onto_man.getOntologyDocumentIRI(onto);
+	     IRIstring=iri.toString();
 	     System.out.println("Loaded ontology iri: "+iri);
 	     System.out.println("Get ontology iri: "+ onto_man.getOntologyDocumentIRI(onto).toString());
 	}
