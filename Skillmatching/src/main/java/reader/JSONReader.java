@@ -121,7 +121,7 @@ public class JSONReader {
 	}
 	
 	//gets an JsonArray for a respective input pointer string
-	public JsonArray instantiate(JsonReader reader, String pointer) throws IOException {
+	public JsonArray getArrayFromPointer(JsonReader reader, String pointer) throws IOException {
 		//reader=open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
 		//JsonStructure jsonStructure = reader.read();
 		JsonPointer jsonPointer = Json.createPointer(pointer);
@@ -166,9 +166,8 @@ public class JSONReader {
 		JsonArray arr = null;
 		try {
 			//get an array of all objects that contain information about the keys we want to have
-			arr = instantiate(reader,classpointer);
+			arr = getArrayFromPointer(reader,classpointer);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		//lists for saving the values
