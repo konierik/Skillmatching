@@ -12,11 +12,8 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.FileManager;
 
-/*This class loads an nt-format (in memory) file and creates rdf/turtle triples from it.
+/**This class loads an nt-format (in memory) file and creates rdf/turtle triples from it.
  * It uses the JENA package for ontology handling*/
-
-
-
 public class NTParser {
 	
 	private String file;
@@ -25,9 +22,12 @@ public class NTParser {
 	private OutputStream output;
 	
 	
+	
+	
 	public NTParser(String file) {
 		setFile(file);
 	}
+	
 	public NTParser(InputStream streamy) {
 		setIntputStream(streamy);
 	}
@@ -39,7 +39,6 @@ public class NTParser {
 	    try {
 			out= new FileOutputStream(new File("C:\\Users\\konierik\\Desktop\\Family_test\\NTparseJENA.ttl"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	    
@@ -97,7 +96,6 @@ public class NTParser {
 		try {
 			output=new FileOutputStream(outputsource);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.out.println("Could not create FileOutputStream for "+outputsource);
 			e.printStackTrace();
 		}
