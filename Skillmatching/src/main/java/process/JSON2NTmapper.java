@@ -66,10 +66,6 @@ public class JSON2NTmapper {
 		
 		instance.saveOntology("C:\\Users\\konierik\\Desktop\\Family_test\\Family_instance_mapping.owl");
 		
-		
-		
-		
-		
 		//han: create  namespaces --> is there already?
 
 	}
@@ -78,7 +74,8 @@ public class JSON2NTmapper {
 	public static void instantiateToOWLClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException{
 		//loop for every class-iri in the array
 		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json"); //open reader on the input file
+			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
+			reader.open(); //open reader 
 			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
 			String classy=annotations.get(0).get(i);
 			String pointer = annotations.get(1).get(i);
@@ -98,14 +95,15 @@ public class JSON2NTmapper {
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
-			reader.close(reader.getReader()); //closing reader: opening-closing is necessary since there requests per reader are limited
+			reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
 		}
 		
 	}
 	
 	public static void instantiateToOWLDataProperties(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException {
 		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
+			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//set input file location
+			reader.open();//open reader
 			String datas=annotations.get(0).get(i);
 			String pointer = annotations.get(1).get(i);
 			String domain= annotations.get(2).get(i);
@@ -121,14 +119,15 @@ public class JSON2NTmapper {
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
-			reader.close(reader.getReader());
+			reader.close();
 		}
 	}
 
 
 	public static void instantiateToOWLObjectProperties(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException {
 		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
+			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//set input file location
+			reader.open(); //open reader
 			String objects=annotations.get(0).get(i);
 			String pointer = annotations.get(1).get(i);
 			String domain= annotations.get(2).get(i);
@@ -144,7 +143,7 @@ public class JSON2NTmapper {
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
-			reader.close(reader.getReader());
+			reader.close();
 		}
 	}
 }

@@ -32,11 +32,14 @@ import com.github.owlcs.ontapi.OntManagers;
 import static org.junit.Assert.assertNotNull;
 import static org.semanticweb.owlapi.search.Searcher.annotations;
 
-
+/**A class using the OWL-API and JENA-API to handle ontologies.*/
 public class OntoModeler {
 	
+	/**A string that contains the namespace & location of the OSHPD ontology representing a possible OSH project work landscape.*/
 	private String OSHPD ="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/OSHPD_schema.owl";
+	/**A string that contains the namespace & location of the skills ontology that is imported into the OSHPD ontology*/
 	private String skills="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl";
+	/**A string containing several prefixes used in the ontologies.*/
 	private String prefix="";	
 	
 	private OWLOntology onto;
@@ -44,19 +47,21 @@ public class OntoModeler {
 	private OWLDataFactory onto_df;
 	private IRI iri;
 	private IRI docIRI; //for local ontology creation
+	/**Annotation property that has json pointers to keys that are instantiated as the relating class.*/
 	private OWLAnnotationProperty classmapping;
+	/**Annotation property that has json pointers to keys that are instantiated as the relating dataproperty.*/
 	private OWLAnnotationProperty datapropertymapping;
+	/**Annotation property that has json pointers to keys that are instantiated as the relating objectproperty.*/
 	private OWLAnnotationProperty objectpropertymapping;
+	/**Annotation property that has json pointers to keys that are the domain of a relating data- or objectproperty.*/
 	private OWLAnnotationProperty identifier;
+	
 	private String IRIstring = "https://github.com/konierik/O-N/raw/master/ontology/Family2.owl";
 	
-	
-	//Construtors
-	/*
-	public OntoModeler() throws OWLOntologyCreationException {
 
-	}*/
-	
+	/**This method system.out.prints the content of any ArrayList(ArrayList(String)). 
+	 * It has no other use than to simply display the structure of the individual lists that can be generated in this class.
+	 * So in general this method is not used. */
 	public void listOut(ArrayList<ArrayList<String>> list) {
 		for (int i=0;i<list.get(0).size();i++) {
 	    	for(int j=0;j<list.size();j++) {
@@ -71,6 +76,8 @@ public class OntoModeler {
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	/**This method loads an owl-ontology from a local file into the OntoModeler.
+	 * @param FileLocationAndName String with ontology file path including filename and extension.*/
 	public void loadOnto(String FileLocationAndName) throws OWLOntologyCreationException {
 	    // Loading the OWL file
 		 onto_man = OntManagers.createManager();
@@ -81,13 +88,13 @@ public class OntoModeler {
 	     System.out.println("Get ontology iri: "+ onto_man.getOntologyDocumentIRI(onto).toString());
 	}
 	
+	/**This method loads an owl-ontology from an accessible URL into the OntoModeler.*/
 	public void loadOnto() {
 		try {
 			onto_man = OWLManager.createOWLOntologyManager();
 			onto = onto_man.loadOntology(iri);
 			onto_df = onto.getOWLOntologyManager().getOWLDataFactory();
 		} catch (OWLOntologyCreationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -99,6 +106,10 @@ public class OntoModeler {
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	/**A method to create a new ontology locally.
+	 * @param FileLocationAndName A string with the path where the new ontology should be saved including filename and extension.
+	 * The FileLocationAndName will be set as document IRI of the ontology but will be also connected to the iri variable. 
+	 * This variable can be set in another method setIRI(). In this way the ontology is accessible from its IRI but also from its document iri.*/
 	public void createOnto(String FileLocationAndName) throws OWLOntologyCreationException {
 	     onto_man = OWLManager.createOWLOntologyManager();
 	     onto=onto_man.createOntology(iri);
@@ -106,9 +117,9 @@ public class OntoModeler {
 	 //set iri to the ontology
 	     docIRI=IRI.create(FileLocationAndName);
 	     onto_man.setOntologyDocumentIRI(onto, docIRI);
-	 //map doc iri and onto iri
+	 //map doc iri and ontology iri
 	     onto_man.getIRIMappers().add(new SimpleIRIMapper(iri,docIRI));
-	 //get datafactory for onto handling (properties, instances, ...)
+	 //get datafactory from the ontology manager for further ontology handling (properties, instances, ...)
 	     onto_df = onto_man.getOWLDataFactory();
 	     
 	}
@@ -119,7 +130,8 @@ public class OntoModeler {
 	//				import ontology
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	
+	/**A method that adds an import statement into the ontology. The ontology to be imported should be accessible from the machine using the code.
+	 * @param ontoURL URL string for the ontology to be imported.*/
 	public void importFromURL(String ontoURL) {
 		OWLImportsDeclaration importDeclaration = onto_df.getOWLImportsDeclaration(IRI.create(ontoURL));
 		AddImport impi= new AddImport(onto, importDeclaration);
@@ -132,6 +144,8 @@ public class OntoModeler {
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	/**Locally saves the ontology to the path and name of the given parameter.
+	 * @param fileandpath String representing the path including filename and extension of the ontology to save.*/
 	public void saveOntology(String fileandpath) throws IOException, OWLOntologyStorageException, OWLOntologyCreationException {
 		System.out.println("Start saving ontology...");
 		System.out.println("Ontology found for saving: "+onto);
@@ -150,6 +164,7 @@ public class OntoModeler {
 	
 	//Dataproperties
 	
+	/**This method creates a */
 	public ArrayList<ArrayList<String>> getDatapropertiesAnnotations(){
 		ArrayList<ArrayList<String>> datasannotations = new ArrayList<ArrayList<String>>();
 		ArrayList <String> datas= new ArrayList<String>(); 
@@ -334,19 +349,24 @@ public class OntoModeler {
 	public void setClassmapping(String mapping) {
 		classmapping=onto_df.getOWLAnnotationProperty(IRIstring+"#"+mapping);		
 	}
+	
 	public void setDatapropertymapping(String mapping) {
 		datapropertymapping=onto_df.getOWLAnnotationProperty(IRIstring+"#"+mapping);		
 	}
+	
 	public void setObjectpropertymapping(String mapping) {
 		objectpropertymapping=onto_df.getOWLAnnotationProperty(IRIstring+"#"+mapping);		
 	}
+	
 	public void setClassIdent(String mapping) {
 		identifier=onto_df.getOWLAnnotationProperty(IRIstring+"#"+mapping);		
 	}
+	
 	public void setIRI(String iristring) {
 		iri =IRI.create(iristring);
 		IRIstring=iristring;
 	}
+	
 	public void setPrefix(String pf) {
 		prefix=pf;
 	}

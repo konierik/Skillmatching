@@ -7,7 +7,8 @@ public class Testmain {
 	public static void main (String[] args) throws IOException {
 		JSONReader readie = new JSONReader();
 		String input="/data/projects/result/edges/~/node/contributors/edges/~/node/id";
-		readie.openDoc("C://Springboot-Repository//Skillmatch//Skillmatching//src//main//resources//inputdata//sampledata_projects.json");
+		readie.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//src//main//resources//inputdata//sampledata_projects.json");
+		readie.open();
 		ArrayList<ArrayList<String>> jsondata=readie.parsePointer(input);
 		System.out.println(jsondata.toString());
 		for (int i=0;i<jsondata.get(0).size();i++) {

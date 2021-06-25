@@ -23,6 +23,8 @@ import javax.json.JsonReader;
 import javax.json.JsonString;
 import javax.json.JsonStructure;
 
+
+
 public class JSONReader {
 	
 	//public static JsonArray jsonArray;
@@ -31,7 +33,7 @@ public class JSONReader {
 	
 	private JsonReader reader;
 	private JsonStructure jsonStructure;
-	
+	private String file;
 	/*public static void main (String[] args) throws URISyntaxException, IOException {
 		//read();
 		open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
@@ -51,43 +53,70 @@ public class JSONReader {
 		
 	}
 	//open a json reader from URL json file location
-	public void open(String file) throws IOException {
-		URL fileURL= new URL(file);
-		BufferedReader read= new BufferedReader(new InputStreamReader(fileURL.openStream()));
-		reader = Json.createReader(read);//new FileReader(file))
-		jsonStructure=reader.read();
-		//return reader;
+	public void open() throws IOException {
+		try {
+			URL fileURL= new URL(file);
+			BufferedReader read= new BufferedReader(new InputStreamReader(fileURL.openStream()));
+			reader = Json.createReader(read);//new FileReader(file))
+			jsonStructure=reader.read();
+		} catch(Exception e) {
+			System.out.println("Open reader from URL not successful. Try reading as local file....");
+			e.printStackTrace();
+		}
+		try {
+			reader = Json.createReader(new FileReader(file));//new FileReader(file))
+			jsonStructure=reader.read();
+		}catch(Exception ex) {
+			System.out.println("Open reader from local file was not successful either.");
+			ex.printStackTrace();
+		}
 	}
-	//open json reader from local json file location
-	public void openDoc(String file) throws IOException {
+	/*old method: open json reader from local json file location
+	public void openDoc() throws IOException {
 		reader = Json.createReader(new FileReader(file));//new FileReader(file))
 		jsonStructure=reader.read();
 		//return reader;
-	}
+	}*/
 	
-	//close the reader
-	public void close(JsonReader reader) {
+	/**This method closes the reader after getting all the information*/
+	public void close() {
 		reader.close();
 	}
 	
 	
-	//parsing a pointer with array markers "~"
+	/**A method to parse a pointer with array markers ("~").
+	 * The mapping annoations from the ontology file are json pointers to where the information stands a relating json formatted file.
+	 * <p>Arrays from the json file are represented by a .../~/... in the annotation. This function recursively runs through 
+	 * all existing arrays that have the requested information, where every "~" is replaced by an index counter until the information is received.
+	 * @param input A string of the pointer where to get the information from. 
+	 * The pointer does not necessary have to include array markers (~), but due to the complex return type
+	 * it is recommended to use another function for getting a simple json value. 
+	 * @return The return type is a twofold ArrayList including strings. 
+	 * Although the method is recursive, the return type is designed for a pointer with two array markers max.
+	 * In the case of more markers the return type is not trivial and difficult to read.*/
 	public ArrayList<ArrayList<String>> parsePointer(String input){
-		//create Array for json reading and data cache
-		
 		//JsonStructure jsonStructure=null;// = reader.read();
 		JsonPointer jsonPointer = null;// = Json.createPointer(pointer);
+		//create Array for json reading and data cache
 		JsonArray data=null;
 		//creating lists for output
+		//list out will be returned in the end
 		ArrayList<ArrayList<String>> out = new ArrayList<ArrayList<String>>();
-		ArrayList<String> outPartOne = new ArrayList<String>();//
+		/* This lists (outPartOne and outPartTwo) hold the domain and range data for the second array information. 
+		 * The list outPartOne has the domain, which is a subject representative in a semantic triple of the form <subject predicate object>
+		 * and the outPartTwo has the range, representing the object of such triples.
+		 * The pointer represents the predicate. Usually the domain in a pointer is the field of the first array marker and the range is the second array marker.
+		 * A third array marker would mean, that the range also has its own predicate. The structure of the method allows that but that is difficult if the result
+		 * is used for one of the instaniation methods of the project, which requires and instantiates in general just one predicate (salso called property).
+		 */
+		ArrayList<String> outPartOne = new ArrayList<String>();
 		ArrayList<String> outPartTwo = new ArrayList<String>();//
 		//count the '~' char, that marks an array in the pointer
 		int count= (int) input.chars().filter(cha->cha=='~').count();	
 		//if there was no array marker found, then the pointer gets to a value
 		if (count<1) {
 			jsonPointer=Json.createPointer(input);
-			//check if the pointer exists:
+			//check if the pointer exists: the domain and range (here without "") is added to the relating arrays
 			if(jsonPointer.containsValue(jsonStructure)) {
 					outPartOne.add(input);
 					outPartTwo.add(jsonPointer.getValue(jsonStructure).toString().replace("\"", ""));
@@ -97,7 +126,7 @@ public class JSONReader {
 			//closing the reader
 			//reader.close();
 		}else {
-			//getting the array of the first array marker '~'
+			//getting the array of the first array marker '~' (count from the left) in the pointer
 			String newArray= input.substring(0, input.indexOf("~")-1);
 			//jsonStructure=reader.read();
 			jsonPointer=Json.createPointer(newArray);
@@ -112,7 +141,7 @@ public class JSONReader {
 				}
 			}	
 		}
-		//write into the arrays if there was a value for the searched key:
+		//write into the out array if there was a value for the searched key: (if outPartTwo>0 then there also was a value for outPartOne)
 		if(outPartTwo.size()>0) {
 			out.add(0, outPartOne);
 			out.add(1, outPartTwo);
@@ -195,7 +224,7 @@ public class JSONReader {
 		ListOut.add(1,range);
 		return ListOut;
 	}
-	
+	/*
 	public JsonString tryToJsonString (JsonPointer jsonPointer, JsonStructure jsonStructure){
 		JsonString jsonString =null;
 		try{
@@ -232,14 +261,16 @@ public class JSONReader {
 		}
 		return jsonArray;
 	}
-	
+	*/
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
 	//						Setter
 	//
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	
+	public void setFile(String filo) {
+		file=filo;
+	}
 	
 	
 	
@@ -250,6 +281,9 @@ public class JSONReader {
 	//
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	public String getFileString() {
+		return file;
+	}
 	public JsonReader getReader() {
 		return reader;
 		}
@@ -288,7 +322,9 @@ public class JSONReader {
 	
 	
 	
-	public void read() throws URISyntaxException, IOException {
+	
+	
+	/*public void read() throws URISyntaxException, IOException {
 		
 		;
 		//InputStream input = fileURL.openStream();
@@ -337,13 +373,13 @@ public class JSONReader {
 		catch (Exception e) {
 			System.out.println("Exception: "+e);
 		}*/
-		
+		/*
 		System.out.println(jsonArray.get(0));
 		ArrayList <JsonObject> objects = new ArrayList <JsonObject>();
 		
 		//get all information
 		JsonPointer jsonPointer3 = Json.createPointer("");
-		jsonObject = (JsonObject) jsonPointer3.getValue(jsonStructure);
+		jsonObject = (JsonObject) jsonPointer3.getValue(jsonStructure);*/
 		//System.out.println(jsonObject.toString());
 		
 		//JSONParser parser=new JSONParser();
@@ -399,5 +435,5 @@ public class JSONReader {
 		//} catch (Exception ex) {
 		 //   ex.printStackTrace();
 	//}
-	}
+	//}
 }
