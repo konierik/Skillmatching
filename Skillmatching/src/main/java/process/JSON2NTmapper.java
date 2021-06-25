@@ -1,17 +1,36 @@
 package process;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import javax.json.JsonArray;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import reader.JSONReader;
 
 public class JSON2NTmapper {
+	
+	private OntoModeler mapping= new OntoModeler();
+	private String objectpropertymapping;
+	private String classmapping;
+	private String datapropertymapping;
+	private String identifier;
+	
+	
+	private String NToutputFile; //Format should be: "c:\\projects\\app.log"
+	private String NTcontent;
 
+	
+
+	
 	public static void main(String[]args) throws OWLOntologyCreationException, IOException, OWLOntologyStorageException {
+		
+		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -28,10 +47,11 @@ public class JSON2NTmapper {
 		mapping.setClassIdent("identifier");
 		mapping.setObjectpropertymapping("objectpropertymapping");
 		mapping.setDatapropertymapping("datapropertymapping");
+		
 		// Get the mapping annotations as lists
-		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping|identifier
-		ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: IRI|datapropertymapping
-		ArrayList<ArrayList<String>> objectannotations=mapping.getObjectpropertiesAnnotations(); //Format: IRI|objectpropertymapping
+		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping pointer|identifier pointer
+		ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+		ArrayList<ArrayList<String>> objectannotations=mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -46,7 +66,10 @@ public class JSON2NTmapper {
 		//instance.loadOnto("C:\\Users\\konierik\\Desktop\\Family_Test\\Family_instance_mapping.owl");
 		//import mapping ontology
 		instance.importFromURL(mapping.getIRIString());
-				
+		
+		//import instances into the mapping ontology:
+		mapping.importFromURL(instance.getIRIString());
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
 		//			JSON input
@@ -70,6 +93,10 @@ public class JSON2NTmapper {
 
 	}
 	
+	public void loadMappingOntology(String mappingiri) {
+		
+		
+	}
 	
 	public static void instantiateToOWLClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException{
 		//loop for every class-iri in the array
@@ -146,5 +173,73 @@ public class JSON2NTmapper {
 			reader.close();
 		}
 	}
+	
+	public void toNTFile() {
+		try {
+			Files.write(Paths.get(NToutputFile), NTcontent.getBytes());
+			
+		} catch(IOException e) {
+			System.out.println("Not successful writing.");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//
+	//			setter
+	//
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public void setNToutputLocation(String out) {
+		NToutputFile=out;
+	}
+	
+	public void setObjectPropertyMapping(String opm) {
+		objectpropertymapping= opm;
+		mapping.setObjectpropertymapping(opm);
+	}
+	
+	public void setDataPropertyMapping(String dpm) {
+		datapropertymapping= dpm;
+		mapping.setDatapropertymapping(dpm);
+	}
+	
+	public void setClassMapping(String cm) {
+		classmapping= cm;
+		mapping.setClassmapping(cm);
+	}
+	
+	public void setIdentifierMapping(String im) {
+		identifier= im;
+		mapping.setClassIdent(im);
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//
+	//			getter
+	//
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public String getObjectPropertyMapping() {
+		return objectpropertymapping;
+	}
+	
+	public String getDataPropertyMapping() {
+		return datapropertymapping;
+	}
+	
+	public String getClassMapping() {
+		return classmapping;
+	}
+	
+	public String getIdentifierMapping() {
+		return identifier;
+	}
+	
+	public String getNToutputLocation() {
+		return NToutputFile;
+	}
+	
 }
 
