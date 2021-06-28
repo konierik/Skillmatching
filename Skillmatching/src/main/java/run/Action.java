@@ -39,6 +39,7 @@ public class Action {
 		//The skill ontology is already build with classes and relations.
 		//The application case data for the skills to use as instances is provided in a separate json file.
 		
+		/*
 		//first create instances for the skill ontology relating on the skill inputs
 		SkillReader skully= new SkillReader();
 		//setting the location of the json input file
@@ -65,7 +66,7 @@ public class Action {
 		//save instantiated ontology. 
 		skully.saveOntology(skill_ontofilelocation);
 		
-		
+		*/
 		
 		/*In a second step a mapping OntoModeler is created to instantiate Project 
 		 * and User data for the OSHPDP ontology, that represents a project landscape for OSH projects. 
@@ -102,8 +103,8 @@ public class Action {
 		
 		// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
 		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping pointer|identifier pointer
-		ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
-		ArrayList<ArrayList<String>> objectannotations=mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+		//ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+		//ArrayList<ArrayList<String>> objectannotations=mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//

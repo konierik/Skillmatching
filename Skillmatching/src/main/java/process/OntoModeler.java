@@ -16,6 +16,7 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataPropertyDomainAxiom;
+import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLImportsDeclaration;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
@@ -175,7 +176,8 @@ public class OntoModeler {
 		ArrayList <String> domainpointer=new ArrayList<String>();
 		ArrayList <String> identpointer= new ArrayList<String>();
 		for(OWLDataProperty dp: onto.dataPropertiesInSignature().collect(Collectors.toSet())) {
-			if(!getAnnotations(onto,dp.getIRI(),datapropertymapping).get(0).isEmpty()) {
+			ArrayList<String> ans=getAnnotations(onto,dp.getIRI(),datapropertymapping);
+			if(!ans.isEmpty()&&ans!=null) {
 				datas.add(dp.getIRI().toString());
 				annotations.addAll(getAnnotations(onto, dp.getIRI(), datapropertymapping)); 
 				domainpointer.addAll(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), classmapping));
@@ -198,7 +200,8 @@ public class OntoModeler {
 		ArrayList <String> domainpointer=new ArrayList<String>();
 		ArrayList <String> identpointer= new ArrayList<String>();
 		for(OWLObjectProperty op: onto.objectPropertiesInSignature().collect(Collectors.toSet())) {
-			if(!getAnnotations(onto,op.getIRI(),objectpropertymapping).get(0).isEmpty()) {
+			ArrayList<String> ans=getAnnotations(onto,op.getIRI(),objectpropertymapping);
+			if(!ans.isEmpty()&&ans!=null) {
 				objects.add(op.getIRI().toString());	
 				//get annotation in the class
 				annotations.addAll(getAnnotations(onto, op.getIRI(), objectpropertymapping));  
@@ -214,17 +217,18 @@ public class OntoModeler {
 	}
 	
 	
-	//Classes
+	/**This method returns an Arraylist(Arraylist(String)) in the form */
 	public  ArrayList<ArrayList<String>> getClassesAnnotations(){
 		ArrayList<ArrayList<String>> classesannotations = new ArrayList<ArrayList<String>>();
 		ArrayList <String> classes= new ArrayList<String>(); 
 		ArrayList <String> annotations= new ArrayList <String>();
 		ArrayList <String> ident=new ArrayList<String>();
 		for( OWLClass oc : onto.classesInSignature().collect(Collectors.toSet() ) ) {				
-	        if(!getAnnotations(onto,oc.getIRI(),classmapping).get(0).isEmpty()) {
+	        ArrayList<String> ans=getAnnotations(onto,oc.getIRI(),classmapping);
+			if(!ans.isEmpty()&&ans!=null) {
 	        	classes.add(oc.getIRI().toString());
-	        	annotations.add(getAnnotations(onto, oc.getIRI(), classmapping).get(0));
-	        	ident.add(getAnnotations(onto, oc.getIRI(), identifier).get(0));
+	        	annotations.add(getAnnotations(onto,oc.getIRI(), classmapping).get(0));
+	        	ident.add(getAnnotations(onto,oc.getIRI(), identifier).get(0));
 	        }	
 		}
 		classesannotations.add(0,classes);
@@ -233,20 +237,22 @@ public class OntoModeler {
 		return classesannotations;
 	}
 	
+		
 	//general annotation axioms for all getAnnotation methods
 	//gets annotaions: input: source ontology, iri from property that has the annotation, anntoation property to search
 	public ArrayList <String> getAnnotations(OWLOntology onto, IRI iri, OWLAnnotationProperty annprop) {
         ArrayList <String> listo= new ArrayList <String> ();	
-		for (OWLAnnotation annotation : annotations(
-         		 onto.annotationAssertionAxioms(iri), annprop).collect(Collectors.toSet())) {
-              if (annotation.getValue() instanceof OWLLiteral) {
+		for (OWLAnnotation annotation : annotations(onto.annotationAssertionAxioms(iri), annprop).collect(Collectors.toSet())) {
+             // if (annotation.getValue() instanceof OWLLiteral) {
                   OWLLiteral val = (OWLLiteral) annotation.getValue();
                   listo.add(val.getLiteral().toString());
                   //System.out.println("\t Annotationproperty: "+val.getLiteral().toString());
-              }
+              //}
           }
 		return listo;
 	}
+	
+
 
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -296,7 +302,12 @@ public class OntoModeler {
 		OWLDataProperty property=onto_df.getOWLDataProperty(iri); 
 		String string ="";
 		for( OWLDataPropertyDomainAxiom dpa : onto.dataPropertyDomainAxioms(property).collect( Collectors.toSet() ) ) {				
-			string=dpa.getDomain().asOWLClass().getIRI().toString();
+			try {
+				string=dpa.getDomain().asOWLClass().getIRI().toString();
+			}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println("\t"+dpa.getDomain().toString());
+			}
 		}
 		return string;
 	}
@@ -306,8 +317,13 @@ public class OntoModeler {
 	public String getObjectPropertyDomain(IRI iri) {
 		OWLObjectProperty property = onto_df.getOWLObjectProperty(iri);
 		String string="";
-		for( OWLObjectPropertyDomainAxiom dpa : onto.objectPropertyDomainAxioms(property).collect( Collectors.toSet() ) ) {				
-			string=dpa.getDomain().asOWLClass().getIRI().toString();
+		for( OWLObjectPropertyDomainAxiom opa : onto.objectPropertyDomainAxioms(property).collect( Collectors.toSet() ) ) {				
+			try {
+				string=opa.getDomain().asOWLClass().getIRI().toString();
+			}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println("\t"+opa.getDomain().toString());
+			}
 		}
 		return string;
 	}

@@ -45,6 +45,8 @@ public class JSON2NTmapper {
 		mapping.setObjectpropertymapping("objectpropertymapping");
 		mapping.setDatapropertymapping("datapropertymapping");
 		
+		
+		
 		// Get the mapping annotations as lists
 		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping pointer|identifier pointer
 		ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
@@ -80,11 +82,11 @@ public class JSON2NTmapper {
 		//ArrayList<String> values = jsonReader.getClassInstances(jsonReader.getReader(), classannotations.get(1).get(0), classannotations.get(2).get(0));
 		//mapping.listOut(objectannotations);
 		
-		instantiateToOWLClasses(classannotations,jsonReader, instance);	
-		instantiateToOWLObjectProperties(objectannotations, jsonReader, instance);
-		instantiateToOWLDataProperties(dataannotations, jsonReader, instance);
+		//instantiateToOWLClasses(classannotations,jsonReader, instance);	
+		//instantiateToOWLObjectProperties(objectannotations, jsonReader, instance);
+		//instantiateToOWLDataProperties(dataannotations, jsonReader, instance);
 		
-		instance.saveOntology("C:\\Users\\konierik\\Desktop\\Family_test\\Family_instance_mapping.owl");
+		//instance.saveOntology("C:\\Users\\konierik\\Desktop\\Family_test\\Family_instance_mapping.owl");
 		
 		//han: create  namespaces --> is there already?
 
@@ -93,6 +95,33 @@ public class JSON2NTmapper {
 	public void loadMappingOntology(String mappingiri) {
 		
 		
+	}
+	
+	public void instantiateToNTClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException {
+		for (int i=0; i<annotations.get(0).size();i++) {
+			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
+			reader.open(); //open reader 
+			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
+			String classy=annotations.get(0).get(i);
+			String pointer = annotations.get(1).get(i);
+			String identifier= annotations.get(2).get(i);
+			try{
+				//getting the identifier values from all instances of the class i
+				ArrayList<String> jsonResult = reader.getClassInstances(reader.getReader(), pointer, identifier);
+				//running through all found instances of class i
+				for (int j=0; j<jsonResult.size(); j++) {
+					//getting jth-instance value
+					String value=jsonResult.get(j);
+					//instantiate the jth- value into the ontology as an individual of class i
+					onto.instantiateClass(onto.getIRIString()+"#"+value, classy);
+					System.out.println(onto.getIRIString()+"#"+value+" instantiated as "+classy+".");
+				}
+				System.out.println("\n");
+			}catch(Exception e) {
+				e.printStackTrace();
+				}
+			reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
+		}
 	}
 	
 	public static void instantiateToOWLClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException{
