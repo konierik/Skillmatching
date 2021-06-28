@@ -290,6 +290,8 @@ public class OntoModeler {
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	/**A method that returns the domain of a dataproperty as string.
+	 * @param iri IRI of the property for which the domain is being searched.*/
 	public String getDatapropertyDomain(IRI iri) {
 		OWLDataProperty property=onto_df.getOWLDataProperty(iri); 
 		String string ="";
@@ -299,6 +301,8 @@ public class OntoModeler {
 		return string;
 	}
 	
+	/**A method that returns the domain of an objectproperty as string.
+	 * @param iri FULL IRI of the property for which the domain is being searched.*/
 	public String getObjectPropertyDomain(IRI iri) {
 		OWLObjectProperty property = onto_df.getOWLObjectProperty(iri);
 		String string="";
@@ -314,7 +318,9 @@ public class OntoModeler {
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	
+	/**Instantiates the parameter instance as indvidual of the parameter Class.
+	 * @param instance FULL IRI of the instance
+	 * @param Class Full IRI of the class*/
 	public void instantiateClass(String instance, String Class) {
 		OWLClass domain = onto_df.getOWLClass(Class);
 		OWLIndividual range = onto_df.getOWLNamedIndividual(instance);
@@ -325,6 +331,10 @@ public class OntoModeler {
 		
 	}
 	
+	/**Instantiates a dataproperty between the parameters (in format: domain property range).
+	 * @param subject FULL IRI of the domain instance
+	 * @param predicate Full IRI of the dataproperty
+	 * @param object String of the dataproperty range value*/
 	public void instantiateDataProperty(String subject, String predicate, String object) {
 		OWLIndividual domain = onto_df.getOWLNamedIndividual(subject);
 		OWLLiteral range = onto_df.getOWLLiteral(object);
@@ -334,6 +344,11 @@ public class OntoModeler {
 		onto_man.applyChange(addAxiomChange);
 	}	
 	
+	
+	/**Instantiates an objectproperty between the parameters (in format: domain property range).
+	 * @param subject FULL IRI of the domain instance
+	 * @param predicate Full IRI of the objectproperty
+	 * @param object FULL IRI of the range instance*/
 	public void instantiateObjectProperty(String subject,String predicate, String object) {
 		OWLIndividual domain = onto_df.getOWLNamedIndividual(subject); //gets a domain individual from the datafactory that has the form of the string "subject"
 		OWLIndividual range = onto_df.getOWLNamedIndividual(object); //gets a range individual from the datafactory that has the form of the string "object"
