@@ -12,7 +12,8 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-
+import java.util.Arrays;
+import java.util.List;
 
 //https://www.baeldung.com/json-pointer
 import javax.json.Json;
@@ -36,10 +37,12 @@ public class JSONReader {
 	private String file;
 	/*public static void main (String[] args) throws URISyntaxException, IOException {
 		//read();
-		open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
+		JSONReader red= new JSONReader();
+		red.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
+		red.open();
 		String pointPerson= "/data/Person";
 		String pointID="/data/Person/ID";
-		JsonArray person=instantiate(reader,"/data/Person");
+		JsonArray person=red.instantiate(red.getReader(),"/data/Person");
 		for (int i=0;i<person.size();i++) {
 		System.out.println("getID: "+person.getValue("/"+i+schort(pointPerson,pointID)));
 		}
@@ -91,7 +94,7 @@ public class JSONReader {
 	 * @param input A string of the pointer where to get the information from. 
 	 * The pointer does not necessary have to include array markers (~), but due to the complex return type
 	 * it is recommended to use another function for getting a simple json value. 
-	 * @return The return type is a twofold ArrayList including strings. 
+	 * @return The return type is a twofold ArrayList including strings.  Format: |pointer to array of first array marker|value of|
 	 * Although the method is recursive, the return type is designed for a pointer with two array markers max.
 	 * In the case of more markers the return type is not trivial and difficult to read.*/
 	public ArrayList<ArrayList<String>> parsePointer(String input){
@@ -137,15 +140,67 @@ public class JSONReader {
 				//running through the array:
 				for (int i=0; i<data.size();i++) {
 					//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
-					out.addAll(parsePointer(input.replaceFirst("~", ""+i+"")));
+					ArrayList<ArrayList<String>> in=parsePointer(input.replaceFirst("~", ""+i+""));
+					if(in.size()>0) {
+						if(out.size()>0) {
+							out.get(0).addAll(in.get(0));
+							out.get(1).addAll(in.get(1));
+						}else {
+							out.addAll(in);
+						}
+					}
 				}
 			}	
 		}
 		//write into the out array if there was a value for the searched key: (if outPartTwo>0 then there also was a value for outPartOne)
 		if(outPartTwo.size()>0) {
-			out.add(0, outPartOne);
-			out.add(1, outPartTwo);
+			
+			out.add(outPartOne);
+			out.add(outPartTwo);
 		}
+		return out;
+	}
+	
+	public ArrayList<ArrayList<String>> replaceToDomain(ArrayList<ArrayList<String>> inarray, String ident){
+		ArrayList<ArrayList<String>> outarray=new ArrayList<ArrayList<String>>();
+		ArrayList<String>cache=new ArrayList<String>();
+		String replace="";
+		System.out.println("array.size(): "+inarray.size());
+		System.out.println("array.get(0).size(): "+inarray.get(0).size());
+		for (int i =0; i<inarray.get(0).size(); i++){
+			//get the string for the pointer of the array index
+			String arrayval=inarray.get(0).get(i);
+			// replacing the array marker in the ident string with the actual array number from the pointer in arrayval. 
+			//For this the pointer is cropped to just the integer in it. (arrayval.replaceAll("\\D+","") removes all chars that are not one of 0123456789)
+			replace=replaceMarker(ident,arrayval);//ident.replaceAll("~", arrayval.replaceAll("\\D+",""));
+			//replacing the array pointer with the domain value. For this the value from the pointer is read
+			inarray.get(0).get(i).replaceAll(arrayval, getPointerValue(replace));
+			cache.add(getPointerValue(replace)); 
+		}
+		
+		outarray.add(0,cache);
+		outarray.add(1,inarray.get(1));
+		return outarray;
+	}
+	
+	public String replaceMarker(String toChange, String compare) {
+		String out="";
+		List<String> changearray=Arrays.asList(toChange.split("/"));
+		List<String> comparearray=Arrays.asList(compare.split("/"));
+		for(int i =1; i<changearray.size(); i++) {
+			if (changearray.get(i).equals("~")) {
+				out+="/"+comparearray.get(i);
+				//changearray.set(i,comparearray.get(i));
+			}else {
+				out+="/"+changearray.get(i);
+			}
+		}
+		return out;
+	}
+	
+	public String getPointerValue(String point) {
+		JsonPointer jsonPointer=Json.createPointer(point);
+		String out=jsonPointer.getValue(jsonStructure).toString().replace("\"", "");
 		return out;
 	}
 	
