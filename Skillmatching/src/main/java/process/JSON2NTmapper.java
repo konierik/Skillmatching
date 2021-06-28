@@ -1,9 +1,6 @@
 package process;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -172,6 +169,11 @@ public class JSON2NTmapper {
 				}
 			reader.close();
 		}
+	}
+	
+	public void addNTStatement(String subject, String predicate, String object) {
+		NTcontent+="<"+subject+"> <"+predicate+"> <"+object+">.\n";
+		
 	}
 	
 	public void toNTFile() {
