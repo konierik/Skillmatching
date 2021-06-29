@@ -183,6 +183,28 @@ public class JSONReader {
 		return outarray;
 	}
 	
+	public ArrayList<ArrayList<String>> replacePointer(ArrayList<ArrayList<String>> inarray, String ident, int replaceindex, int identindex){
+		ArrayList<ArrayList<String>> outarray=new ArrayList<ArrayList<String>>();
+		ArrayList<String>cache=new ArrayList<String>();
+		String replace="";
+		System.out.println("array.size(): "+inarray.size());
+		System.out.println("array.get(0).size(): "+inarray.get(0).size());
+		for (int i =0; i<inarray.get(0).size(); i++){
+			//get the string for the pointer of the array index
+			String arrayval=inarray.get(0).get(i);
+			// replacing the array marker in the ident string with the actual array number from the pointer in arrayval. 
+			//For this the pointer is cropped to just the integer in it. (arrayval.replaceAll("\\D+","") removes all chars that are not one of 0123456789)
+			replace=replaceMarker(ident,arrayval);//ident.replaceAll("~", arrayval.replaceAll("\\D+",""));
+			//replacing the array pointer with the domain value. For this the value from the pointer is read
+			inarray.get(0).get(i).replaceAll(arrayval, getPointerValue(replace));
+			cache.add(getPointerValue(replace)); 
+		}
+		
+		outarray.add(0,cache);
+		outarray.add(1,inarray.get(1));
+		return outarray;
+	}
+	
 	public String replaceMarker(String toChange, String compare) {
 		String out="";
 		List<String> changearray=Arrays.asList(toChange.split("/"));
