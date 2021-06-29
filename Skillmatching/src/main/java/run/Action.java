@@ -11,6 +11,7 @@ import reader.*;
 
 /**This class is used to create all files, mappings and queries of the project*/
 public class Action {
+	@SuppressWarnings("unused")
 	public static void main(String args[]) throws OWLOntologyCreationException {
 		//initialization of variables used:
 		String projectdir=System.getProperty("user.dir").replace("\\", "/");
@@ -103,8 +104,8 @@ public class Action {
 		
 		// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
 		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping pointer|identifier pointer
-		//ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
-		//ArrayList<ArrayList<String>> objectannotations=mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+		ArrayList<ArrayList<String>> dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+		ArrayList<ArrayList<String>> objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
