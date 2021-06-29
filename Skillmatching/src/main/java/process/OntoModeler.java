@@ -16,12 +16,14 @@ import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataPropertyDomainAxiom;
+import org.semanticweb.owlapi.model.OWLDataPropertyRangeAxiom;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLImportsDeclaration;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyDomainAxiom;
+import org.semanticweb.owlapi.model.OWLObjectPropertyRangeAxiom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
@@ -137,8 +139,11 @@ public class OntoModeler {
 	/**A method that adds an import statement into the ontology. The ontology to be imported should be accessible from the machine using the code.
 	 * @param ontoURL URL string for the ontology to be imported.*/
 	public void importFromURL(String ontoURL) {
+	//creating an importdeclaration that states the import of the ontology from ontoURL
 		OWLImportsDeclaration importDeclaration = onto_df.getOWLImportsDeclaration(IRI.create(ontoURL));
+	//creating an importaxiom that integrates the importDeclaration into the wished ontology onto
 		AddImport impi= new AddImport(onto, importDeclaration);
+	//adding the import with the ontology manager
 		onto_man.applyChange(impi);
 	}
 
@@ -168,72 +173,109 @@ public class OntoModeler {
 	
 	//Dataproperties
 	
-	/**This method creates a */
+	/**This method creates an Arraylist(Arraylist(String)) in a triples form 
+	 * <br>[[dataproperty domain pointer][dataproperty iri][dataproperty pointer]] <br>
+	 * for all dataproperties in the ontology that are annotated with a datapropertymapping. <P>
+	 * The dataproperty domain pointer is a mapping annotation pointing to the class instance of the dataproperty.<br>
+	 * The dataproperty iri is the iristring of the dataproperty. <br>
+	 * The dataproperty pointer is a json pointer to the value of the dataproperty.
+	 * */
 	public ArrayList<ArrayList<String>> getDatapropertiesAnnotations(){
 		ArrayList<ArrayList<String>> datasannotations = new ArrayList<ArrayList<String>>();
 		ArrayList <String> datas= new ArrayList<String>(); 
 		ArrayList <String> annotations= new ArrayList <String>();
-		ArrayList <String> domainpointer=new ArrayList<String>();
+		//ArrayList <String> domainpointer=new ArrayList<String>();
 		ArrayList <String> identpointer= new ArrayList<String>();
 		for(OWLDataProperty dp: onto.dataPropertiesInSignature().collect(Collectors.toSet())) {
 			ArrayList<String> ans=getAnnotations(onto,dp.getIRI(),datapropertymapping);
 			if(!ans.isEmpty()&&ans!=null) {
 				datas.add(dp.getIRI().toString());
-				annotations.addAll(getAnnotations(onto, dp.getIRI(), datapropertymapping)); 
-				domainpointer.addAll(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), classmapping));
-				identpointer.addAll(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), identifier));
+				annotations.add(getAnnotations(onto, dp.getIRI(), datapropertymapping).get(0)); 
+				//domainpointer.add(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), classmapping).get(0));
+				identpointer.add(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), identifier).get(0));
 			}
         }
-		datasannotations.add(0,datas);
-		datasannotations.add(1,annotations);
-		datasannotations.add(2,domainpointer);
-		datasannotations.add(3,identpointer);
+		datasannotations.add(0,identpointer);
+		datasannotations.add(1,datas);
+		datasannotations.add(2,annotations);
+		//datasannotations.add(2,domainpointer);
+		
 		return datasannotations;
 	}
 	
 	
 	//Objectproperties
+	/**This method creates an Arraylist(Arraylist(String)) in a triples form 
+	 * <br>[[objectproperty domain pointer][objectproperty iri][objectproperty pointer]] <br>
+	 * for all objectproperties in the ontology that are annotated with an objectpropertymapping. <P>
+	 * The objectproperty domain pointer is a mapping annotation pointing to the class instance of the objectproperty.<br>
+	 * The objectproperty iri is the iristring of the objectproperty. <br>
+	 * The objectproperty pointer is a json pointer to the value of the objectproperty.
+	 * */
 	public ArrayList<ArrayList<String>> getObjectpropertiesAnnotations(){
 		ArrayList<ArrayList<String>> objectsannotations = new ArrayList<ArrayList<String>>();
 		ArrayList <String> objects= new ArrayList<String>(); 
 		ArrayList <String> annotations= new ArrayList <String>();
-		ArrayList <String> domainpointer=new ArrayList<String>();
+		//ArrayList <String> domainpointer=new ArrayList<String>();
 		ArrayList <String> identpointer= new ArrayList<String>();
 		for(OWLObjectProperty op: onto.objectPropertiesInSignature().collect(Collectors.toSet())) {
 			ArrayList<String> ans=getAnnotations(onto,op.getIRI(),objectpropertymapping);
 			if(!ans.isEmpty()&&ans!=null) {
 				objects.add(op.getIRI().toString());	
 				//get annotation in the class
-				annotations.addAll(getAnnotations(onto, op.getIRI(), objectpropertymapping));  
-				domainpointer.addAll(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping));
-				identpointer.addAll(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), identifier));
+				annotations.add(getAnnotations(onto, op.getIRI(), objectpropertymapping).get(0));  
+				//domainpointer.add(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping).get(0));
+				identpointer.add(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), identifier).get(0));
         	}
 		}
-		objectsannotations.add(0,objects);
-		objectsannotations.add(1,annotations);
-		objectsannotations.add(2,domainpointer);
-		objectsannotations.add(3,identpointer);
+		objectsannotations.add(0,identpointer);
+		objectsannotations.add(1,objects);
+		objectsannotations.add(2,annotations);
+		//objectsannotations.add(2,domainpointer);
+		
 		return objectsannotations;
 	}
 	
+	/**This method takes the annotations array from getObjectproptertiesAnnotations() method and gathers data for class instantiation of the range, 
+	 * in case those instances are not in the other data.*/
+	public ArrayList<ArrayList<String>> getClassesFromObjectpropertyRange(ArrayList<ArrayList<String>> objectsannotations){
+		ArrayList<ArrayList<String>> objectpropertyrangeclasses=new ArrayList<ArrayList<String>>();
+		ArrayList<String> domain =objectsannotations.get(2);
+		ArrayList<String> property= new ArrayList<String>();
+		ArrayList<String> range = new ArrayList<String>();
+		for (int i=0; i<objectsannotations.get(0).size();i++){
+			range.add(getObjectPropertyRange(IRI.create(objectsannotations.get(1).get(i))));
+			property.add("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
+		}
+		
+		objectpropertyrangeclasses.add(0,domain);
+		objectpropertyrangeclasses.add(1,property);
+		objectpropertyrangeclasses.add(2,range);
+		
+		return objectpropertyrangeclasses;
+	}
 	
-	/**This method returns an Arraylist(Arraylist(String)) in the form */
+	/**This method returns an Arraylist(Arraylist(String)) in triple form [[class pointer][rdfs:type][class iri]].*/
 	public  ArrayList<ArrayList<String>> getClassesAnnotations(){
 		ArrayList<ArrayList<String>> classesannotations = new ArrayList<ArrayList<String>>();
 		ArrayList <String> classes= new ArrayList<String>(); 
 		ArrayList <String> annotations= new ArrayList <String>();
-		ArrayList <String> ident=new ArrayList<String>();
+		//ArrayList <String> ident=new ArrayList<String>();
+		ArrayList <String> rdfsType=new ArrayList<String>();
 		for( OWLClass oc : onto.classesInSignature().collect(Collectors.toSet() ) ) {				
 	        ArrayList<String> ans=getAnnotations(onto,oc.getIRI(),classmapping);
 			if(!ans.isEmpty()&&ans!=null) {
 	        	classes.add(oc.getIRI().toString());
 	        	annotations.add(getAnnotations(onto,oc.getIRI(), classmapping).get(0));
-	        	ident.add(getAnnotations(onto,oc.getIRI(), identifier).get(0));
+	        	rdfsType.add("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
+	        	//ident.add(getAnnotations(onto,oc.getIRI(), identifier).get(0));
 	        }	
 		}
-		classesannotations.add(0,classes);
-		classesannotations.add(1,annotations);
-		classesannotations.add(2, ident);
+		classesannotations.add(0,annotations);
+		classesannotations.add(1,rdfsType);
+		classesannotations.add(2,classes);
+		
+		//classesannotations.add(2, ident);
 		return classesannotations;
 	}
 	
@@ -292,7 +334,7 @@ public class OntoModeler {
 	*/
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
-	//				get Domain of property
+	//				get Domain or Range of property
 	//
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -303,7 +345,7 @@ public class OntoModeler {
 		String string ="";
 		for( OWLDataPropertyDomainAxiom dpa : onto.dataPropertyDomainAxioms(property).collect( Collectors.toSet() ) ) {				
 			try {
-				string=dpa.getDomain().asOWLClass().getIRI().toString();
+				string=dpa.getDomain().asOWLClass().getIRI().getIRIString();
 			}catch(Exception e) {
 				e.printStackTrace();
 				System.out.println("\t"+dpa.getDomain().toString());
@@ -319,7 +361,7 @@ public class OntoModeler {
 		String string="";
 		for( OWLObjectPropertyDomainAxiom opa : onto.objectPropertyDomainAxioms(property).collect( Collectors.toSet() ) ) {				
 			try {
-				string=opa.getDomain().asOWLClass().getIRI().toString();
+				string=opa.getDomain().asOWLClass().getIRI().getIRIString();
 			}catch(Exception e) {
 				e.printStackTrace();
 				System.out.println("\t"+opa.getDomain().toString());
@@ -327,6 +369,40 @@ public class OntoModeler {
 		}
 		return string;
 	}
+	
+	/**A method that returns the range of an objectproperty as string.
+	 * @param iri FULL IRI of the property for which the range is being searched.*/
+	public String getObjectPropertyRange(IRI iri) {
+		OWLObjectProperty property = onto_df.getOWLObjectProperty(iri);
+		String string="";
+		for( OWLObjectPropertyRangeAxiom opa : onto.objectPropertyRangeAxioms(property).collect( Collectors.toSet() ) ) {				
+			try {
+				string=opa.getRange().asOWLClass().getIRI().getIRIString();
+			}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println("\t"+opa.getRange().toString());
+			}
+		}
+		return string;
+	}
+	
+	
+	/**A method that returns the range of a dataproperty as string.
+	 * @param iri IRI of the property for which the range is being searched.*/
+	public String getDatapropertyRange(IRI iri) {
+		OWLDataProperty property=onto_df.getOWLDataProperty(iri); 
+		String string ="";
+		for( OWLDataPropertyRangeAxiom dpa : onto.dataPropertyRangeAxioms(property).collect( Collectors.toSet() ) ) {				
+			try {
+				string=dpa.getRange().toString();
+			}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println("\t"+dpa.getRange().toString());
+			}
+		}
+		return string;
+	}
+	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
