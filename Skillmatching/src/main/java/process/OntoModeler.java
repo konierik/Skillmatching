@@ -188,11 +188,11 @@ public class OntoModeler {
 		ArrayList <String> identpointer= new ArrayList<String>();
 		for(OWLDataProperty dp: onto.dataPropertiesInSignature().collect(Collectors.toSet())) {
 			ArrayList<String> ans=getAnnotations(onto,dp.getIRI(),datapropertymapping);
-			if(!ans.isEmpty()&&ans!=null) {
+			if(!ans.isEmpty()&&ans!=null&&ans.get(0).length()!=0) {
 				datas.add(dp.getIRI().toString());
 				annotations.add(getAnnotations(onto, dp.getIRI(), datapropertymapping).get(0)); 
 				//domainpointer.add(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), classmapping).get(0));
-				identpointer.add(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), identifier).get(0));
+				identpointer.addAll(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), identifier));
 			}
         }
 		datasannotations.add(0,identpointer);
@@ -220,12 +220,13 @@ public class OntoModeler {
 		ArrayList <String> identpointer= new ArrayList<String>();
 		for(OWLObjectProperty op: onto.objectPropertiesInSignature().collect(Collectors.toSet())) {
 			ArrayList<String> ans=getAnnotations(onto,op.getIRI(),objectpropertymapping);
-			if(!ans.isEmpty()&&ans!=null) {
+			if(!ans.isEmpty()&&ans!=null&&ans.get(0).length()!=0) {
+				System.out.println(ans.toString() +" type: "+ ans.get(0).getClass());
 				objects.add(op.getIRI().toString());	
 				//get annotation in the class
-				annotations.add(getAnnotations(onto, op.getIRI(), objectpropertymapping).get(0));  
+				annotations.addAll(getAnnotations(onto, op.getIRI(), objectpropertymapping));  
 				//domainpointer.add(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping).get(0));
-				identpointer.add(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), identifier).get(0));
+				identpointer.addAll(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), identifier));
         	}
 		}
 		objectsannotations.add(0,identpointer);
@@ -264,7 +265,7 @@ public class OntoModeler {
 		ArrayList <String> rdfsType=new ArrayList<String>();
 		for( OWLClass oc : onto.classesInSignature().collect(Collectors.toSet() ) ) {				
 	        ArrayList<String> ans=getAnnotations(onto,oc.getIRI(),classmapping);
-			if(!ans.isEmpty()&&ans!=null) {
+			if(!ans.isEmpty()&&ans!=null&&ans.get(0).length()!=0) {
 	        	classes.add(oc.getIRI().toString());
 	        	annotations.add(getAnnotations(onto,oc.getIRI(), classmapping).get(0));
 	        	rdfsType.add("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
