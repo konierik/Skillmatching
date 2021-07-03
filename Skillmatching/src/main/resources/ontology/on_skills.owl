@@ -17,27 +17,27 @@
     <Prefix name="skills" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl#"/>
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal>Skills Hierarchy</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
-        <Literal>2021-05-19</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
-        <Literal>GNU General Public License v3.0</Literal>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Erik Paul Konietzko</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:created"/>
         <Literal>2021-04-28</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="dc:creator"/>
-        <Literal>Erik Paul Konietzko</Literal>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <Literal>GNU General Public License v3.0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal>2021-05-19</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Skills Hierarchy</Literal>
     </Annotation>
     <Declaration>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Brandname"/>
@@ -617,18 +617,6 @@
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="oshpd:wif-on-classmap"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="oshpd:wif-on-objectpropertymap"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="#wif-on-datapropertymap"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="#wif-on-identifier"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Brandname"/>
@@ -1339,35 +1327,35 @@
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#buildes"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#designes"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#distributes"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#estimates_costs_for"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#installs"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#legal_information"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#maintains"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#operates"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#possible_action"/>
@@ -1375,15 +1363,15 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#product_pricing"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#skill_action"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#teaches_about"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#topic_of_skill"/>
@@ -1428,7 +1416,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#possible_action"/>
-        <Class abbreviatedIRI="oshpd:Person"/>
+        <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#skill_action"/>
@@ -1577,6 +1565,5 @@ Sanskrit</Literal>
 
 
 
-<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
-
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 

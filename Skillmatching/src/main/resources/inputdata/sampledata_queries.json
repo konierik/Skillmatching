@@ -1,0 +1,270 @@
+
+query Issue() {
+  issues(){
+    result () {
+      edges {
+        node {
+		  id
+		  dateCreated
+          lastUpdated
+          title
+          description
+          status
+		  
+		  creator { # returns type "User", author of the issue
+          	id
+            username
+            profile{
+              skills{
+                name
+                id
+              }
+            }
+          }
+		  
+          project { # returns type "Project", project that contains this issue
+          	id
+			title
+			description
+			creator{
+				id
+				username
+			  }
+			  
+			  tags{
+				name
+				id
+			  }
+			  
+			  contributors{
+				edges{
+				  node{
+					user{
+					  id
+					  username
+					  profile{
+						skills{
+						  id
+						  name
+						}
+					  }
+					}
+				  }
+				}
+			  }
+			 
+			  tracker{
+				issues{
+				  edges{
+					node{
+					  id
+					  title
+					  status
+					  creator{
+						id
+						username
+					  }
+					}
+				  }
+				}
+			  }
+          }
+          #projectId # not project{id}
+          #contentPtrId
+          #slug
+		  
+          tags {
+          	name
+          } 
+		  
+		  assignees{
+            id
+            username
+          } 
+        }
+      }
+    }
+  }
+}
+
+query Project() {
+  projects{
+    result{
+      edges{
+        node{
+          title
+          description
+          id
+          parentSlug
+          slug
+          
+          creator{
+            id
+            username
+          }
+          
+          tags{
+            name
+            id
+          }
+          
+          contributors{
+            edges{
+              node{
+                user{
+				  id
+                  username
+                  profile{
+                    skills{
+                      id
+                      name
+                    }
+                  }
+                }
+              }
+            }
+          }
+         
+          tracker{
+            issues{
+              edges{
+                node{
+                  id
+                  title
+				  status
+                  creator{
+                    id
+                    username
+                  }
+                }
+              }
+            }
+          }         
+        }
+      }
+    }
+  }
+}
+
+query User() {
+profiles{
+  result{
+    edges{
+      node{
+        #id #this is not a user id
+
+        user{
+          username
+          id
+        }
+        
+        lastActivityAt
+        countryCode
+        
+        skills{
+          id
+          name
+        }
+        
+        contributions{
+          edges{
+            node{
+              id
+              title
+              description
+              status
+              tags{
+				id
+				name
+			  }
+            }
+          }
+        }
+        
+        followingProjects{
+          edges{
+            node{
+              title
+              id
+              description
+              tags{
+                id
+                name
+              }
+            }
+          }
+        }
+
+        projects{
+          edges{
+            node{
+              id
+              title
+              name
+              description
+              
+              creator{
+                id
+                username
+              }
+              
+              contributors{
+                edges{
+                  node{
+                    user{
+					  id
+					  username
+                      profile{
+                        skills{
+                          id
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }  
+              
+              tracker{
+                issues{
+                  edges{
+                    node{
+                      title
+                      id
+                      description
+                      status
+                      
+                      creator{
+                        id
+                        username
+                      }
+                      
+                      tags{
+                        id
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        sharedFiles{
+          edges{
+            node{
+              id
+              name
+              participants{
+                id
+                username
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
