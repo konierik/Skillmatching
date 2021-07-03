@@ -24,7 +24,7 @@ public class Testmain {
 			
 		}
 		
-		ArrayList<ArrayList<String>> jsondatadomain=readie.replaceToDomain(jsondata, ident);
+		ArrayList<ArrayList<String>> jsondatadomain=readie.replaceToIdent(jsondata, ident);
 		System.out.println(jsondatadomain.toString());
 		for (int i=0;i<jsondatadomain.get(0).size();i++) {
 			

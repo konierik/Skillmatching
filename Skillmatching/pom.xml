@@ -61,6 +61,14 @@
 	    <version>1.3.8.510</version>
 	</dependency>
 	
+	<!-- jsonsimple for json anonymizing -->
+	
+   <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+   </dependency>
+
 	<!-- Ontology Reasoner openllet: https://github.com/Galigator/openllet
 	NEEDS JAVA 11, at least there are compilation errors with JAVA8-->
 	<!--<dependency>

@@ -283,8 +283,15 @@ public class OntoModeler {
 		
 	//general annotation axioms for all getAnnotation methods
 	//gets annotaions: input: source ontology, iri from property that has the annotation, anntoation property to search
+	
+	/**This method looks for values in annotation properties.
+	 * @param onto	The input ontology to look for the annotations
+	 * @param iri	The iri of the concept (class or property) that is annotated 
+	 * @param annprop	The annotation property of interest*/
 	public ArrayList <String> getAnnotations(OWLOntology onto, IRI iri, OWLAnnotationProperty annprop) {
-        ArrayList <String> listo= new ArrayList <String> ();	
+        //output list
+		ArrayList <String> listo= new ArrayList <String> ();	
+		//run through all annotation axioms of the concept with IRI "iri" in the ontology, that is the same as annprop
 		for (OWLAnnotation annotation : annotations(onto.annotationAssertionAxioms(iri), annprop).collect(Collectors.toSet())) {
              // if (annotation.getValue() instanceof OWLLiteral) {
                   OWLLiteral val = (OWLLiteral) annotation.getValue();

@@ -21,6 +21,8 @@ public class JSON2NTmapper {
 	
 	private String NToutputFile; //Format should be: "c:\\projects\\app.log"
 	private String NTcontent;
+	private String instanceIRI;
+	private String mappingIRI;
 
 	
 
@@ -92,35 +94,63 @@ public class JSON2NTmapper {
 
 	}
 	
-	public void loadMappingOntology(String mappingiri) {
-		
-		
-	}
 	
-	public void instantiateToNTClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException {
+	public void instantiateToNTClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader) throws IOException {
 		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
-			reader.open(); //open reader 
+			//reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
+			//reader.open(); //open reader 
 			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
-			String classy=annotations.get(0).get(i);
-			String pointer = annotations.get(1).get(i);
-			String identifier= annotations.get(2).get(i);
+			String individualpointer=annotations.get(0).get(i);
+			String rdfsType = annotations.get(1).get(i);
+			String classIRI= annotations.get(2).get(i);
 			try{
 				//getting the identifier values from all instances of the class i
-				ArrayList<String> jsonResult = reader.getClassInstances(reader.getReader(), pointer, identifier);
+				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(individualpointer);
 				//running through all found instances of class i
-				for (int j=0; j<jsonResult.size(); j++) {
+				for (int j=0; j<jsonResult.get(0).size(); j++) {
 					//getting jth-instance value
-					String value=jsonResult.get(j);
-					//instantiate the jth- value into the ontology as an individual of class i
-					onto.instantiateClass(onto.getIRIString()+"#"+value, classy);
-					System.out.println(onto.getIRIString()+"#"+value+" instantiated as "+classy+".");
+					String individual=jsonResult.get(1).get(j);
+					//instantiate the jth- value as an individual of class i
+					addNTStatement(instanceIRI+"#"+individual,rdfsType,classIRI);
 				}
 				System.out.println("\n");
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
-			reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
+			//reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
+		}
+	}
+	
+	public void instantiateToNTObjectproperties(ArrayList<ArrayList<String>> annotations, JSONReader reader) {
+		
+	}
+	
+	public void instantiateToNTDataproperties(ArrayList<ArrayList<String>> annotations, JSONReader reader) {
+		for (int i=0; i<annotations.get(0).size();i++) {
+			//reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
+			//reader.open(); //open reader 
+			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
+			String valuepointer=annotations.get(2).get(i);
+			String dataproperty = annotations.get(1).get(i);
+			String classIRI= annotations.get(0).get(i);
+			try{
+				//getting the identifier values from all instances of the class i
+				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(valuepointer);
+				//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
+				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, classIRI);
+				//running through all found values j of the dataproperty i 
+				for (int j=0; j<replacedResults.get(0).size(); j++) {
+					//getting jth-instance value
+					String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
+					String object="\""+replacedResults.get(1).get(j)+"\"";
+					//instantiate the jth- value as an individual of class i
+					addNTStatement(subject,dataproperty,object);
+				}
+				System.out.println("\n");
+			}catch(Exception e) {
+				e.printStackTrace();
+				}
+			//reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
 		}
 	}
 	
@@ -202,7 +232,7 @@ public class JSON2NTmapper {
 	
 	public void addNTStatement(String subject, String predicate, String object) {
 		NTcontent+="<"+subject+"> <"+predicate+"> <"+object+">.\n";
-		
+		System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> <"+object+">.\n");
 	}
 	
 	public void toNTFile() {
@@ -224,6 +254,13 @@ public class JSON2NTmapper {
 	
 	public void setNToutputLocation(String out) {
 		NToutputFile=out;
+	}
+	
+	public void setInstanceIRI(String iri) {
+		instanceIRI=iri;
+	}
+	public void setMappingIRI(String iri) {
+		mappingIRI=iri;
 	}
 	
 	public void setObjectPropertyMapping(String opm) {

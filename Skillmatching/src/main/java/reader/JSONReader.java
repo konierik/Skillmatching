@@ -1,7 +1,6 @@
 package reader;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 
 //another source: https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
@@ -9,7 +8,6 @@ import java.io.FileReader;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,8 +19,8 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonPointer;
 import javax.json.JsonReader;
-import javax.json.JsonString;
 import javax.json.JsonStructure;
+import javax.json.JsonValue;
 
 
 
@@ -94,9 +92,10 @@ public class JSONReader {
 	 * @param input A string of the pointer where to get the information from. 
 	 * The pointer does not necessary have to include array markers (~), but due to the complex return type
 	 * it is recommended to use another function for getting a simple json value. 
-	 * @return The return type is a twofold ArrayList including strings.  Format: |pointer to array of first array marker|value of|
+	 * @return The return type is a twofold ArrayList including strings. 
+	 * <br>Format: |pointer to the key|value of the pointer|<br>
 	 * Although the method is recursive, the return type is designed for a pointer with two array markers max.
-	 * In the case of more markers the return type is not trivial and difficult to read.*/
+	 * In the case of more markers the return type is not trivial and difficult to read. For this it would be best to add Arrays (outPartThree,..., etc.)*/
 	public ArrayList<ArrayList<String>> parsePointer(String input){
 		//JsonStructure jsonStructure=null;// = reader.read();
 		JsonPointer jsonPointer = null;// = Json.createPointer(pointer);
@@ -161,29 +160,36 @@ public class JSONReader {
 		return out;
 	}
 	
-	public ArrayList<ArrayList<String>> replaceToDomain(ArrayList<ArrayList<String>> inarray, String ident){
+	/**This method is used to replace the pointers of parsePointer() method, which gives the result:<br>
+	 * [[property pointer],[pointer value]]<br>
+	 * The property pointer has the location of the respective value in an array. 
+	 * This we need to find the domain of the property. So all location information (basically the array indexes) from the property pointer are taken.
+	 * Then the pointer for the domain will be enriched with the infomration, to get the respective value for the domain.
+	 * @param inarray Array result from the parsePointer() method.
+	 * @param ident Pointer of the domain concept, mostly a classmapping*/
+	public ArrayList<ArrayList<String>> replaceToIdent(ArrayList<ArrayList<String>> inarray, String ident){
 		ArrayList<ArrayList<String>> outarray=new ArrayList<ArrayList<String>>();
 		ArrayList<String>cache=new ArrayList<String>();
 		String replace="";
-		System.out.println("array.size(): "+inarray.size());
-		System.out.println("array.get(0).size(): "+inarray.get(0).size());
+		//running through the input array
 		for (int i =0; i<inarray.get(0).size(); i++){
-			//get the string for the pointer of the array index
+			//get the string for the pointer of the property at i
 			String arrayval=inarray.get(0).get(i);
-			// replacing the array marker in the ident string with the actual array number from the pointer in arrayval. 
-			//For this the pointer is cropped to just the integer in it. (arrayval.replaceAll("\\D+","") removes all chars that are not one of 0123456789)
+			// replacing the array marker in the ident string with the actual array indices from the property pointer in arrayval. 
+			//So the relating ident pointer to the property pointer is created.
 			replace=replaceMarker(ident,arrayval);//ident.replaceAll("~", arrayval.replaceAll("\\D+",""));
+			
 			//replacing the array pointer with the domain value. For this the value from the pointer is read
 			inarray.get(0).get(i).replaceAll(arrayval, getPointerValue(replace));
 			cache.add(getPointerValue(replace)); 
 		}
-		
+		//adding new information to the output array
 		outarray.add(0,cache);
 		outarray.add(1,inarray.get(1));
 		return outarray;
 	}
 	
-	public ArrayList<ArrayList<String>> replacePointer(ArrayList<ArrayList<String>> inarray, String ident, int replaceindex, int identindex){
+	/*public ArrayList<ArrayList<String>> replacePointer(ArrayList<ArrayList<String>> inarray, String ident, int replaceindex, int identindex){
 		ArrayList<ArrayList<String>> outarray=new ArrayList<ArrayList<String>>();
 		ArrayList<String>cache=new ArrayList<String>();
 		String replace="";
@@ -192,18 +198,20 @@ public class JSONReader {
 		for (int i =0; i<inarray.get(0).size(); i++){
 			//get the string for the pointer of the array index
 			String arrayval=inarray.get(0).get(i);
-			// replacing the array marker in the ident string with the actual array number from the pointer in arrayval. 
-			//For this the pointer is cropped to just the integer in it. (arrayval.replaceAll("\\D+","") removes all chars that are not one of 0123456789)
+			// replacing the array marker in the ident pointer string with the actual array indices from the pointer in arrayval. 
+			//So the relating ident pointer to the property pointer is created.
 			replace=replaceMarker(ident,arrayval);//ident.replaceAll("~", arrayval.replaceAll("\\D+",""));
-			//replacing the array pointer with the domain value. For this the value from the pointer is read
+			
+			//replacing the array pointer with the actual value. For this the value from the pointer is read
 			inarray.get(0).get(i).replaceAll(arrayval, getPointerValue(replace));
 			cache.add(getPointerValue(replace)); 
 		}
 		
+		//adding new information to the output array.
 		outarray.add(0,cache);
 		outarray.add(1,inarray.get(1));
 		return outarray;
-	}
+	}*/
 	
 	public String replaceMarker(String toChange, String compare) {
 		String out="";
@@ -226,8 +234,9 @@ public class JSONReader {
 		return out;
 	}
 	
+	
 	//gets an JsonArray for a respective input pointer string
-	public JsonArray getArrayFromPointer(JsonReader reader, String pointer) throws IOException {
+	public JsonArray getArrayFromPointer(String pointer) throws IOException {
 		//reader=open("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");
 		//JsonStructure jsonStructure = reader.read();
 		JsonPointer jsonPointer = Json.createPointer(pointer);
@@ -239,10 +248,22 @@ public class JSONReader {
 			
 			System.out.println("Pointer instantiated: "+jsonArray+"\n");
 		} else {
+			jsonPointer=Json.createPointer(pointer.substring(0,pointer.indexOf("~")));
+			if (jsonPointer.containsValue(jsonStructure)) {
+				jsonArray=jsonPointer.getValue(jsonStructure).asJsonArray();
+			}
 			System.out.println("Pointer not in Json file. \n");
 		}
 		
 		return jsonArray;
+	}
+	public JsonValue getValueFromPointer(String pointer) {
+		JsonPointer jsonPointer= Json.createPointer(pointer);
+		JsonValue jsonVal=null;
+		if(jsonPointer.containsValue(jsonStructure)) {
+			jsonVal=jsonPointer.getValue(jsonStructure);
+		}
+		return jsonVal;
 	}
 	
 	// gets ident for classes
@@ -272,7 +293,7 @@ public class JSONReader {
 		JsonArray arr = null;
 		try {
 			//get an array of all objects that contain information about the keys we want to have
-			arr = getArrayFromPointer(reader,classpointer);
+			arr = getArrayFromPointer(classpointer);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -361,10 +382,14 @@ public class JSONReader {
 	public String getFileString() {
 		return file;
 	}
+	
 	public JsonReader getReader() {
 		return reader;
 		}
 	
+	public JsonStructure getStructure() {
+		return jsonStructure;
+	}
 	
 	
 	
