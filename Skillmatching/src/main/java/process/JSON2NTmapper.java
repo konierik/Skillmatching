@@ -109,9 +109,9 @@ public class JSON2NTmapper {
 				//running through all found instances of class i
 				for (int j=0; j<jsonResult.get(0).size(); j++) {
 					//getting jth-instance value
-					String individual=jsonResult.get(1).get(j);
+					String individual=instanceIRI+"#"+jsonResult.get(1).get(j);
 					//instantiate the jth- value as an individual of class i
-					addNTStatement(instanceIRI+"#"+individual,rdfsType,classIRI);
+					addNTStatement(individual,rdfsType,classIRI);
 				}
 				System.out.println("\n");
 			}catch(Exception e) {
@@ -122,7 +122,33 @@ public class JSON2NTmapper {
 	}
 	
 	public void instantiateToNTObjectproperties(ArrayList<ArrayList<String>> annotations, JSONReader reader) {
-		
+		for (int i=0; i<annotations.get(0).size();i++) {
+			//reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
+			//reader.open(); //open reader 
+			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
+			String valuepointer=annotations.get(2).get(i);
+			String dataproperty = annotations.get(1).get(i);
+			String classIRI= annotations.get(0).get(i);
+			try{
+				//getting the identifier values from all instances of the class i
+				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(valuepointer);
+				//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
+				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, classIRI);
+				//running through all found values j of the dataproperty i 
+				for (int j=0; j<replacedResults.get(0).size(); j++) {
+					//getting jth-instance value
+					String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
+					//the object of an object property is instanitated as string value
+					String object=instanceIRI+"#"+replacedResults.get(1).get(j);
+					//instantiate the jth- value as an individual of class i
+					addNTStatement(subject,dataproperty,object);
+				}
+				System.out.println("\n");
+			}catch(Exception e) {
+				e.printStackTrace();
+				}
+			//reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
+		}
 	}
 	
 	public void instantiateToNTDataproperties(ArrayList<ArrayList<String>> annotations, JSONReader reader) {
@@ -142,6 +168,7 @@ public class JSON2NTmapper {
 				for (int j=0; j<replacedResults.get(0).size(); j++) {
 					//getting jth-instance value
 					String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
+					//the object of a data property is instanitated as string value
 					String object="\""+replacedResults.get(1).get(j)+"\"";
 					//instantiate the jth- value as an individual of class i
 					addNTStatement(subject,dataproperty,object);
