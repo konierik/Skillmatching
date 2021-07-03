@@ -16,7 +16,7 @@ import java.util.List;
 //https://www.baeldung.com/json-pointer
 import javax.json.Json;
 import javax.json.JsonArray;
-import javax.json.JsonObject;
+//import javax.json.JsonObject;
 import javax.json.JsonPointer;
 import javax.json.JsonReader;
 import javax.json.JsonStructure;
@@ -132,24 +132,28 @@ public class JSONReader {
 			String newArray= input.substring(0, input.indexOf("~")-1);
 			//jsonStructure=reader.read();
 			jsonPointer=Json.createPointer(newArray);
-			data=jsonPointer.getValue(jsonStructure).asJsonArray();
-			//close the reader since the recursive function will open it again
-			//close(reader);
-			if(data.size()>0) {
-				//running through the array:
-				for (int i=0; i<data.size();i++) {
-					//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
-					ArrayList<ArrayList<String>> in=parsePointer(input.replaceFirst("~", ""+i+""));
-					if(in.size()>0) {
-						if(out.size()>0) {
-							out.get(0).addAll(in.get(0));
-							out.get(1).addAll(in.get(1));
-						}else {
-							out.addAll(in);
+			try {
+				data=jsonPointer.getValue(jsonStructure).asJsonArray();
+				//close the reader since the recursive function will open it again
+				//close(reader);
+				if(data.size()>0) {
+					//running through the array:
+					for (int i=0; i<data.size();i++) {
+						//recursive funtion: add the arraylist<arraylist<string>> that is created from the next array marker '~'
+						ArrayList<ArrayList<String>> in=parsePointer(input.replaceFirst("~", ""+i+""));
+						if(in.size()>0) {
+							if(out.size()>0) {
+								out.get(0).addAll(in.get(0));
+								out.get(1).addAll(in.get(1));
+							}else {
+								out.addAll(in);
+							}
 						}
 					}
 				}
-			}	
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 		//write into the out array if there was a value for the searched key: (if outPartTwo>0 then there also was a value for outPartOne)
 		if(outPartTwo.size()>0) {
