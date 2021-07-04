@@ -467,9 +467,6 @@
         <DataProperty IRI="#User_name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#description"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#C"/>
     </Declaration>
     <Declaration>
@@ -1353,11 +1350,6 @@
         <Literal>.stp</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#description"/>
-        <NamedIndividual IRI="#designMechanicalComponent"/>
-        <Literal>a general concept for a not further defined mechanical design skill</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="#File_extension"/>
         <NamedIndividual IRI="#.art"/>
         <Literal>.art</Literal>
@@ -2142,6 +2134,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Project_id"/>
+        <Class IRI="#Project"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Project_title"/>
         <Class IRI="#Project"/>
     </DataPropertyDomain>
     <DataPropertyDomain>

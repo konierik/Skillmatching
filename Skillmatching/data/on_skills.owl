@@ -139,45 +139,6 @@
         <DataProperty IRI="#SkillEntity_name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#alternativeLabels"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#conceptType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#conceptUri"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#definition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#description"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hiddenLabels"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#inScheme"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#modifiedDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#preferredLabel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#reuseLevel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#scopeNote"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#skillType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#status"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#C"/>
     </Declaration>
     <Declaration>
