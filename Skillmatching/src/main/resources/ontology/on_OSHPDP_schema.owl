@@ -2449,6 +2449,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_cmap"/>
+        <IRI>#Tag</IRI>
+        <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <IRI>#Tag_id</IRI>
         <Literal>/data/issues/result/edges/~/node/project/tags/~/id</Literal>
@@ -2459,12 +2464,22 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
+        <IRI>#Tag_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
         <IRI>#Task</IRI>
         <Literal>/data/issues/result/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+        <IRI>#Task</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_4_cmap"/>
         <IRI>#Task</IRI>
         <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/id</Literal>
     </AnnotationAssertion>
@@ -2504,6 +2519,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>/data/issues/result/edges/~/node/status</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Task_status</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <IRI>#Task_title</IRI>
         <Literal>/data/issues/result/edges/~/node/title</Literal>
@@ -2539,6 +2559,16 @@ This leads to the ranges of the property. Since OS does not claim to be complete
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_4_cmap"/>
+        <IRI>#User</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_cmap"/>
+        <IRI>#User</IRI>
+        <Literal>/data/issues/result/edges/~/node/assignees/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <IRI>#User_id</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/id</Literal>
@@ -2554,6 +2584,11 @@ This leads to the ranges of the property. Since OS does not claim to be complete
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_4_dpmap"/>
+        <IRI>#User_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <IRI>#User_name</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/username</Literal>
@@ -2567,6 +2602,11 @@ This leads to the ranges of the property. Since OS does not claim to be complete
         <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
         <IRI>#User_name</IRI>
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/username</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_4_dpmap"/>
+        <IRI>#User_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2663,9 +2703,24 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_opmap"/>
+        <IRI>#tagged_with</IRI>
+        <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_opmap"/>
+        <IRI>#task_assigned_to</IRI>
+        <Literal>/data/issues/result/edges/~/node/assignees/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>
         <IRI>#task_created_by</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_4_opmap"/>
+        <IRI>#task_created_by</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>
@@ -2695,7 +2750,7 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
         <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
-        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
+        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>

@@ -2589,6 +2589,11 @@ This leads to the ranges of the property. Since OS does not claim to be complete
         <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
+        <IRI>#User_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/assignees/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <IRI>#User_name</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/username</Literal>
@@ -2607,6 +2612,11 @@ This leads to the ranges of the property. Since OS does not claim to be complete
         <AnnotationProperty IRI="#wif_issue_4_dpmap"/>
         <IRI>#User_name</IRI>
         <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
+        <IRI>#User_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/assignees/~/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2743,19 +2753,39 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <AbbreviatedIRI>skills:SkillEntity_id</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
         <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
-        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
+        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+        <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>
         <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_opmap"/>
+        <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
