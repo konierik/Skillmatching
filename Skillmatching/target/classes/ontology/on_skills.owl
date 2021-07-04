@@ -133,6 +133,12 @@
         <ObjectProperty IRI="#topic_of_skill"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#SkillEntity_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#SkillEntity_name"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#alternativeLabels"/>
     </Declaration>
     <Declaration>
@@ -1440,6 +1446,17 @@
             <Class IRI="#Topic"/>
         </ObjectUnionOf>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#SkillEntity_name"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#SkillEntity_id"/>
+        <Class IRI="#Skill_Entity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#SkillEntity_name"/>
+        <Class IRI="#Skill_Entity"/>
+    </DataPropertyDomain>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Event</IRI>

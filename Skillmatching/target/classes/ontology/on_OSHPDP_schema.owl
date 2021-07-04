@@ -56,6 +56,9 @@
         <Class IRI="#Core_team"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Creator"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Data_format"/>
     </Declaration>
     <Declaration>
@@ -110,9 +113,6 @@
         <Class IRI="#PLC_phase"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Person"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Product_artefact"/>
     </Declaration>
     <Declaration>
@@ -161,7 +161,13 @@
         <Class IRI="#Skills"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Tag"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Validation"/>
@@ -212,6 +218,15 @@
         <ObjectProperty IRI="#contributes"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#contributor_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#creator_of_project"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#creator_of_task"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#data_implies_skill"/>
     </Declaration>
     <Declaration>
@@ -225,9 +240,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#does_task"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#done_by"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#edited_by"/>
@@ -246,6 +258,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#fulfills_task"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_contributor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_member"/>
@@ -323,6 +338,18 @@
         <ObjectProperty IRI="#stored_format"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#tagged_with"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tags"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#task_assigned_to"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#task_created_by"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#task_of"/>
     </Declaration>
     <Declaration>
@@ -377,13 +404,16 @@
         <DataProperty IRI="#File_format_name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#Person_name"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#Project_Category"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Project_description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Project_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Project_title"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Project_type"/>
@@ -401,7 +431,22 @@
         <DataProperty IRI="#Review_decision"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#Tag_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Tag_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Task_creationDate"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#Task_description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Task_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Task_lastUpdated"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Task_priority"/>
@@ -410,7 +455,16 @@
         <DataProperty IRI="#Task_status"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#Task_title"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#Task_type"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#User_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#User_name"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#description"/>
@@ -551,10 +605,49 @@
         <AnnotationProperty abbreviatedIRI="dcterms:created"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#json-mapping-class"/>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="wikifactory:class-mapping"/>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_1_opmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_2_cmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_2_dpmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_2_opmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_3_opmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_4_cmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_4_dpmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_4_opmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_5_cmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif_issue_5_opmap"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#CAD_document"/>
@@ -603,7 +696,7 @@
         <Class IRI="#Skills"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty abbreviatedIRI="skills:possible_action"/>
-            <Class IRI="#Person"/>
+            <Class IRI="#User"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -640,7 +733,7 @@
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Author"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CAD_document"/>
@@ -657,6 +750,23 @@
     <SubClassOf>
         <Class IRI="#Core_team"/>
         <Class IRI="#Collaboration_role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Creator"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Creator"/>
+        <ObjectUnionOf>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#creator_of_project"/>
+                <Class IRI="#Project"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#creator_of_task"/>
+                <Class IRI="#Task"/>
+            </ObjectMinCardinality>
+        </ObjectUnionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DesignSkill"/>
@@ -718,7 +828,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Member"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Operation_and_maintenance"/>
@@ -792,8 +902,8 @@
         <Class IRI="#Input/Ideas"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Person"/>
         <Class IRI="#Project"/>
+        <Class IRI="#User"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#programming_languages"/>
@@ -820,7 +930,7 @@
         <NamedIndividual IRI="#Edit_and_commit"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
         <NamedIndividual IRI="#Erik"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -876,7 +986,7 @@
         <NamedIndividual IRI="#Scratch"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
         <NamedIndividual IRI="#Sonika"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -956,7 +1066,7 @@
         <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
         <NamedIndividual IRI="#0_Person"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1318,6 +1428,14 @@
         <ObjectProperty IRI="#contributes"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#contributor_of"/>
+        <ObjectProperty IRI="#has_contributor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#creator_of_task"/>
+        <ObjectProperty IRI="#task_created_by"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#described_by_documentation"/>
         <ObjectProperty IRI="#describes_project"/>
     </InverseObjectProperties>
@@ -1327,7 +1445,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#does_task"/>
-        <ObjectProperty IRI="#done_by"/>
+        <ObjectProperty IRI="#task_assigned_to"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#edited_by"/>
@@ -1380,6 +1498,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#skill_tag_task"/>
         <ObjectProperty IRI="#task_tag_skill"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#tagged_with"/>
+        <ObjectProperty IRI="#tags"/>
     </InverseObjectProperties>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
@@ -1439,7 +1561,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#Person_has_role"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#Role_of_person"/>
@@ -1455,7 +1577,19 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#contributes"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contributor_of"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#creator_of_project"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#creator_of_task"/>
+        <Class IRI="#User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#data_implies_skill"/>
@@ -1475,11 +1609,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#does_task"/>
-        <Class IRI="#Person"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#done_by"/>
-        <Class IRI="#Task"/>
+        <Class IRI="#User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#edited_by"/>
@@ -1506,12 +1636,16 @@
         <Class IRI="#Contribution"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_contributor"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_member"/>
         <Class IRI="#Project"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_skill"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_task"/>
@@ -1535,7 +1669,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#knows_about_skill"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#listed_in"/>
@@ -1604,6 +1738,22 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#stored_format"/>
         <Class IRI="#Document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tagged_with"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tags"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#task_assigned_to"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#task_created_by"/>
+        <Class IRI="#Task"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#task_of"/>
@@ -1675,7 +1825,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Role_of_person"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#author_of"/>
@@ -1683,11 +1833,23 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#contributed_by"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#contributes"/>
         <Class IRI="#Contribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contributor_of"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#creator_of_project"/>
+        <Class IRI="#Project"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#creator_of_task"/>
+        <Class IRI="#Task"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#data_implies_skill"/>
@@ -1708,10 +1870,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#does_task"/>
         <Class IRI="#Task"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#done_by"/>
-        <Class IRI="#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#edited_by"/>
@@ -1736,6 +1894,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#fulfills_task"/>
         <Class IRI="#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_contributor"/>
+        <Class IRI="#User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_member"/>
@@ -1823,7 +1985,7 @@
             <ObjectInverseOf>
                 <ObjectProperty abbreviatedIRI="skills:skill_action"/>
             </ObjectInverseOf>
-            <Class IRI="#Person"/>
+            <Class IRI="#User"/>
         </ObjectMinCardinality>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1836,7 +1998,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#skill_of"/>
-        <Class IRI="#Person"/>
+        <Class IRI="#User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#skill_tag_task"/>
@@ -1845,6 +2007,22 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#stored_format"/>
         <Class IRI="#Data_format"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tagged_with"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tags"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#task_assigned_to"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#task_created_by"/>
+        <Class IRI="#User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#task_of"/>
@@ -1886,6 +2064,18 @@
         </ObjectPropertyChain>
         <ObjectProperty IRI="#has_skill"/>
     </SubObjectPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Project_id"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Tag_name"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Task_id"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#User_id"/>
+    </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#Document_author"/>
         <Class IRI="#Document"/>
@@ -1943,15 +2133,15 @@
         <Class IRI="#Data_format"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#Person_name"/>
-        <Class IRI="#Person"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#Project_Category"/>
         <Class IRI="#Project"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Project_description"/>
+        <Class IRI="#Project"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Project_id"/>
         <Class IRI="#Project"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1975,7 +2165,27 @@
         <Class IRI="#Review"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#Tag_id"/>
+        <Class IRI="#Tag"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Tag_name"/>
+        <Class IRI="#Tag"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Task_creationDate"/>
+        <Class IRI="#Task"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#Task_description"/>
+        <Class IRI="#Task"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Task_id"/>
+        <Class IRI="#Task"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Task_lastUpdated"/>
         <Class IRI="#Task"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1987,8 +2197,20 @@
         <Class IRI="#Task"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#Task_title"/>
+        <Class IRI="#Task"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#Task_type"/>
         <Class IRI="#Task"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#User_id"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#User_name"/>
+        <Class IRI="#User"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#Project_description"/>
@@ -2023,11 +2245,6 @@
         <IRI>#CAD_format</IRI>
         <Literal>class from 
 Bonvoisin et al. (2018). &quot;How participative is open source hardware? Insights from online repository mining&quot;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="wikifactory:class-mapping"/>
-        <IRI>#Contribution</IRI>
-        <Literal>/project/Contribution</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2098,6 +2315,21 @@ All concepts handled in the ontology are not physical. Although some of them (e.
         <Literal>&quot;Realization&quot; in (DIN SPEC 3105-2, 3.10)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
+        <IRI>#Project</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_2_cmap"/>
+        <IRI>#Project</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+        <IRI>#Project</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Project_Category</IRI>
         <Literal>asked by Max</Literal>
@@ -2119,11 +2351,36 @@ involuntairly isolated innovators: low decentralisation and high pursued level o
 &quot;They were expressing the intention to open their process for people to participate in development activities (accessibility), yet they have not managed to create the needed momentum for co-design. These projects may already provide accessibility to some extent but people are not making use of it. Therefore they may be considered as involuntary isolated innovators. There may be various reasons for this situation to occur, such as a lack of available persons with methodological skills to create necessary momentum for collaborative development.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Project_description</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Project_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_2_dpmap"/>
+        <IRI>#Project_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Project_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Project_team</IRI>
         <Literal>OPEN! Process map
 
 check class axiom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Project_title</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/title</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2187,6 +2444,76 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>Is this semantically correct?</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
+        <IRI>#Tag</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Tag_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tags/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Tag_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
+        <IRI>#Task</IRI>
+        <Literal>/data/issues/result/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+        <IRI>#Task</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_cmap"/>
+        <IRI>#Task</IRI>
+        <Literal>/data/issues/result/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Task_creationDate</IRI>
+        <Literal>/data/issues/result/edges/~/node/dateCreated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Task_description</IRI>
+        <Literal>/data/issues/result/edges/~/node/description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Task_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Task_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Task_lastUpdated</IRI>
+        <Literal>/data/issues/result/edges/~/node/lastUpdated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Task_status</IRI>
+        <Literal>/data/issues/result/edges/~/node/status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#Task_title</IRI>
+        <Literal>/data/issues/result/edges/~/node/title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Task_title</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Task_type</IRI>
         <Literal>OPEN! Deliverable 2.1 OSPD Process map
@@ -2195,6 +2522,51 @@ Further detailing in DIN SPEC 3105-2</Literal>
 
 Interpretation:
 This leads to the ranges of the property. Since OS does not claim to be complete an additional range &quot;other&quot; is included.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
+        <IRI>#User</IRI>
+        <Literal>/data/issues/result/edges/~/node/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_2_cmap"/>
+        <IRI>#User</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+        <IRI>#User</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#User_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_2_dpmap"/>
+        <IRI>#User_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#User_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <IRI>#User_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/creator/username</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_2_dpmap"/>
+        <IRI>#User_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/creator/username</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#User_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2241,6 +2613,16 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>maybe rename, in order to the description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_opmap"/>
+        <IRI>#has_contributor</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_opmap"/>
+        <IRI>#has_task</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#in_PLC_phase</IRI>
         <Literal>Do I need an inverse for my purposes?</Literal>
@@ -2276,6 +2658,21 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>Inverse needed?</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_opmap"/>
+        <IRI>#tagged_with</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_opmap"/>
+        <IRI>#task_created_by</IRI>
+        <Literal>/data/issues/result/edges/~/node/creator/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_opmap"/>
+        <IRI>#task_of</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#written_by</IRI>
         <Literal>schema.org equivalent?</Literal>
@@ -2284,6 +2681,26 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Input/Ideas</IRI>
         <Literal>dummy class, to hold ideas that might be useful and implemented later on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <AbbreviatedIRI>skills:SkillEntity_id</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
+        <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
+        <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_opmap"/>
+        <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/creator/profile/skills/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
