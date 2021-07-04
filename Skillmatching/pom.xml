@@ -68,6 +68,14 @@
       <artifactId>json-simple</artifactId>
       <version>1.1.1</version>
    </dependency>
+   
+   
+   <!-- html parser for nt strings -->
+	  <dependency>
+	    <groupId>org.jsoup</groupId>
+	    <artifactId>jsoup</artifactId>
+	    <version>1.13.1</version>
+	</dependency>
 
 	<!-- Ontology Reasoner openllet: https://github.com/Galigator/openllet
 	NEEDS JAVA 11, at least there are compilation errors with JAVA8-->

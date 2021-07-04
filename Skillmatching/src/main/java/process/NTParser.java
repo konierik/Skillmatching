@@ -17,10 +17,10 @@ import org.apache.jena.util.FileManager;
 public class NTParser {
 	
 	private String file;
-	private Model model= ModelFactory.createDefaultModel();
+	private OntModel model= ModelFactory.createOntologyModel();
+	private Ontology ontology;
 	private InputStream is;
 	private OutputStream output;
-	
 	
 	
 	
@@ -50,6 +50,7 @@ public class NTParser {
 	        testmodel.setNsPrefix("", "https://github.com/konierik/O-N/raw/master/ontology/NTInstances.ttl#");
 	        testmodel.setNsPrefix("owl","http://www.w3.org/2002/07/owl#");
 	        testmodel.read(in, null, "N-TRIPLE");
+	        
 	        Ontology ont = testmodel.createOntology("https://github.com/konierik/O-N/raw/master/ontology/NTInstanceProperties.ttl");
 	        ont.addImport(testmodel.createResource("https://github.com/konierik/O-N/raw/master/ontology/Family2.owl"));
 	       
@@ -60,10 +61,20 @@ public class NTParser {
 	    }
 	}
 	
-	public void parseNT(String outputloaction) {
+	
+	public void parseNT() {
 	    if (is != null) {
 	        //model.read(is, null, "N-TRIPLE");
 	        model.write(output, "TURTLE");
+	        
+	    } else {
+	        System.err.println("cannot parse " + file+". Please set file/inputstream and outputstream.");;
+	    }
+	}
+	public void parseNT(String baseIRI) {
+	    if (is != null) {
+	        //model.read(is, null, "N-TRIPLE");
+	        model.write(output, "TURTLE",baseIRI);
 	        
 	    } else {
 	        System.err.println("cannot parse " + file+". Please set file/inputstream and outputstream.");;
@@ -85,11 +96,11 @@ public class NTParser {
 	public void setFile(String a) {
 		file=a;
 		is=FileManager.get().open(file);
-		readNTModel();
+		//readNTModel();
 	}
 	
 	public void setPrefix(String prefix, String uri) {
-		model.setNsPrefix(prefix, uri);
+		model.setNsPrefix(prefix, uri+"#");
 	}
 	
 	public void setOutput(String outputsource) {
@@ -100,6 +111,18 @@ public class NTParser {
 			e.printStackTrace();
 		}
 		
+	}
+	public void setOntologyIRI(String bas) {
+		ontology=model.createOntology(bas);
+		
+	}
+	
+	public void addImport(String ontologyIRI) {
+//		model.setDynamicImports(true);
+//        model.addLoadedImport(ontologyIRI);
+		ontology.addImport(model.createResource(ontologyIRI));
+	       
+       
 	}
 
 	

@@ -58,8 +58,7 @@ public class OntoModeler {
 	private OWLAnnotationProperty datapropertymapping;
 	/**Annotation property that has json pointers to keys that are instantiated as the relating objectproperty.*/
 	private OWLAnnotationProperty objectpropertymapping;
-	/**Annotation property that has json pointers to keys that are the domain of a relating data- or objectproperty.*/
-	private OWLAnnotationProperty identifier;
+
 	
 	
 	
@@ -101,7 +100,13 @@ public class OntoModeler {
 			onto = onto_man.loadOntology(iri);
 			onto_df = onto.getOWLOntologyManager().getOWLDataFactory();
 		} catch (OWLOntologyCreationException e) {
+			System.out.println("Did not load ontology from IRI. Try to load ontology as file.");
 			e.printStackTrace();
+			try {
+				loadOnto(docIRI.toString());
+				} catch(Exception ex) {
+					e.printStackTrace();
+				}
 		}
 	}
 	
@@ -192,7 +197,7 @@ public class OntoModeler {
 				datas.add(dp.getIRI().toString());
 				annotations.add(getAnnotations(onto, dp.getIRI(), datapropertymapping).get(0)); 
 				//domainpointer.add(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), classmapping).get(0));
-				identpointer.addAll(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), identifier));
+				identpointer.addAll(getAnnotations(onto,IRI.create(getDatapropertyDomain(dp.getIRI())), classmapping));
 			}
         }
 		datasannotations.add(0,identpointer);
@@ -224,9 +229,9 @@ public class OntoModeler {
 				System.out.println(ans.toString() +" type: "+ ans.get(0).getClass());
 				objects.add(op.getIRI().toString());	
 				//get annotation in the class
-				annotations.addAll(getAnnotations(onto, op.getIRI(), objectpropertymapping));  
+				annotations.add(getAnnotations(onto, op.getIRI(), objectpropertymapping).get(0));  
 				//domainpointer.add(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping).get(0));
-				identpointer.addAll(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), identifier));
+				identpointer.addAll(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping));
         	}
 		}
 		objectsannotations.add(0,identpointer);
@@ -476,13 +481,13 @@ public class OntoModeler {
 		objectpropertymapping=onto_df.getOWLAnnotationProperty(IRIstring+"#"+mapping);		
 	}
 	
-	public void setClassIdent(String mapping) {
-		identifier=onto_df.getOWLAnnotationProperty(IRIstring+"#"+mapping);		
-	}
-	
 	public void setIRI(String iristring) {
 		iri =IRI.create(iristring);
 		IRIstring=iristring;
+	}
+	
+	public void setDocIRI(String iri) {
+		docIRI=IRI.create(iri);
 	}
 	
 	public void setPrefix(String pf) {

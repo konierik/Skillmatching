@@ -1,6 +1,9 @@
 package run;
 
+import static org.mockito.Mockito.inOrder;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -12,7 +15,7 @@ import reader.*;
 /**This class is used to create all files, mappings and queries of the project*/
 public class Action {
 	@SuppressWarnings("unused")
-	public static void main(String args[]) throws OWLOntologyCreationException {
+	public static void main(String args[]) throws OWLOntologyCreationException, IOException {
 		//initialization of variables used:
 		String projectdir=System.getProperty("user.dir").replace("\\", "/");
 		
@@ -92,37 +95,80 @@ public class Action {
 		// Creating an OntoModeler for the ontology holding the mappings
 		OntoModeler mapping=new OntoModeler();
 		//Setting the IRI of the ontology
-		mapping.setIRI("https://github.com/konierik/O-N/raw/master/ontology/Family2.owl");
+		mapping.setIRI("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl");
 		//Loading the ontology, here: from web
 		mapping.loadOnto();
 		/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
 		 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
-		mapping.setClassmapping("classmapping");
-		mapping.setClassIdent("identifier");
-		mapping.setObjectpropertymapping("objectpropertymapping");
-		mapping.setDatapropertymapping("datapropertymapping");
+		mapping.setClassmapping("wif_issue_1_cmap");
+		//mapping.setClassIdent("identifier");
+		mapping.setObjectpropertymapping("wif_issue_1_opmap");
+		mapping.setDatapropertymapping("wif_issue_1_dpmap");
 		
 		// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
-		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping pointer|identifier pointer
+		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
 		ArrayList<ArrayList<String>> dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
 		ArrayList<ArrayList<String>> objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
-		//			Instance Ontology
+		//			variables for instance ontology
 		//
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.ttl";
 		
-		//Create an OntoModeler for the ontology to populate instances
-		OntoModeler instance=new OntoModeler();
-		instance.setIRI("https://github.com/konierik/O-N/raw/master/ontology/Family_instance_mapping.owl");
-		instance.createOnto("C:\\Users\\konierik\\Desktop\\Family_test\\Family_instance_mapping.owl");
-		//instance.loadOnto("C:\\Users\\konierik\\Desktop\\Family_Test\\Family_instance_mapping.owl");
-		//import mapping ontology
-		instance.importFromURL(mapping.getIRIString());
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//
+		//			setup json reader
+		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		//create one JSONReader per data file: issues, projects, user
+		JSONReader readIssues=new JSONReader();
+		//set the file to read and open it
+		readIssues.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_issues_anonym.json");
+		readIssues.open();
 		
-		//import instances into the mapping ontology:
-		mapping.importFromURL(instance.getIRIString());
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//
+		//			setup json2ntmapper
+		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		JSON2NTmapper ntmapper=new JSON2NTmapper();
+		//setting iris for instantiation
+		ntmapper.setInstanceIRI(instanceIRI);
+		ntmapper.setMappingIRI(mapping.getIRI().toString());
+		//mapping the annotations to NT
+		ntmapper.instantiateToNTClasses(classannotations, readIssues );
+		ntmapper.instantiateToNTDataproperties(dataannotations, readIssues);
+		ntmapper.instantiateToNTObjectproperties(objectannotations, readIssues);
+		//Set output string for file
+		String ntoutput="C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.nt";
+		ntmapper.setNToutputLocation(ntoutput);
+		ntmapper.toNTFile();
+		NTParser ntparse=new NTParser(ntoutput);
+		ntparse.setPrefix("", instanceIRI);
+		ntparse.setPrefix("oshpd", mapping.getIRIString());
+		ntparse.setPrefix("skills", "https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		ntparse.readNTModel();
+		ntparse.setOntologyIRI(instanceIRI);
+		ntparse.addImport(mapping.getIRIString());
+		ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
+		ntparse.parseNT(instanceIRI);
+		/*
+		for (int i=0; i<classannotations.get(0).size();i++) { 
+			ArrayList<ArrayList<String>> jsondata = readIssues.parsePointer(classannotations.get(0).get(i));
+			for (int j=0; j<jsondata.get(0).size();j++) {
+				
+			}
+			System.out.println(i);
+			System.out.println(jsondata);
+		}*/
 		
+
+	
 	}
 }

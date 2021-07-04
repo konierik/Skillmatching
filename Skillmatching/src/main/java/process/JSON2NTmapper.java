@@ -1,12 +1,18 @@
 package process;
 
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.jsoup.Jsoup;
 
 import reader.JSONReader;
 
@@ -20,80 +26,10 @@ public class JSON2NTmapper {
 	
 	
 	private String NToutputFile; //Format should be: "c:\\projects\\app.log"
-	private String NTcontent;
+	private String NTcontent="";;
 	private String instanceIRI;
 	private String mappingIRI;
-
-	
-
-	
-	public static void main(String[]args) throws OWLOntologyCreationException, IOException, OWLOntologyStorageException {
-		
-		
-		
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//			Mapping Ontology
-		//
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		// Creating an ontologymodeler for the ontology holding the mappings
-		OntoModeler mapping=new OntoModeler();
-		mapping.setIRI("https://github.com/konierik/O-N/raw/master/ontology/Family2.owl");
-		mapping.loadOnto();
-		// Define what mapping annotations should be looked for (in case there are more mappings in the ontology)
-		mapping.setClassmapping("classmapping");
-		mapping.setClassIdent("identifier");
-		mapping.setObjectpropertymapping("objectpropertymapping");
-		mapping.setDatapropertymapping("datapropertymapping");
-		
-		
-		
-		// Get the mapping annotations as lists
-		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: classIRI|classmapping pointer|identifier pointer
-		ArrayList<ArrayList<String>> dataannotations=mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
-		ArrayList<ArrayList<String>> objectannotations=mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
-		
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//			Instance Ontology
-		//
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		//Create an ontologymodeler for the ontology to populate instances
-		OntoModeler instance=new OntoModeler();
-		instance.setIRI("https://github.com/konierik/O-N/raw/master/ontology/Family_instance_mapping.owl");
-		instance.createOnto("C:\\Users\\konierik\\Desktop\\Family_test\\Family_instance_mapping.owl");
-		//instance.loadOnto("C:\\Users\\konierik\\Desktop\\Family_Test\\Family_instance_mapping.owl");
-		//import mapping ontology
-		instance.importFromURL(mapping.getIRIString());
-		
-		//import instances into the mapping ontology:
-		mapping.importFromURL(instance.getIRIString());
-		
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//			JSON input
-		//
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-		//Create a JSONReader for the JSON input to be instantiated
-		JSONReader jsonReader = new JSONReader();
-		
-		//JsonArray classes=jsonReader.instantiate(jsonReader.getReader(),"/data/Person");
-		//ArrayList<String> values = jsonReader.getClassInstances(jsonReader.getReader(), classannotations.get(1).get(0), classannotations.get(2).get(0));
-		//mapping.listOut(objectannotations);
-		
-		//instantiateToOWLClasses(classannotations,jsonReader, instance);	
-		//instantiateToOWLObjectProperties(objectannotations, jsonReader, instance);
-		//instantiateToOWLDataProperties(dataannotations, jsonReader, instance);
-		
-		//instance.saveOntology("C:\\Users\\konierik\\Desktop\\Family_test\\Family_instance_mapping.owl");
-		
-		//han: create  namespaces --> is there already?
-
-	}
-	
+	private Writer out;
 	
 	public void instantiateToNTClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader) throws IOException {
 		for (int i=0; i<annotations.get(0).size();i++) {
@@ -126,14 +62,14 @@ public class JSON2NTmapper {
 			//reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
 			//reader.open(); //open reader 
 			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
-			String valuepointer=annotations.get(2).get(i);
-			String dataproperty = annotations.get(1).get(i);
-			String classIRI= annotations.get(0).get(i);
+			String range=annotations.get(2).get(i);
+			String objectproperty = annotations.get(1).get(i);
+			String domain= annotations.get(0).get(i);
 			try{
 				//getting the identifier values from all instances of the class i
-				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(valuepointer);
+				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(range);
 				//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
-				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, classIRI);
+				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult,domain);
 				//running through all found values j of the dataproperty i 
 				for (int j=0; j<replacedResults.get(0).size(); j++) {
 					//getting jth-instance value
@@ -141,7 +77,7 @@ public class JSON2NTmapper {
 					//the object of an object property is instanitated as string value
 					String object=instanceIRI+"#"+replacedResults.get(1).get(j);
 					//instantiate the jth- value as an individual of class i
-					addNTStatement(subject,dataproperty,object);
+					addNTStatement(subject,objectproperty,object);
 				}
 				System.out.println("\n");
 			}catch(Exception e) {
@@ -156,22 +92,23 @@ public class JSON2NTmapper {
 			//reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
 			//reader.open(); //open reader 
 			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
-			String valuepointer=annotations.get(2).get(i);
+			String range=annotations.get(2).get(i);
 			String dataproperty = annotations.get(1).get(i);
-			String classIRI= annotations.get(0).get(i);
+			String domain= annotations.get(0).get(i);
 			try{
 				//getting the identifier values from all instances of the class i
-				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(valuepointer);
+				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(range);
 				//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
-				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, classIRI);
+				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, domain);
 				//running through all found values j of the dataproperty i 
 				for (int j=0; j<replacedResults.get(0).size(); j++) {
 					//getting jth-instance value
 					String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
 					//the object of a data property is instanitated as string value
-					String object="\""+replacedResults.get(1).get(j)+"\"";
+					String object="\""+replaceIllegalChar(replacedResults.get(1).get(j))+"\"";
+					
 					//instantiate the jth- value as an individual of class i
-					addNTStatement(subject,dataproperty,object);
+					addDatapropertyNTStatement(subject,dataproperty,object);
 				}
 				System.out.println("\n");
 			}catch(Exception e) {
@@ -180,81 +117,22 @@ public class JSON2NTmapper {
 			//reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
 		}
 	}
-	
-	public static void instantiateToOWLClasses(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException{
-		//loop for every class-iri in the array
-		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//setting input filelocation
-			reader.open(); //open reader 
-			//needed variables: class-iri to instantiate, class pointer to get the class objects from json file, ident pointer to get the ident-property out of the json objects
-			String classy=annotations.get(0).get(i);
-			String pointer = annotations.get(1).get(i);
-			String identifier= annotations.get(2).get(i);
-			try{
-				//getting the identifier values from all instances of the class i
-				ArrayList<String> jsonResult = reader.getClassInstances(reader.getReader(), pointer, identifier);
-				//running through all found instances of class i
-				for (int j=0; j<jsonResult.size(); j++) {
-					//getting jth-instance value
-					String value=jsonResult.get(j);
-					//instantiate the jth- value into the ontology as an individual of class i
-					onto.instantiateClass(onto.getIRIString()+"#"+value, classy);
-					System.out.println(onto.getIRIString()+"#"+value+" instantiated as "+classy+".");
-				}
-				System.out.println("\n");
-			}catch(Exception e) {
-				e.printStackTrace();
-				}
-			reader.close(); //closing reader: opening-closing is necessary since there requests per reader are limited
-		}
+	/**This method removes characters from a string that are not allowed in nt format, e.g. the escape "\" */	
+	public String replaceIllegalChar(String in) {
+		String neu="";
 		
-	}
-	
-	public static void instantiateToOWLDataProperties(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException {
-		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//set input file location
-			reader.open();//open reader
-			String datas=annotations.get(0).get(i);
-			String pointer = annotations.get(1).get(i);
-			String domain= annotations.get(2).get(i);
-			String identifier= annotations.get(3).get(i);
-			try{
-				ArrayList<ArrayList<String>> jsonResult = reader.getValuesFromArray(reader.getReader(), domain, identifier, pointer);
-				for (int j=0; j<jsonResult.get(0).size(); j++) {
-					
-					onto.instantiateDataProperty(onto.getIRIString()+"#"+jsonResult.get(0).get(j), datas,jsonResult.get(1).get(j));
-					System.out.println(onto.getIRIString()+"#"+jsonResult.get(0).get(j)+" "+datas+" "+jsonResult.get(1).get(j));
-				}
-				System.out.println("\n");
-			}catch(Exception e) {
-				e.printStackTrace();
-				}
-			reader.close();
+		try {
+			//remove html statements
+			neu=Jsoup.parse(in).text();
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
-	}
-
-
-	public static void instantiateToOWLObjectProperties(ArrayList<ArrayList<String>> annotations, JSONReader reader, OntoModeler onto) throws IOException {
-		for (int i=0; i<annotations.get(0).size();i++) {
-			reader.setFile("https://github.com/konierik/O-N/raw/master/ontology/Family_input.json");//set input file location
-			reader.open(); //open reader
-			String objects=annotations.get(0).get(i);
-			String pointer = annotations.get(1).get(i);
-			String domain= annotations.get(2).get(i);
-			String identifier= annotations.get(3).get(i);
-			try{
-				ArrayList<ArrayList<String>> jsonResult = reader.getValuesFromArray(reader.getReader(), domain, identifier, pointer);
-				for (int j=0; j<jsonResult.get(0).size(); j++) {
-					
-					onto.instantiateObjectProperty(onto.getIRIString()+"#"+jsonResult.get(0).get(j), objects,jsonResult.get(1).get(j));
-					System.out.println(onto.getIRIString()+"#"+jsonResult.get(0).get(j)+" "+objects+" "+onto.getIRIString()+"#"+jsonResult.get(1).get(j));
-				}
-				System.out.println("\n");
-			}catch(Exception e) {
-				e.printStackTrace();
-				}
-			reader.close();
-		}
+		neu=neu.replace("\\", "");
+		neu=neu.replace("\"","");
+		return neu;
+//		if (in.contains("<a>")){
+//			return in.replace(in.substring(in.indexOf("<a"),in.indexOf(">")), "");
+//		}else {return in;}
 	}
 	
 	public void addNTStatement(String subject, String predicate, String object) {
@@ -262,13 +140,26 @@ public class JSON2NTmapper {
 		System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> <"+object+">.\n");
 	}
 	
-	public void toNTFile() {
+	public void addDatapropertyNTStatement(String subject, String predicate, String object) {
+		NTcontent+="<"+subject+"> <"+predicate+"> "+object+".\n";
+		System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> "+object+".\n");
+	}
+	
+	public void toNTFile() throws UnsupportedEncodingException, FileNotFoundException {
+		out=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(NToutputFile),"UTF-8"));
 		try {
-			Files.write(Paths.get(NToutputFile), NTcontent.getBytes());
-			
+			//Files.write(Paths.get(NToutputFile), NTcontent.getBytes(),StandardCharsets.UTF_8);
+			out.write(NTcontent);
 		} catch(IOException e) {
 			System.out.println("Not successful writing.");
 			e.printStackTrace();
+		}finally {
+			try {
+				out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -305,10 +196,6 @@ public class JSON2NTmapper {
 		mapping.setClassmapping(cm);
 	}
 	
-	public void setIdentifierMapping(String im) {
-		identifier= im;
-		mapping.setClassIdent(im);
-	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//

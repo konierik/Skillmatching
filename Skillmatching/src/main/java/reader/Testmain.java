@@ -5,8 +5,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import process.OntoModeler;
+
 public class Testmain {
 	public static void main (String[] args) throws IOException {
+	/*
 		JSONReader readie = new JSONReader();
 		String input="/data/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name";//"/data/projects/result/edges/~/node/contributors/edges/~/node/id";
 		String ident="/data/profiles/result/edges/~/node/followingProjects/edges/~/node/id";//"/data/projects/result/edges/~/node/id";
@@ -24,7 +27,10 @@ public class Testmain {
 				System.out.println("Key: "+jsondata.get(0).get(i));
 				System.out.println("Value: "+jsondata.get(1).get(i)+"\n\n");
 			
-		}
+		}*/
+		OntoModeler mod= new OntoModeler();
+		mod.setDocIRI("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		mod.loadOnto();
 		/*
 		ArrayList<ArrayList<String>> jsondatadomain=readie.replaceToIdent(jsondata, ident);
 		System.out.println(jsondatadomain.toString());

@@ -1,0 +1,587 @@
+@base          <https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.ttl> .
+@prefix :      <https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.ttl#> .
+@prefix skills: <https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oshpd: <https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl#> .
+
+:2d-design  a           oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMDQy" ;
+        oshpd:Tag_name  "2d-design" .
+
+:clean-energy  a        oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5NDEx" ;
+        oshpd:Tag_name  "clean-energy" .
+
+:SXNzdWU6NjAxNjI4  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:35:27.060377+00:00" ;
+        oshpd:Task_description   "Hi @robotboydesign Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjI4" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:35:27.060377+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May" ;
+        oshpd:task_created_by    :uid40 .
+
+:uid83  a                oshpd:User ;
+        oshpd:User_id    "uid83" ;
+        oshpd:User_name  "USER83" .
+
+:SXNzdWU6NjE2MjQ1  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-06-07T07:25:58.764568+00:00" ;
+        oshpd:Task_description   "Many terms and methods with investing are confusing and nonintuitive," ;
+        oshpd:Task_id            "SXNzdWU6NjE2MjQ1" ;
+        oshpd:Task_lastUpdated   "2021-06-07T07:29:55.837948+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Lingo" ;
+        oshpd:task_created_by    :uid89 .
+
+:SXNzdWU6NjE0NDU4  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-06-05T20:36:19.974717+00:00" ;
+        oshpd:Task_description   "We made some changes to the way the injection machine was wired, but we didn't add a new schematic diagram." ;
+        oshpd:Task_id            "SXNzdWU6NjE0NDU4" ;
+        oshpd:Task_lastUpdated   "2021-06-11T15:57:28.570689+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Electronic Schematic Not updated" ;
+        oshpd:task_created_by    :uid88 .
+
+:SXNzdWU6NjAxNjMy  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:46:28.133739+00:00" ;
+        oshpd:Task_description   "Hi @jakeahoward Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjMy" ;
+        oshpd:Task_lastUpdated   "2021-05-16T09:09:36.637117+00:00" ;
+        oshpd:Task_status        "Closed" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May" ;
+        oshpd:task_created_by    :uid40 .
+
+<#UHJvamVjdDo1OTY5OTI=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo1OTY5OTI=" ;
+        oshpd:Project_title        "Assortment System" .
+
+:SXNzdWU6NjAxNTU0  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T13:11:51.267352+00:00" ;
+        oshpd:Task_description   "" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNTU0" ;
+        oshpd:Task_lastUpdated   "2021-05-18T02:20:46.316651+00:00" ;
+        oshpd:Task_status        "Closed" ;
+        oshpd:Task_title         "" ;
+        oshpd:task_created_by    :uid64 .
+
+<#UHJvamVjdDo1Mzk1MTc=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Vertical axis wind turbine along the lines of John Ettridge's design" ;
+        oshpd:Project_id           "UHJvamVjdDo1Mzk1MTc=" ;
+        oshpd:Project_title        "VAWT" .
+
+:uid90  a                oshpd:User ;
+        oshpd:User_id    "uid90" ;
+        oshpd:User_name  "USER90" .
+
+:SXNzdWU6NjA3ODc5  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-30T08:37:33.436685+00:00" ;
+        oshpd:Task_description   "Hey I would like to know if you are continuing with the idea I had a similar one hope to get in contact with you." ;
+        oshpd:Task_id            "SXNzdWU6NjA3ODc5" ;
+        oshpd:Task_lastUpdated   "2021-05-30T14:03:40.882801+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "collaboraton" ;
+        oshpd:task_created_by    :uid58 .
+
+:SXNzdWU6NjE2OTQx  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-06-08T17:10:20.475991+00:00" ;
+        oshpd:Task_description   "Admin stuff" ;
+        oshpd:Task_id            "SXNzdWU6NjE2OTQx" ;
+        oshpd:Task_lastUpdated   "2021-06-08T17:10:39.137492+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Files" ;
+        oshpd:task_created_by    :uid90 .
+
+:uid88  a                oshpd:User ;
+        oshpd:User_id    "uid88" ;
+        oshpd:User_name  "USER88" .
+
+:vertical-axis-windmill
+        a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjIxODEw" ;
+        oshpd:Tag_name  "vertical-axis-windmill" .
+
+<#UHJvamVjdDo2MTYyNDM=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Design improvements for investing apps," ;
+        oshpd:Project_id           "UHJvamVjdDo2MTYyNDM=" ;
+        oshpd:Project_title        "Investing app" .
+
+<#UHJvamVjdDozODI0OTA=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "The project about miniatur figure action" ;
+        oshpd:Project_id           "UHJvamVjdDozODI0OTA=" ;
+        oshpd:Project_title        "3d modelling" .
+
+<#UHJvamVjdDo1NzU5ODM=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Every mad scientist, or evil genius, needs an army of minions. When Otto (www.ottodiy.com) meets a Dingbot (www.girlgeniusonline.com), then the result can only be a DingbOtto." ;
+        oshpd:Project_id           "UHJvamVjdDo1NzU5ODM=" ;
+        oshpd:Project_title        "DingbOtto" .
+
+:SXNzdWU6NjAxNjI3  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:33:41.303699+00:00" ;
+        oshpd:Task_description   "Hi @foo00 Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjI3" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:33:41.303699+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May" ;
+        oshpd:task_created_by    :uid40 .
+
+:uid82  a                oshpd:User ;
+        oshpd:User_id    "uid82" ;
+        oshpd:User_name  "USER82" .
+
+:SXNzdWU6NjAxNjM4  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:51:40.910644+00:00" ;
+        oshpd:Task_description   "Hi @fgoeusse You’re project looks very exciting. Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjM4" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:51:40.910644+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May..." ;
+        oshpd:task_created_by    :uid40 .
+
+<>      a            owl:Ontology ;
+        owl:imports  <on_skills.owl> , <on_OSHPDP_schema.owl> .
+
+:challenge  a           oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MzM2" , "VGFnOjI5NTk3" , "VGFnOjI5NTA4" , "VGFnOjI5MzE5" , "VGFnOjI5NjU4" , "VGFnOjI5MjU1" , "VGFnOjI5NDA2" , "VGFnOjI5MTkx" , "VGFnOjI5NDU4" , "VGFnOjI5MDk4" , "VGFnOjI5MTIy" ;
+        oshpd:Tag_name  "challenge" .
+
+:a-toymaker-out-of-waste
+        a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MDE0" ;
+        oshpd:Tag_name  "a-toymaker-out-of-waste" .
+
+:uid5   a                oshpd:User ;
+        oshpd:User_id    "uid5" ;
+        oshpd:User_name  "USER5" .
+
+<#UHJvamVjdDoxMTU0Mg==>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Use Micro:bit to make Otto robot. would be able yo code your robot micro:bit using Blocks, JavaScript, and Python." ;
+        oshpd:Project_id           "UHJvamVjdDoxMTU0Mg==" ;
+        oshpd:Project_title        "Microbit biped" .
+
+:SXNzdWU6NjAxNjQy  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T15:01:35.393176+00:00" ;
+        oshpd:Task_description   "Hi @miczinid You’re project looks very exciting. Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjQy" ;
+        oshpd:Task_lastUpdated   "2021-05-14T15:01:35.637865+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May..." ;
+        oshpd:task_created_by    :uid5 ;
+        skills:skill_action      :steam-education , :arduino , :3d-modeling .
+
+:drones4change  a       oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE4NjY2" ;
+        oshpd:Tag_name  "drones4change" .
+
+:mayku  a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MzIw" , "VGFnOjI5NjU5" , "VGFnOjI5MTky" , "VGFnOjI5NTA5" , "VGFnOjI5MDk5" , "VGFnOjI5NTk4" , "VGFnOjI5MjU2" , "VGFnOjI5MTIz" , "VGFnOjI5NDU5" , "VGFnOjI5MzM3" ;
+        oshpd:Tag_name  "mayku" .
+
+<#UHJvamVjdDo0NDg0MTk=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "The Dronecoria Frame is an open source drone design for aerial sowing and ecosystem restoration. Together with the Seed Coating machine and Seed Sower, these tools can be used to reforest large tracks of land at a low cost bringing back the trees and habitats that support life on this planet." ;
+        oshpd:Project_id           "UHJvamVjdDo0NDg0MTk=" ;
+        oshpd:Project_title        "Drone Frame" .
+
+<#UHJvamVjdDo1OTk0MjU=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Use the Mayku Form Box to produce shapes for works of art, advertising or special interest land marks." ;
+        oshpd:Project_id           "UHJvamVjdDo1OTk0MjU=" ;
+        oshpd:Project_title        "Clear shapes" .
+
+:uid40  a                oshpd:User ;
+        oshpd:User_id    "uid40" ;
+        oshpd:User_name  "USER40" .
+
+:robot  a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE5NzI=" , "VGFnOjUwNjk=" ;
+        oshpd:Tag_name  "robot" .
+
+:SXNzdWU6NjAxNjI2  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:32:30.869543+00:00" ;
+        oshpd:Task_description   "Hi @rafaelsolbr Your project looks very exciting. Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete . The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjI2" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:32:30.869543+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May" ;
+        oshpd:task_created_by    :uid40 .
+
+:uid81  a                oshpd:User ;
+        oshpd:User_id    "uid81" ;
+        oshpd:User_name  "USER81" .
+
+:3dprinting  a          oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE5NzQ=" ;
+        oshpd:Tag_name  "3dprinting" .
+
+:SXNzdWU6NjAxNjM3  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:50:59.814146+00:00" ;
+        oshpd:Task_description   "Hi @hioctane46 You’re project looks very exciting. Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjM3" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:50:59.814146+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May..." ;
+        oshpd:task_created_by    :uid40 .
+
+<#UHJvamVjdDo1OTA0NzQ=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo1OTA0NzQ=" ;
+        oshpd:Project_title        "Mold" .
+
+:SXNzdWU6NjAxNjQ4  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T15:04:38.791614+00:00" ;
+        oshpd:Task_description   "Hi @addz0419890412 Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjQ4" ;
+        oshpd:Task_lastUpdated   "2021-05-14T15:04:39.151863+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May..." ;
+        oshpd:task_created_by    :uid5 ;
+        skills:skill_action      :steam-education , :3d-modeling , :arduino .
+
+:SXNzdWU6NjEwMjIx  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-06-03T07:04:24.265335+00:00" ;
+        oshpd:Task_description   "It might be nice to scale light intensity by measuring ambient light." ;
+        oshpd:Task_id            "SXNzdWU6NjEwMjIx" ;
+        oshpd:Task_lastUpdated   "2021-06-03T07:04:24.675084+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Upgrade Idea: add light sensor" ;
+        oshpd:task_created_by    :uid84 .
+
+:sionpartsforfuture  a  oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5NDc4" ;
+        oshpd:Tag_name  "sionpartsforfuture" .
+
+:SXNzdWU6NjAxNjMw  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:38:41.147304+00:00" ;
+        oshpd:Task_description   "Hi @spiralcurls You’re project looks very exciting. Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjMw" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:38:41.147304+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May" ;
+        oshpd:task_created_by    :uid40 .
+
+:creately-developpemnt
+        a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMDQz" ;
+        oshpd:Tag_name  "creately-developpemnt" .
+
+:ottodiy  a             oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjUwNjg=" , "VGFnOjI4NzQz" ;
+        oshpd:Tag_name  "ottodiy" .
+
+:SXNzdWU6NjAyOTY3  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-16T19:21:24.966398+00:00" ;
+        oshpd:Task_description   "My name is toan" ;
+        oshpd:Task_id            "SXNzdWU6NjAyOTY3" ;
+        oshpd:Task_lastUpdated   "2021-05-16T19:21:25.218753+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Hello" ;
+        oshpd:task_created_by    :uid60 .
+
+:uid60  a                oshpd:User ;
+        oshpd:User_id    "uid60" ;
+        oshpd:User_name  "USER60" .
+
+:car-build-car-avionics-technician-electronic
+        a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMDQ0" ;
+        oshpd:Tag_name  "car-build-car-avionics-technician-electronic" .
+
+:uid45  a                oshpd:User ;
+        oshpd:User_id    "uid45" ;
+        oshpd:User_name  "USER45" .
+
+:uid58  a                oshpd:User ;
+        oshpd:User_id    "uid58" ;
+        oshpd:User_name  "USER58" .
+
+:wind-energy  a         oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjIxODA5" ;
+        oshpd:Tag_name  "wind-energy" .
+
+:forklanding  a         oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5NDcy" ;
+        oshpd:Tag_name  "forklanding" .
+
+:fork   a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MjY0" ;
+        oshpd:Tag_name  "fork" .
+
+:SXNzdWU6NjA2NzY0  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-25T13:29:50.651998+00:00" ;
+        oshpd:Task_description   "front xheel / rear wheel or tilting" ;
+        oshpd:Task_id            "SXNzdWU6NjA2NzY0" ;
+        oshpd:Task_lastUpdated   "2021-05-25T13:38:36.661711+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "steering" ;
+        oshpd:task_created_by    :uid82 .
+
+:SXNzdWU6NjAxNjQw  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T14:59:30.641607+00:00" ;
+        oshpd:Task_description   "Hi @faeezali You’re project looks very exciting. Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjQw" ;
+        oshpd:Task_lastUpdated   "2021-05-14T14:59:30.887891+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May" ;
+        oshpd:task_created_by    :uid5 ;
+        skills:skill_action      :steam-education , :3d-modeling , :arduino .
+
+:app    a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMTcw" ;
+        oshpd:Tag_name  "app" .
+
+:SXNzdWU6NjAxNjUx  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T15:08:15.850186+00:00" ;
+        oshpd:Task_description   "Hi @mariogonzaleslaimito Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjUx" ;
+        oshpd:Task_lastUpdated   "2021-05-14T15:08:16.091472+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May..." ;
+        oshpd:task_created_by    :uid5 ;
+        skills:skill_action      :arduino , :3d-modeling , :steam-education .
+
+<#UHJvamVjdDo1OTUzMjc=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "world is already facing many problems including load shedding, but the energy crisis (Gas) is hitting the boundaries. the possible solution for this problem of the energy crisis is an eco-friendly, “solar-powered induction cooking stove” which will operate on solar energy" ;
+        oshpd:Project_id           "UHJvamVjdDo1OTUzMjc=" ;
+        oshpd:Project_title        "Solar Induction Stove" .
+
+:SXNzdWU6Mjk3OTkz  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2020-01-14T17:57:52.966160+00:00" ;
+        oshpd:Task_description   "Is it possible to translate the short Chinese text into English. That would help a lot. Greetings from Germany" ;
+        oshpd:Task_id            "SXNzdWU6Mjk3OTkz" ;
+        oshpd:Task_lastUpdated   "2021-05-18T19:15:51.546647+00:00" ;
+        oshpd:Task_status        "Closed" ;
+        oshpd:Task_title         "Translation in English" ;
+        oshpd:task_created_by    :uid81 .
+
+<#UHJvamVjdDo1ODQ5MjU=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo1ODQ5MjU=" ;
+        oshpd:Project_title        "Mayku Challenge Template" .
+
+:steam-education  a  skills:Skill_Entity .
+
+:microbit  a            oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE5NzM=" ;
+        oshpd:Tag_name  "microbit" .
+
+:fromonetomany  a       oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MDEz" , "VGFnOjI5MDk3" , "VGFnOjI5MjU0" , "VGFnOjI5NjU3" , "VGFnOjI5NTk2" , "VGFnOjI5MzM1" , "VGFnOjI5NDU3" , "VGFnOjI5MTkw" , "VGFnOjI5NTA3" , "VGFnOjI5NDA1" , "VGFnOjI5MTIx" , "VGFnOjI5MzE4" ;
+        oshpd:Tag_name  "fromonetomany" .
+
+:wind-power  a          oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjIxODA4" ;
+        oshpd:Tag_name  "wind-power" .
+
+:digital-fabrication  a  oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE4NjY4" ;
+        oshpd:Tag_name  "digital-fabrication" .
+
+<#UHJvamVjdDo1MTM3NDc=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Advance the Century-Old Stirliling Engine with todays technology. Electric Stirling Engine is smokeless, flameless. A Zero Emission External Combustion Engine for multiple application" ;
+        oshpd:Project_id           "UHJvamVjdDo1MTM3NDc=" ;
+        oshpd:Project_title        "Electric Stirling Engine" .
+
+:recycling  a           oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMjY1" ;
+        oshpd:Tag_name  "recycling" .
+
+<#UHJvamVjdDo1MzYzMDg=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Injection Machine" ;
+        oshpd:Project_id           "UHJvamVjdDo1MzYzMDg=" ;
+        oshpd:Project_title        "Packable Injector 2.0" .
+
+:3d-modeling  a  skills:Skill_Entity .
+
+:otto-builder  a        oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI4NzQy" ;
+        oshpd:Tag_name  "otto-builder" .
+
+<#UHJvamVjdDo1ODI4NzE=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Using vacuum forming to create racing cars" ;
+        oshpd:Project_id           "UHJvamVjdDo1ODI4NzE=" ;
+        oshpd:Project_title        "Mouse car" .
+
+:uid64  a                oshpd:User ;
+        oshpd:User_id    "uid64" ;
+        oshpd:User_name  "USER64" .
+
+<#UHJvamVjdDo1NjIyNjA=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Smart charging indicator for your home. The device can display the charging status of your electric car, wherever you need it. It can even remind you to plug in. The integrated plant fully offsets the CO2 needed to power the device. The PowerPlanter is part of Sion Parts for Future." ;
+        oshpd:Project_id           "UHJvamVjdDo1NjIyNjA=" ;
+        oshpd:Project_title        "Sion PowerPlanter" .
+
+<#UHJvamVjdDo1ODk1NTI=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo1ODk1NTI=" ;
+        oshpd:Project_title        "MAKYU CHALLENGE" .
+
+<#UHJvamVjdDo1ODMyNDA=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "a recumbant tricycle to seriously replace daily car trips." ;
+        oshpd:Project_id           "UHJvamVjdDo1ODMyNDA=" ;
+        oshpd:Project_title        "GoWare URO" .
+
+<#UHJvamVjdDo1OTI0NDM=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo1OTI0NDM=" ;
+        oshpd:Project_title        "3d wall panel" .
+
+<#UHJvamVjdDo1OTc5NTE=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Teaching logic gates shouldn't be drawing arbitrary shapes on a whiteboard! The logic gates are 3D, magnetic, and wired to perform as expected. These logic gates are simple and fun to play with and spark creativity and investigative thought." ;
+        oshpd:Project_id           "UHJvamVjdDo1OTc5NTE=" ;
+        oshpd:Project_title        "Logic Gates" .
+
+:SXNzdWU6NjA4NTU5  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-06-01T03:07:19.042273+00:00" ;
+        oshpd:Task_description   "Receive a cordial greeting. This publication appears as an initiative for the promotion, development and implementation of diverse sustainable technologies, which are allowed competent as a product, offering a wide catalog of practical facilities available to the individual." ;
+        oshpd:Task_id            "SXNzdWU6NjA4NTU5" ;
+        oshpd:Task_lastUpdated   "2021-06-01T04:09:27.160108+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Welcome and details." ;
+        oshpd:task_created_by    :uid83 .
+
+<#UHJvamVjdDo2MDEwMTU=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo2MDEwMTU=" ;
+        oshpd:Project_title        "bigotera COVID" .
+
+:SXNzdWU6NjA0MjM0  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-19T11:44:16.259559+00:00" ;
+        oshpd:Task_description   "About electronic components, is there an installation guide?" ;
+        oshpd:Task_id            "SXNzdWU6NjA0MjM0" ;
+        oshpd:Task_lastUpdated   "2021-06-22T11:40:51.916389+00:00" ;
+        oshpd:Task_status        "Closed" ;
+        oshpd:Task_title         "Instalattion guide electronic components" ;
+        oshpd:task_created_by    :uid91 .
+
+:arduino  a             skills:Skill_Entity , oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjUwNzA=" ;
+        oshpd:Tag_name  "arduino" .
+
+:uid84  a                oshpd:User ;
+        oshpd:User_id    "uid84" ;
+        oshpd:User_name  "USER84" .
+
+<#UHJvamVjdDo1OTI2MzM=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "A template that will help you develop a great project for the Mayku design challenge. ﻿ Fork this project and use the existing sections to document your own project." ;
+        oshpd:Project_id           "UHJvamVjdDo1OTI2MzM=" ;
+        oshpd:Project_title        "Solar Panel Box" .
+
+:SXNzdWU6NjA3OTU5  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-30T15:54:49.144811+00:00" ;
+        oshpd:Task_description   "Electric Engine is my new project. Different from electric motor because it retains a cylinder and a piston similar to solenoid engine but its design requires minimal current and voltage but produce noticeable torque. My aim is to have a renewable, sustainable, and affordable clean energy beginning on household and then to industrial application." ;
+        oshpd:Task_id            "SXNzdWU6NjA3OTU5" ;
+        oshpd:Task_lastUpdated   "2021-05-30T15:54:49.144811+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Project Electric Stirling Engine has been discontinued and replace with a new Electric Engine" ;
+        oshpd:task_created_by    :uid63 .
+
+<#UHJvamVjdDoyMDc0MzA=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Otto got arms to look similar to a Human and an LED matrix to express emotions." ;
+        oshpd:Project_id           "UHJvamVjdDoyMDc0MzA=" ;
+        oshpd:Project_title        "Humanoid" .
+
+:SXNzdWU6NjAxNjQ1  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-14T15:02:37.951169+00:00" ;
+        oshpd:Task_description   "Hi @northernbrick Just a reminder that the challenge will close at 12pm CET on Sunday 16 May 2021, so do make sure your documentation is complete (including your header image and summary). The judges are excited to see your submission next week. Good luck!" ;
+        oshpd:Task_id            "SXNzdWU6NjAxNjQ1" ;
+        oshpd:Task_lastUpdated   "2021-05-14T15:02:38.189885+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Reminder: submissions close on 16 May..." ;
+        oshpd:task_created_by    :uid5 ;
+        skills:skill_action      :arduino , :steam-education , :3d-modeling .
+
+:drones  a              oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE4NjY3" ;
+        oshpd:Tag_name  "drones" .
+
+:investing  a           oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMTY5" ;
+        oshpd:Tag_name  "investing" .
+
+:vacuum-forming  a      oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MDEy" ;
+        oshpd:Tag_name  "vacuum-forming" .
+
+:uid91  a                oshpd:User ;
+        oshpd:User_id    "uid91" ;
+        oshpd:User_name  "USER91" .
+
+<#UHJvamVjdDo1OTExODU=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Facechocs - Create yourself in chocolate! Share your likeness with friends, family & loved ones in a way they won’t forget! Facechocs.com" ;
+        oshpd:Project_id           "UHJvamVjdDo1OTExODU=" ;
+        oshpd:Project_title        "Facechocs - Mayku" .
+
+:uid63  a                oshpd:User ;
+        oshpd:User_id    "uid63" ;
+        oshpd:User_name  "USER63" .
+
+:plastic-recycling  a   oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMjY3" ;
+        oshpd:Tag_name  "plastic-recycling" .
+
+:mobility-lowtech-cernlicencesv2
+        a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI5MDQ5" ;
+        oshpd:Tag_name  "mobility-lowtech-cernlicencesv2" .
+
+:uid89  a                oshpd:User ;
+        oshpd:User_id    "uid89" ;
+        oshpd:User_name  "USER89" .
+
+<#UHJvamVjdDo2MDg1NTg=>
+        a                          oshpd:Project ;
+        oshpd:Project_description  "Initiative exposed for the development and gradual implementation of sustainable technologies and ultralight transport within the daily social sector." ;
+        oshpd:Project_id           "UHJvamVjdDo2MDg1NTg=" ;
+        oshpd:Project_title        "AEROBIKE 4" .
+
+:sdg    a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjg1Nzc=" , "VGFnOjg2NDM=" ;
+        oshpd:Tag_name  "sdg" .
+
+:plastic  a             oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjMwMjY2" ;
+        oshpd:Tag_name  "plastic" .
+
+:2d-modeling-or-3d-modeling
+        a               oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjE0ODg5" ;
+        oshpd:Tag_name  "2d-modeling-or-3d-modeling" .
+
+:powerplanter  a        oshpd:Tag ;
+        oshpd:Tag_id    "VGFnOjI4ODIz" ;
+        oshpd:Tag_name  "powerplanter" .
+
+:SXNzdWU6NjAxMzgx  a             oshpd:Task ;
+        oshpd:Task_creationDate  "2021-05-13T21:23:37.641836+00:00" ;
+        oshpd:Task_description   "" ;
+        oshpd:Task_id            "SXNzdWU6NjAxMzgx" ;
+        oshpd:Task_lastUpdated   "2021-05-13T21:23:37.846206+00:00" ;
+        oshpd:Task_status        "Open" ;
+        oshpd:Task_title         "Do you still use the platform?" ;
+        oshpd:task_created_by    :uid45 .
