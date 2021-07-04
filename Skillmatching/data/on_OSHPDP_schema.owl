@@ -5,40 +5,41 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl"
-     versionIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl/0.1">
-    <Prefix name="" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl#"/>
-    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
-    <Prefix name="okh" IRI="http://purl.org/oseg/ontologies/osh-metadata/0.1/base"/>
+     ontologyIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl">
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="oshpd" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl"/>
-    <Prefix name="skills" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#"/>
-    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
-    <Prefix name="oldskill" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#"/>
-    <Prefix name="wikifactory" IRI="https://wikifactory.com/api/graphgl/"/>
-    <Import>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl</Import>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
         <Literal>Erik Paul Konietzko</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
         <Literal>2021-04-28</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+        <Literal>GNU General Public License v3.0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+        <Literal>2021-05-19</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <Literal>Open Source Hardware Product Development schema</Literal>
     </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Skills Hierarchy</Literal>
+    </Annotation>
     <Declaration>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="oldskill:Topic"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Topic"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Author"/>
@@ -189,6 +190,54 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Input/Ideas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Languages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cars_mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#classical_languages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#electrics_electronics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#furniture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ict"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mechanics"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
@@ -362,6 +411,51 @@
         <ObjectProperty IRI="#written_by"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#buildes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#designes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#distributes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#estimates_costs_for"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#installs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#legal_information"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#maintains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#operates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#possible_action"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#product_pricing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_has_topic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaches_about"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#technical_writing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#topic_of_skill"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#Document_author"/>
     </Declaration>
     <Declaration>
@@ -465,6 +559,12 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#User_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_name"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#C"/>
@@ -596,10 +696,451 @@
         <NamedIndividual IRI="#C++"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#C"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#CAD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#CSharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Materials"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#abs"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#agriculture"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#analysis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#animation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#architecture"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#arduino"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#art"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#artificial-reality"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#autocad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#autodesk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#automation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#business"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#car"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cardboard"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#catia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ceramic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#circuit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#clay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cnc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#coding"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#communication"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#community"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#computer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#covid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#covid19"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#css"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cutter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#data"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#design"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#designing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#development"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#digitalfabrication"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#diy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drawing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drawings"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#dronecoria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drones"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#education"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#electronics"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#energy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#engineering"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#extruder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fablab"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fabrication"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#farming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fashion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#foam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#food"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fromonetomany"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#furniture"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fusion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fusion360"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#grasshopper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#hackaton"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#hardware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#health"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#healthcare"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#home"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#html"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#injection"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#innovation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#inventor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#iot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#java"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#javascript"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#laser-cutting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#lasercut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#learning"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#machining"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#manufacturing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#marketing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mechanical"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#medical"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#metal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#milling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mobile"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#modelig"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mold"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#molding"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#music"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#networking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#open-source"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#opensource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#otto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ottodiy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#painting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#pcb"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#photography"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#photoshop"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#pi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#pla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#plant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#plastic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#plywood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#print"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#printer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#prinying"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#production"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#programming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#prosthetics"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#python"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#raspberry"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#raspberrypi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#recycling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#research"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#rhino"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#robot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#robotics"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sand"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#science"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#simulations"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sketchup"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#software"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#solideorks"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#solidworks"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#space"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sustainability"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sustainable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaching"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#tech"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#technology"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#testing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#thinking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ventilator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#video"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#water"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#web"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#webinars"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#welding"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#wikifactory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#wood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#woodworking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#writing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3d-modelling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3d-printer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3d-printing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3dmodelling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3dprinter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3dprinting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#360"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
@@ -692,7 +1233,7 @@
     <EquivalentClasses>
         <Class IRI="#Skills"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty abbreviatedIRI="skills:possible_action"/>
+            <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#possible_action"/>
             <Class IRI="#User"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
@@ -767,7 +1308,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DesignSkill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Development"/>
@@ -869,7 +1410,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#languages"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#mech_design"/>
@@ -878,6 +1419,81 @@
     <SubClassOf>
         <Class IRI="#programming_languages"/>
         <Class IRI="#languages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Languages"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Object"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cars_mobility"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cars_mobility"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#electrics_electronics"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ict"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mechanics"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#classical_languages"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Languages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#electrics_electronics"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#furniture"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#furniture"/>
+        <ObjectIntersectionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#electrics_electronics"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mechanics"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ict"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mechanics"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Contribution"/>
@@ -1073,6 +1689,586 @@
     <ClassAssertion>
         <Class IRI="#programming_languages"/>
         <NamedIndividual IRI="#C++"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#C"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#CAD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#CSharp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Materials"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#abs"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#agriculture"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#analysis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#animation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#architecture"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#arduino"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#art"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#artificial-reality"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#autocad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#autodesk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#automation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#business"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#car"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cardboard"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#catia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ceramic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#circuit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#clay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cnc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#coding"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#communication"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#community"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#computer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#covid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#covid19"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#css"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#cutter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#data"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#design"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#designing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#development"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#digitalfabrication"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#diy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drawing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drawings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#dronecoria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#drones"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#education"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#electronics"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#energy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#engineering"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#extruder"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fablab"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fabrication"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#farming"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fashion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#foam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#food"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fromonetomany"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#furniture"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fusion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#fusion360"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#grasshopper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#hackaton"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#hardware"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#health"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#healthcare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#home"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#html"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#injection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#innovation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#inventor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#iot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#java"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#javascript"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#laser-cutting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#lasercut"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#learning"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#machining"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#manufacturing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#marketing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mechanical"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#medical"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#metal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#milling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mobile"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#modelig"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#mold"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#molding"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#music"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#networking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#open-source"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#opensource"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#otto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ottodiy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#painting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#pcb"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#photography"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#photoshop"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#pi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#pla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Object"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#plant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#plastic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#plywood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#print"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#printer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#prinying"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#production"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#programming"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#prosthetics"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#python"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#raspberry"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#raspberrypi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#recycling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#research"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#rhino"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#robot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#robotics"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#science"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#simulations"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sketchup"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#software"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#solideorks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#solidworks"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#space"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sustainability"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#sustainable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaching"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#tech"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#technology"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#testing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#thinking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Object"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ventilator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#video"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#web"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#webinars"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#welding"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Brandname"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#wikifactory"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#wood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#woodworking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#writing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3d-modelling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3d-printer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3d-printing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3dmodelling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3dprinter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#3dprinting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        <NamedIndividual IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#360"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#stored_format"/>
@@ -1399,6 +2595,50 @@
         <NamedIndividual IRI="#.3dm"/>
         <Literal>.3dm</Literal>
     </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#buildes"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#designes"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#distributes"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#estimates_costs_for"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#installs"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#legal_information"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#maintains"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#operates"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#product_pricing"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaches_about"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#technical_writing"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
         <ObjectProperty IRI="#Contribution_process_successor"/>
@@ -1494,6 +2734,14 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#tagged_with"/>
         <ObjectProperty IRI="#tags"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#possible_action"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_has_topic"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#topic_of_skill"/>
     </InverseObjectProperties>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
@@ -1681,7 +2929,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#needed_for"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#project_has_topic"/>
@@ -1725,7 +2973,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#skill_tag_task"/>
-        <Class abbreviatedIRI="skills:Skill_Entity"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#stored_format"/>
@@ -1757,15 +3005,67 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#topic_of_project"/>
-        <Class abbreviatedIRI="oldskill:Topic"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Topic"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#topic_of_project"/>
-        <Class abbreviatedIRI="skills:Topic"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#written_by"/>
         <Class IRI="#Document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#buildes"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#designes"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#distributes"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#estimates_costs_for"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#installs"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#legal_information"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#maintains"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#operates"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#possible_action"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#product_pricing"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaches_about"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#topic_of_skill"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
@@ -1845,7 +3145,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#data_implies_skill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#described_by_documentation"/>
@@ -1897,7 +3197,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_skill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_task"/>
@@ -1921,7 +3221,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#knows_about_skill"/>
-        <Class abbreviatedIRI="skills:Skill_Entity"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#listed_in"/>
@@ -1945,7 +3245,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#project_has_topic"/>
-        <Class abbreviatedIRI="skills:Topic"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#rates"/>
@@ -1969,13 +3269,13 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#requires_skill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
+        <Class IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#Skills"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#requires_skill"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectInverseOf>
-                <ObjectProperty abbreviatedIRI="skills:skill_action"/>
+                <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
             </ObjectInverseOf>
             <Class IRI="#User"/>
         </ObjectMinCardinality>
@@ -2022,7 +3322,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#task_tag_skill"/>
-        <Class abbreviatedIRI="skills:Skill_Entity"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#topic_of_project"/>
@@ -2033,12 +3333,75 @@
         <Class IRI="#Author"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="skills:buildes"/>
-        <Class abbreviatedIRI="skills:Skill_Entity"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#buildes"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="skills:distributes"/>
-        <Class abbreviatedIRI="skills:Skill_Entity"/>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#designes"/>
+        <ObjectUnionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#distributes"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#estimates_costs_for"/>
+        <ObjectUnionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Material"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#installs"/>
+        <ObjectUnionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#maintains"/>
+        <ObjectUnionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#operates"/>
+        <ObjectUnionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#possible_action"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_has_topic"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaches_about"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#teaches_about"/>
+        <ObjectUnionOf>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Machine"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Process"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool"/>
+            <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
@@ -2067,6 +3430,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#User_id"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_name"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#Document_author"/>
@@ -2208,14 +3574,14 @@
         <DataProperty IRI="#User_name"/>
         <Class IRI="#User"/>
     </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="#Project_description"/>
-        <DataOneOf>
-            <Literal>Collaborative innovators</Literal>
-            <Literal>Involuntairly isolated innovators</Literal>
-            <Literal>Public innovators</Literal>
-        </DataOneOf>
-    </DataPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_id"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_name"/>
+        <Class IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#Review_decision"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -2238,7 +3604,7 @@
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>oldskill:applyToolsForContentDevelopment</AbbreviatedIRI>
+        <IRI>https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl#applyToolsForContentDevelopment</IRI>
         <Literal>using_digital_tools_for_collaboration_content_creation_and_problem_solving</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -2749,43 +4115,164 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>dummy class, to hold ideas that might be useful and implemented later on</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Event</IRI>
+        <Literal>necessary for use case?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Languages</IRI>
+        <Literal>Albanian
+Arabic
+Armenian
+Azerbaijani
+Basque
+Belarusian
+Bengali
+Berber
+Bihari
+Bosnian
+Bulgarian
+Catalan
+Chinese
+communicate using non-verbal language
+Croatian
+Czech
+Danish
+Dutch
+English
+Estonian
+Finnish
+French
+Galician
+Georgian
+German
+Greek
+Gujarati
+Hebrew
+Hindi
+Hungarian
+Icelandic
+Irish
+Italian
+Japanese
+Javanese
+Kazakh
+Korean
+Kurdish
+Latvian
+Limburgish
+Lithuanian
+Macedonian
+Malay
+Maltese
+manage a good diction
+Marathi
+Montenegrin
+Norwegian
+Occitan
+Persian
+Polish
+Portuguese
+Punjabi
+Romani
+Romanian
+Russian
+Sardinian
+Serbian
+Slovak
+Slovenian
+Spanish
+speak dialect
+Swedish
+Tamil
+Telugu
+Turkish
+Ukrainian
+Urdu
+use body language
+use codes to communicate with taxi drivers
+Vietnamese
+Walloon
+Welsh
+Yiddish</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
-        <AbbreviatedIRI>skills:SkillEntity_id</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_id</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
-        <AbbreviatedIRI>skills:SkillEntity_id</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_id</IRI>
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
-        <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_name</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
-        <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#SkillEntity_name</IRI>
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity</IRI>
+        <Literal>Skill entities are a result of WIF mining on data, if not commented other</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
-        <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_cmap"/>
-        <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity</IRI>
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Tool</IRI>
+        <Literal>difference between Machine? (automatic/manually?)
+Distinction necessary?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Topic</IRI>
+        <Literal>subclasses are topics of OPEN!NEXT, not WIF mining</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#classical_languages</IRI>
+        <Literal>Ancient Greek
+Latin
+Sanskrit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#ict</IRI>
+        <Literal>information and communication technologies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#possible_action</IRI>
+        <Literal>This objectproterty describes possible skill actions that can be applied to a skill entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action</IRI>
+        <Literal>This property describes what skill actions a person can do with a skill entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>
-        <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action</IRI>
         <Literal>/data/issues/result/edges/~/node/creator/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_opmap"/>
-        <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
+        <IRI>https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#skill_action</IRI>
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
     </AnnotationAssertion>
 </Ontology>
