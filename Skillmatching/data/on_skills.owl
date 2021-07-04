@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl"
+     xml:base="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl">
-    <Prefix name="" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl"/>
+     ontologyIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl">
+    <Prefix name="" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="oshpd" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/OSHPD_schema.owl#"/>
-    <Prefix name="skills" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl#"/>
+    <Prefix name="oshpd" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl#"/>
+    <Prefix name="skills" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#"/>
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:creator"/>
