@@ -34,7 +34,6 @@ import process.OntoModeler;
 public class SkillReader {
 
 	
-	
 	/**skills is a namespace variable for the instances. Skills will be instantiated as: skills+"#instance_attribut"*/
 	private static String skills="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl";
 	/**JsonReader reader is used to read and parse information of json files.
@@ -197,36 +196,5 @@ public class SkillReader {
 	public void setSkillPrefix(String prefix) {
 		skills=prefix;
 	}
-	
-	/*
-	static void main(String[] args) throws IOException, OWLOntologyStorageException, OWLOntologyCreationException {
-		//creating a reader and a pointer for the json-file
-		JsonReader reader = Json.createReader(new FileReader("C:/Users/konierik/Nextcloud2/MA-Arbeit/03_Ontology/Skills/WIF_data/exported_schema.json"));
-		//read file
-		JsonStructure jsonStructure = reader.read();
-		//looking for "/skill_targets" in the file
-		JsonPointer jsonPointer = Json.createPointer("/skill_targets");
-		//Array to save results
-		JsonArray jsonArray=null;
-		//creating a OntologyModeler, that provides needed functions to handle owl-ontologies
-		OntoModeler ont=new OntoModeler();
-		//check if the pointer exists in the json file structure
-		if(jsonPointer.containsValue(jsonStructure)) {
-			//if pointer/data exists: 
-			//loading ontology from local file
-			ont.loadOnto("C:\\Users\\konierik\\Nextcloud2\\MA-Arbeit\\03_Ontology\\github\\skills_wif_merge.owl");
-			//loading the pointed information as JsonArray
-			jsonArray=jsonPointer.getValue(jsonStructure).asJsonArray();
-			//running through the Array and looking for the values of the keys "skill_target" and "entity_type", than instantiating them as individuals of a class
-			for (int i=0; i<jsonArray.size();i++) {
-				String instance=jsonArray.get(i).asJsonObject().getString("skill_target");
-				String Class=jsonArray.get(i).asJsonObject().getString("entity_type");
-				ont.instantiateClass(skills+"#"+instance, skills+"#"+Class);		
-			}
-			//locally saving the new instantiated ontology
-			ont.saveOntology("C:\\Users\\konierik\\Nextcloud2\\MA-Arbeit\\03_Ontology\\github\\skills_wif_merge_instances.owl");
-		}
-		reader.close();
-		
-	}*/
+
 }

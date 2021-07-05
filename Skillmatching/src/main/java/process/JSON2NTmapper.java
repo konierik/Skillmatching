@@ -22,8 +22,6 @@ public class JSON2NTmapper {
 	private String objectpropertymapping;
 	private String classmapping;
 	private String datapropertymapping;
-	private String identifier;
-	
 	
 	private String NToutputFile; //Format should be: "c:\\projects\\app.log"
 	private String NTcontent="";;
@@ -130,19 +128,17 @@ public class JSON2NTmapper {
 		neu=neu.replace("\\", "");
 		neu=neu.replace("\"","");
 		return neu;
-//		if (in.contains("<a>")){
-//			return in.replace(in.substring(in.indexOf("<a"),in.indexOf(">")), "");
-//		}else {return in;}
+
 	}
 	
 	public void addNTStatement(String subject, String predicate, String object) {
 		NTcontent+="<"+subject+"> <"+predicate+"> <"+object+">.\n";
-		System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> <"+object+">.\n");
+		//System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> <"+object+">.\n");
 	}
 	
 	public void addDatapropertyNTStatement(String subject, String predicate, String object) {
 		NTcontent+="<"+subject+"> <"+predicate+"> "+object+".\n";
-		System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> "+object+".\n");
+		//System.out.println("Added NT statement: <"+subject+"> <"+predicate+"> "+object+".\n");
 	}
 	
 	public void toNTFile() throws UnsupportedEncodingException, FileNotFoundException {
@@ -214,11 +210,7 @@ public class JSON2NTmapper {
 	public String getClassMapping() {
 		return classmapping;
 	}
-	
-	public String getIdentifierMapping() {
-		return identifier;
-	}
-	
+
 	public String getNToutputLocation() {
 		return NToutputFile;
 	}

@@ -33,6 +33,8 @@ public class Action {
 		String skill_ontolocation=projectdir+"/src/main/resources/inputdata/on_skills_void.owl";
 		String skill_ontofilelocation=projectdir+"/src/main/resources/ontology/on_skills.owl";
 		String skill_prefix="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl";
+		String skillIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl";
+
 				
 		////////////////////////////////////////////////////////////////////////////////
 		//
@@ -98,17 +100,20 @@ public class Action {
 		mapping.setIRI("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl");
 		//Loading the ontology, here: from web
 		mapping.loadOnto();
+		mapping.mergeOntology(skillIRI);
 		/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
 		 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
-		mapping.setClassmapping("wif_issue_1_cmap");
+		mapping.setClassmapping("wif_issue_3_cmap");
 		//mapping.setClassIdent("identifier");
-		mapping.setObjectpropertymapping("wif_issue_1_opmap");
-		mapping.setDatapropertymapping("wif_issue_1_dpmap");
+		mapping.setObjectpropertymapping("wif_issue_3_opmap");
+		mapping.setDatapropertymapping("wif_issue_3_dpmap");
 		
 		// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
 		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
 		ArrayList<ArrayList<String>> dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
 		ArrayList<ArrayList<String>> objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+		
+		
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -151,11 +156,11 @@ public class Action {
 		NTParser ntparse=new NTParser(ntoutput);
 		ntparse.setPrefix("", instanceIRI);
 		ntparse.setPrefix("oshpd", mapping.getIRIString());
-		ntparse.setPrefix("skills", "https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		ntparse.setPrefix("skills", skillIRI);
 		ntparse.readNTModel();
 		ntparse.setOntologyIRI(instanceIRI);
 		ntparse.addImport(mapping.getIRIString());
-		ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		//ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
 		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
 		ntparse.parseNT(instanceIRI);
 		/*

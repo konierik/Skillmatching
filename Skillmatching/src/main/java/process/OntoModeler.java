@@ -28,6 +28,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.util.OWLOntologyMerger;
 import org.semanticweb.owlapi.util.SimpleIRIMapper;
 
 import com.github.owlcs.ontapi.OntManagers;
@@ -50,7 +51,7 @@ public class OntoModeler {
 	private OWLDataFactory onto_df;
 	//Variables for iri information
 	private IRI iri;
-	private String IRIstring = "https://github.com/konierik/O-N/raw/master/ontology/Family2.owl";
+	private String IRIstring;
 	private IRI docIRI; //for local ontology creation
 	/**Annotation property that has json pointers to keys that are instantiated as the relating class.*/
 	private OWLAnnotationProperty classmapping;
@@ -229,7 +230,7 @@ public class OntoModeler {
 				System.out.println(ans.toString() +" type: "+ ans.get(0).getClass());
 				objects.add(op.getIRI().toString());	
 				//get annotation in the class
-				annotations.add(getAnnotations(onto, op.getIRI(), objectpropertymapping).get(0));  
+				annotations.addAll(getAnnotations(onto, op.getIRI(), objectpropertymapping));  
 				//domainpointer.add(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping).get(0));
 				identpointer.addAll(getAnnotations(onto,IRI.create(getObjectPropertyDomain(op.getIRI())), classmapping));
         	}
@@ -308,43 +309,6 @@ public class OntoModeler {
 	}
 	
 
-
-	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//
-	//				get identifier for class of an annotationproperty
-	//
-	////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	
-	//this method gets the identifier of classes, e.g. when they are used as domain or range in data-/objectproperties
-	/*
-	public String getIdentPointer(OWLClass classy) {
-		String out="";
-		try {
-			out=getAnnotations(onto, classy.getIRI(), identifier).toString();
-		} catch(Exception e) {
-			
-		}
-		return out;
-	}
-	
-	public String getClassPointer(OWLClass classy) {
-		String out="";
-		try {
-			out=getAnnotations(onto, classy.getIRI(), classmapping).toString();
-		} catch(Exception e) {
-			
-		}
-		return out;
-	}
-	
-	public String getObjectpropertyPointer(OWLClass classy) {
-		return getAnnotations(onto, classy.getIRI(), objectpropertymapping).get(0).toString();
-	}
-	public String getDatapropertyPointer(OWLClass classy) {
-		return getAnnotations(onto, classy.getIRI(), datapropertymapping).get(0).toString();
-	}
-	*/
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
 	//				get Domain or Range of property
@@ -375,6 +339,7 @@ public class OntoModeler {
 		for( OWLObjectPropertyDomainAxiom opa : onto.objectPropertyDomainAxioms(property).collect( Collectors.toSet() ) ) {				
 			try {
 				string=opa.getDomain().asOWLClass().getIRI().getIRIString();
+System.out.println("Obj.prop domain:"+string);
 			}catch(Exception e) {
 				e.printStackTrace();
 				System.out.println("\t"+opa.getDomain().toString());
@@ -461,6 +426,20 @@ public class OntoModeler {
 		OWLAxiom assertion=onto_df.getOWLObjectPropertyAssertionAxiom(property,domain,range); //creates an objectproperty-axiom with the defined two individuals and property 
 		AddAxiom addAxiomChange =new AddAxiom (onto, assertion); 
 		onto_man.applyChange(addAxiomChange);	
+	}
+	
+	public void mergeOntology(String OntologyIRItoMerge) {
+		try {
+			OWLOntology merge=onto_man.loadOntology(IRI.create(OntologyIRItoMerge));
+			
+			OWLOntologyMerger merger = new OWLOntologyMerger(onto_man);
+			//the merged ontology will have the same iri
+			onto=merger.createMergedOntology(onto_man, IRI.create("\"https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema_merged.owl"));
+			System.out.println("Merge successful.");
+		} catch (OWLOntologyCreationException e) {
+			e.printStackTrace();
+			System.out.println("Ontologies not merged.");
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
