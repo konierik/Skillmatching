@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl">
+    <Prefix name="" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -3978,7 +3979,7 @@ This leads to the ranges of the property. Since OS does not claim to be complete
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_4_dpmap"/>
         <IRI>#User_name</IRI>
-        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/name</Literal>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/creator/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
