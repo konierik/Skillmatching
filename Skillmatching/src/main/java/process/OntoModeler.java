@@ -325,7 +325,7 @@ public class OntoModeler {
 				string=dpa.getDomain().asOWLClass().getIRI().getIRIString();
 			}catch(Exception e) {
 				e.printStackTrace();
-				System.out.println("\t"+dpa.getDomain().toString());
+System.out.println("\t"+dpa.getDomain().toString());
 			}
 		}
 		return string;
@@ -342,7 +342,7 @@ public class OntoModeler {
 System.out.println("Obj.prop domain:"+string);
 			}catch(Exception e) {
 				e.printStackTrace();
-				System.out.println("\t"+opa.getDomain().toString());
+System.out.println("\t"+opa.getDomain().toString());
 			}
 		}
 		return string;
