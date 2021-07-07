@@ -41,13 +41,21 @@ public class JSON2NTmapper {
 				//getting the identifier values from all instances of the class i
 				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(individualpointer);
 				//running through all found instances of class i
-				for (int j=0; j<jsonResult.get(0).size(); j++) {
-					//getting jth-instance value
-					String individual=instanceIRI+"#"+jsonResult.get(1).get(j);
-					//instantiate the jth- value as an individual of class i
-					addNTStatement(individual,rdfsType,classIRI);
+				if(!jsonResult.isEmpty()&&jsonResult.size()!=0&&jsonResult!=null) {
+					for (int j=0; j<jsonResult.get(0).size(); j++) {
+						//getting jth-instance value
+						String individual=jsonResult.get(1).get(j);
+						//instantiate the jth- value as an individual of class i
+						addNTStatement(instanceIRI+"#"+individual,rdfsType,classIRI);
+						//if the instance is from the skill ontology, it will be set as the same individual as the one in the skill ontology. so it will be accordingly hierarchized.
+						if(classIRI.contentEquals("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity")) {
+							addNTStatement(instanceIRI+"#"+individual,"http://www.w3.org/2002/07/owl#sameAs","https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#"+individual);
+						}
+					}
+				}else {
+					System.out.println("Array for "+annotations.get(0).get(i)+" is empty.");
 				}
-				System.out.println("\n");
+			
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
@@ -66,18 +74,23 @@ public class JSON2NTmapper {
 			try{
 				//getting the identifier values from all instances of the class i
 				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(range);
-				//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
-				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult,domain);
-				//running through all found values j of the dataproperty i 
-				for (int j=0; j<replacedResults.get(0).size(); j++) {
-					//getting jth-instance value
-					String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
-					//the object of an object property is instanitated as string value
-					String object=instanceIRI+"#"+replacedResults.get(1).get(j);
-					//instantiate the jth- value as an individual of class i
-					addNTStatement(subject,objectproperty,object);
+				if(!jsonResult.isEmpty()&&jsonResult.size()!=0&&jsonResult!=null) {
+					//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
+					//System.out.println("replacing"+i+"-th pointer: "+range+" for property "+objectproperty);
+					ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult,domain);
+					//running through all found values j of the dataproperty i 
+					for (int j=0; j<replacedResults.get(0).size(); j++) {
+						//getting jth-instance value
+						String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
+						//the object of an object property is instanitated as string value
+						String object=instanceIRI+"#"+replacedResults.get(1).get(j);
+						//instantiate the jth- value as an individual of class i
+						addNTStatement(subject,objectproperty,object);
+
+					}
+				}else {
+					System.out.println("Array for "+annotations.get(0).get(i)+" is empty.");
 				}
-				System.out.println("\n");
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
@@ -96,19 +109,23 @@ public class JSON2NTmapper {
 			try{
 				//getting the identifier values from all instances of the class i
 				ArrayList<ArrayList<String>> jsonResult = reader.parsePointer(range);
-				//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
-				ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, domain);
-				//running through all found values j of the dataproperty i 
-				for (int j=0; j<replacedResults.get(0).size(); j++) {
-					//getting jth-instance value
-					String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
-					//the object of a data property is instanitated as string value
-					String object="\""+replaceIllegalChar(replacedResults.get(1).get(j))+"\"";
-					
-					//instantiate the jth- value as an individual of class i
-					addDatapropertyNTStatement(subject,dataproperty,object);
+				if(!jsonResult.isEmpty()&&jsonResult.size()!=0&&jsonResult!=null){
+					//replacing the value pointers in jsonResult with pointers of the domain concept for the dataproperty
+					ArrayList<ArrayList<String>> replacedResults=reader.replaceToIdent(jsonResult, domain);
+					//running through all found values j of the dataproperty i 
+					for (int j=0; j<replacedResults.get(0).size(); j++) {
+						//getting jth-instance value
+						String subject=instanceIRI+"#"+replacedResults.get(0).get(j);
+						//the object of a data property is instanitated as string value
+						String object="\""+replaceIllegalChar(replacedResults.get(1).get(j))+"\"";
+						
+						//instantiate the jth- value as an individual of class i
+						addDatapropertyNTStatement(subject,dataproperty,object);
+					}
+				}else {
+					System.out.println("Array for "+annotations.get(0).get(i)+" is empty.");
 				}
-				System.out.println("\n");
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 				}
@@ -153,7 +170,6 @@ public class JSON2NTmapper {
 			try {
 				out.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
