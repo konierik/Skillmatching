@@ -2785,7 +2785,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Tag_name</IRI>
-        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
