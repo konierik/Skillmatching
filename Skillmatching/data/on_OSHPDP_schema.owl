@@ -3324,6 +3324,11 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_project_1_opmap"/>
+        <IRI>#tagged_with</IRI>
+        <Literal>/data/projects/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_opmap"/>
         <IRI>#tagged_with</IRI>
         <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
