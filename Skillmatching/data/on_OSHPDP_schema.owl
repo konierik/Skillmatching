@@ -2787,7 +2787,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_project_1_cmap"/>
         <IRI>#Tag</IRI>
-        <Literal>/data/projects/result/edges/~/node/tags/~/id</Literal>
+        <Literal>/data/projects/result/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_cmap"/>
@@ -3292,6 +3292,11 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <AnnotationProperty IRI="#wif_user_1_opmap"/>
         <IRI>#member_of_project</IRI>
         <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_project_1_opmap"/>
+        <IRI>#project_created_by</IRI>
+        <Literal>/data/projects/result/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_opmap"/>
