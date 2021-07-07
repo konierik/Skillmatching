@@ -3,9 +3,6 @@ package reader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-//another source: https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
-//https://stackabuse.com/reading-and-writing-json-in-java/
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
