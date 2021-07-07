@@ -915,6 +915,13 @@
         <Class IRI="#User"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Member"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#creator_of_project"/>
+            <Class IRI="#Project"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Operation_and_maintenance"/>
         <Class IRI="#PLC_phase"/>
     </SubClassOf>
@@ -2853,7 +2860,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Task_status</IRI>
-        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/status</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
