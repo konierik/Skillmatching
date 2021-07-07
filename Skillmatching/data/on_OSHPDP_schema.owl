@@ -2418,6 +2418,11 @@
         <Literal>/data/issues/result/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_user_2_cmap"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>oldskill:applyToolsForContentDevelopment</AbbreviatedIRI>
         <Literal>using_digital_tools_for_collaboration_content_creation_and_problem_solving</Literal>
@@ -2611,6 +2616,11 @@ involuntairly isolated innovators: low decentralisation and high pursued level o
         <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
         <IRI>#Project_id</IRI>
         <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_user_2_dpmap"/>
+        <IRI>#Project_id</IRI>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_dpmap"/>
