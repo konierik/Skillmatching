@@ -32,7 +32,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal>Open Source Hardware Product Development schema</Literal>
+        <Literal>Open Source Hardware Product Development (OSHPDP) schema</Literal>
     </Annotation>
     <Declaration>
         <Class abbreviatedIRI="oldskill:Skills"/>
@@ -2421,17 +2421,17 @@ Bonvoisin et al. (2018). &quot;How participative is open source hardware? Insigh
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_opmap"/>
         <IRI>#Contribution</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Contribution_description</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/description</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Contribution_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2441,12 +2441,12 @@ Bonvoisin et al. (2018). &quot;How participative is open source hardware? Insigh
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Contribution_status</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/status</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/status</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Contribution_title</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/title</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/title</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2529,27 +2529,27 @@ All concepts handled in the ontology are not physical. Although some of them (e.
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_cmap"/>
         <IRI>#Project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_cmap"/>
         <IRI>#Project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_cmap"/>
         <IRI>#Project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_cmap"/>
         <IRI>#Project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_cmap"/>
         <IRI>#Project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2580,12 +2580,12 @@ involuntairly isolated innovators: low decentralisation and high pursued level o
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_dpmap"/>
         <IRI>#Project_description</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/description</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_dpmap"/>
         <IRI>#Project_description</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/description</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2605,7 +2605,7 @@ involuntairly isolated innovators: low decentralisation and high pursued level o
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_dpmap"/>
         <IRI>#Project_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2622,12 +2622,12 @@ check class axiom</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_dpmap"/>
         <IRI>#Project_title</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/title</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/title</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_dpmap"/>
         <IRI>#Project_title</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/title</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/title</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2703,17 +2703,17 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_cmap"/>
         <IRI>#Tag</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_cmap"/>
         <IRI>#Tag</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_cmap"/>
         <IRI>#Tag</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2723,17 +2723,17 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Tag_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/tags/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/tags/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_dpmap"/>
         <IRI>#Tag_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Tag_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2748,17 +2748,17 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Tag_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_dpmap"/>
         <IRI>#Tag_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Tag_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
@@ -2783,7 +2783,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_cmap"/>
         <IRI>#Task</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2798,7 +2798,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Task_description</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/description</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/description</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2813,7 +2813,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Task_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2833,7 +2833,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Task_status</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2848,7 +2848,7 @@ Further detailing in DIN SPEC 3105-2</Literal>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#Task_title</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/title</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/title</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2888,37 +2888,37 @@ This leads to the ranges of the property. Since OS does not claim to be complete
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_cmap"/>
         <IRI>#User</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_cmap"/>
         <IRI>#User</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_cmap"/>
         <IRI>#User</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/creator/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_cmap"/>
         <IRI>#User</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_cmap"/>
         <IRI>#User</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_6_cmap"/>
         <IRI>#User</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#User_country</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/countryCode</Literal>
+        <Literal>/data/profiles/result/edges/~/node/countryCode</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2948,27 +2948,27 @@ This leads to the ranges of the property. Since OS does not claim to be complete
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#User_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_dpmap"/>
         <IRI>#User_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/creator/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_dpmap"/>
         <IRI>#User_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#User_id</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#User_lastActivity</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/lastActivityAt</Literal>
+        <Literal>/data/profiles/result/edges/~/node/lastActivityAt</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -2998,22 +2998,22 @@ This leads to the ranges of the property. Since OS does not claim to be complete
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#User_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/user/username</Literal>
+        <Literal>/data/profiles/result/edges/~/node/user/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_dpmap"/>
         <IRI>#User_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/creator/username</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/creator/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_dpmap"/>
         <IRI>#User_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/username</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
         <IRI>#User_name</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/username</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/username</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3023,7 +3023,7 @@ This leads to the ranges of the property. Since OS does not claim to be complete
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_opmap"/>
         <IRI>#contributes</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3067,7 +3067,7 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_opmap"/>
         <IRI>#follows_project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_opmap"/>
@@ -3077,7 +3077,7 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_opmap"/>
         <IRI>#has_contributor</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_3_opmap"/>
@@ -3087,7 +3087,7 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_opmap"/>
         <IRI>#has_task</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3112,12 +3112,12 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_opmap"/>
         <IRI>#member_of_project</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_3_opmap"/>
         <IRI>#project_created_by</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/creator/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3147,12 +3147,12 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_opmap"/>
         <IRI>#tagged_with</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/followingProjects/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_opmap"/>
         <IRI>#tagged_with</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_5_opmap"/>
@@ -3172,7 +3172,7 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_opmap"/>
         <IRI>#task_created_by</IRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/tracker/issues/edges/~/node/creator/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>
@@ -3202,12 +3202,12 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <AbbreviatedIRI>skills:SkillEntity_id</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/skills/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/skills/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_dpmap"/>
         <AbbreviatedIRI>skills:SkillEntity_id</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user//profile/skills/~/id</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user//profile/skills/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
@@ -3222,12 +3222,12 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/skills/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_dpmap"/>
         <AbbreviatedIRI>skills:SkillEntity_name</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user//profile/skills/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user//profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_cmap"/>
@@ -3242,12 +3242,12 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_opmap"/>
         <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/skills/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_cmap"/>
         <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user//profile/skills/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributors/edges/~/node/user//profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_opmap"/>
@@ -3262,12 +3262,12 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_opmap"/>
         <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/skills/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_4_opmap"/>
         <AbbreviatedIRI>skills:skill_action</AbbreviatedIRI>
-        <Literal>/data/user/profiles/result/edges/~/node/projects/edges/~/node/contributions/edges/~/node/user//profile/skills/~/name</Literal>
+        <Literal>/data/profiles/result/edges/~/node/projects/edges/~/node/contributions/edges/~/node/user//profile/skills/~/name</Literal>
     </AnnotationAssertion>
 </Ontology>
 
