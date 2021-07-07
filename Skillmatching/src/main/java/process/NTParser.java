@@ -12,7 +12,7 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.FileManager;
 
-/**This class loads an nt-format (in memory) file and creates rdf/turtle triples from it.
+/**This class loads an nt-format file and creates rdf/turtle triples from it.
  * It uses the JENA package for ontology handling*/
 public class NTParser {
 	
