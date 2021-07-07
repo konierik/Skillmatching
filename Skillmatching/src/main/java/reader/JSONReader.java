@@ -148,20 +148,25 @@ public class JSONReader {
 		ArrayList<String>cache=new ArrayList<String>();
 		String replace="";
 		//running through the input array
-		for (int i =0; i<inarray.get(0).size(); i++){
-			//get the string for the pointer of the property at i
-			String arrayval=inarray.get(0).get(i);
-			// replacing the array marker in the ident string with the actual array indices from the property pointer in arrayval. 
-			//So the relating ident pointer to the property pointer is created.
-			replace=replaceMarker(ident,arrayval);//ident.replaceAll("~", arrayval.replaceAll("\\D+",""));
-			
-			//replacing the array pointer with the domain value. For this the value from the pointer is read
-			inarray.get(0).get(i).replaceAll(arrayval, getPointerValue(replace));
-			cache.add(getPointerValue(replace)); 
-		}
-		//adding new information to the output array
-		outarray.add(0,cache);
-		outarray.add(1,inarray.get(1));
+		try {
+			for (int i =0; i<inarray.get(0).size(); i++){
+				//get the string for the pointer of the property at i
+				String arrayval=inarray.get(0).get(i);
+				// replacing the array marker in the ident string with the actual array indices from the property pointer in arrayval. 
+				//So the relating ident pointer to the property pointer is created.
+				replace=replaceMarker(ident,arrayval);//ident.replaceAll("~", arrayval.replaceAll("\\D+",""));
+				
+				//replacing the array pointer with the domain value. For this the value from the pointer is read
+				inarray.get(0).get(i).replaceAll(arrayval, getPointerValue(replace));
+				cache.add(getPointerValue(replace)); 
+			}
+			//adding new information to the output array
+			outarray.add(0,cache);
+			outarray.add(1,inarray.get(1));
+		}catch(Exception e) {
+			System.out.println(ident+ " not replacable due to Exception:");
+			e.printStackTrace();}
+
 		return outarray;
 	}
 	
