@@ -131,6 +131,11 @@ public class Action {
 		readUser.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_user_anonym.json");
 		readUser.open();
 		
+		JSONReader readProjects=new JSONReader();
+		//set the file to read and open it
+		readProjects.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_projects_anonym.json");
+		readProjects.open();
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
 		//			setup json2ntmapper
@@ -178,7 +183,7 @@ public class Action {
 		
 		//going through all 6 user_mapping_annotations
 		System.out.println("Instantiate User-mappings");
-		for (int i=1; i<=6;i++) { 
+		for (int i=1; i<=5;i++) { 
 			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
 			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
 			mapping.setClassmapping("wif_user_"+i+"_cmap");
@@ -196,6 +201,34 @@ public class Action {
 			ntmapper.instantiateToNTObjectproperties(objectannotations, readUser);
 		}
 		System.out.println("\n\n");
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//
+		//			Instantiate prject-mappings
+		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//going through all 3 project_mapping_annotations
+		System.out.println("Instantiate User-mappings");
+		for (int i=1; i<=3;i++) { 
+			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
+			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
+			mapping.setClassmapping("wif_project_"+i+"_cmap");
+			//mapping.setClassIdent("identifier");
+			mapping.setObjectpropertymapping("wif_project_"+i+"_opmap");
+			mapping.setDatapropertymapping("wif_project_"+i+"_dpmap");
+			
+			// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
+			classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
+			dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+			objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+				
+			ntmapper.instantiateToNTClasses(classannotations, readProjects );
+			ntmapper.instantiateToNTDataproperties(dataannotations, readProjects);
+			ntmapper.instantiateToNTObjectproperties(objectannotations, readProjects);
+		}
+		System.out.println("\n\n");
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
 		//			parse nt file, adding prefixes and import statements and converting to ttl format
@@ -215,7 +248,7 @@ public class Action {
 		ntparse.readNTModel();
 		ntparse.setOntologyIRI(instanceIRI);
 		ntparse.addImport(mapping.getIRIString());
-		//ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
 		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
 		ntparse.parseNT(instanceIRI);
 		
