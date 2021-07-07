@@ -123,7 +123,8 @@ public class JSONReader {
 					}
 				}
 			}catch(Exception e) {
-				e.printStackTrace();
+				System.out.println(newArray+" contains no value.");
+				//e.printStackTrace();
 			}
 		}
 		//write into the out array if there was a value for the searched key: (if outPartTwo>0 then there also was a value for outPartOne)
