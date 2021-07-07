@@ -60,9 +60,14 @@ query Issue() {
 					  id
 					  title
 					  status
+					  description
 					  creator{
 						id
 						username
+					  }
+					  tags{
+						name
+						id
 					  }
 					}
 				  }
@@ -75,6 +80,7 @@ query Issue() {
 		  
           tags {
           	name
+			id
           } 
 		  
 		  assignees{
@@ -95,8 +101,6 @@ query Project() {
           title
           description
           id
-          parentSlug
-          slug
           
           creator{
             id
@@ -136,6 +140,10 @@ query Project() {
                     id
                     username
                   }
+				  tags{
+					name
+					id
+				  }
                 }
               }
             }

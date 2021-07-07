@@ -518,9 +518,6 @@
         <NamedIndividual IRI="#Edit_and_commit"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Erik"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Forking"/>
     </Declaration>
     <Declaration>
@@ -558,9 +555,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Scratch"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Sonika"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SparQL"/>
@@ -618,9 +612,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#0_Person"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#0_Task_DesignSkill"/>
@@ -1048,10 +1039,6 @@
         <NamedIndividual IRI="#Edit_and_commit"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#User"/>
-        <NamedIndividual IRI="#Erik"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Contribution_process_phase"/>
         <NamedIndividual IRI="#Forking"/>
     </ClassAssertion>
@@ -1102,10 +1089,6 @@
     <ClassAssertion>
         <Class IRI="#programming_languages"/>
         <NamedIndividual IRI="#Scratch"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#User"/>
-        <NamedIndividual IRI="#Sonika"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#programming_languages"/>
@@ -1184,10 +1167,6 @@
         <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#User"/>
-        <NamedIndividual IRI="#0_Person"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Task"/>
         <NamedIndividual IRI="#0_Task_DesignSkill"/>
     </ClassAssertion>
@@ -1209,11 +1188,6 @@
         <ObjectProperty IRI="#Contribution_process_successor"/>
         <NamedIndividual IRI="#Edit_and_commit"/>
         <NamedIndividual IRI="#Forking"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#author_of"/>
-        <NamedIndividual IRI="#Erik"/>
-        <NamedIndividual IRI="#CAD_file"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
@@ -1256,16 +1230,6 @@
         <NamedIndividual IRI="#Pull_request"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#author_of"/>
-        <NamedIndividual IRI="#Sonika"/>
-        <NamedIndividual IRI="#Issues"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_skill"/>
-        <NamedIndividual IRI="#Sonika"/>
-        <NamedIndividual IRI="#DesignSkill"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#OSPD_process_predecessor"/>
         <NamedIndividual IRI="#Task_assignment"/>
         <NamedIndividual IRI="#Task_contribution"/>
@@ -1304,11 +1268,6 @@
         <ObjectProperty IRI="#fulfills_task"/>
         <NamedIndividual IRI="#0_Contribution"/>
         <NamedIndividual IRI="#0_Task_DesignSkill"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#contributes"/>
-        <NamedIndividual IRI="#0_Person"/>
-        <NamedIndividual IRI="#0_Contribution"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#requires_skill"/>
@@ -2780,6 +2739,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_cmap"/>
+        <IRI>#Tag</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_5_cmap"/>
         <IRI>#Tag</IRI>
         <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
@@ -2788,6 +2752,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <AnnotationProperty IRI="#wif_project_1_cmap"/>
         <IRI>#Tag</IRI>
         <Literal>/data/projects/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_project_3_cmap"/>
+        <IRI>#Tag</IRI>
+        <Literal>/data/projects/result/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_cmap"/>
@@ -2810,9 +2779,24 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>/data/issues/result/edges/~/node/project/tags/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Tag_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/tags/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
+        <IRI>#Tag_id</IRI>
+        <Literal>/data/issues/result/edges/~/node/tags/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_project_1_dpmap"/>
         <IRI>#Tag_id</IRI>
         <Literal>/data/projects/result/edges/~/node/tags/~/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_project_3_dpmap"/>
+        <IRI>#Tag_id</IRI>
+        <Literal>/data/projects/result/edges/~/node/tracker/issues/edges/~/node/tags/~/id</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
@@ -2835,6 +2819,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Tag_name</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_5_dpmap"/>
         <IRI>#Tag_name</IRI>
         <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
@@ -2843,6 +2832,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <AnnotationProperty IRI="#wif_project_1_dpmap"/>
         <IRI>#Tag_name</IRI>
         <Literal>/data/projects/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_project_3_dpmap"/>
+        <IRI>#Tag_name</IRI>
+        <Literal>/data/projects/result/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
@@ -2903,6 +2897,11 @@ Further detailing in DIN SPEC 3105-2</Literal>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
         <IRI>#Task_description</IRI>
         <Literal>/data/issues/result/edges/~/node/description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_dpmap"/>
+        <IRI>#Task_description</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/status</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_5_dpmap"/>
@@ -3324,6 +3323,11 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>/data/issues/result/edges/~/node/project/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_3_opmap"/>
+        <IRI>#tagged_with</IRI>
+        <Literal>/data/issues/result/edges/~/node/project/tracker/issues/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_5_opmap"/>
         <IRI>#tagged_with</IRI>
         <Literal>/data/issues/result/edges/~/node/tags/~/name</Literal>
@@ -3332,6 +3336,11 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <AnnotationProperty IRI="#wif_project_1_opmap"/>
         <IRI>#tagged_with</IRI>
         <Literal>/data/projects/result/edges/~/node/tags/~/name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_project_3_opmap"/>
+        <IRI>#tagged_with</IRI>
+        <Literal>/data/projects/result/edges/~/node/tracker/issues/edges/~/node/tags/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_user_2_opmap"/>
