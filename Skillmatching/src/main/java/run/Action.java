@@ -128,8 +128,8 @@ public class Action {
 		
 		JSONReader readUser=new JSONReader();
 		//set the file to read and open it
-		readIssues.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_user_anonym.json");
-		readIssues.open();
+		readUser.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_user_anonym.json");
+		readUser.open();
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -150,6 +150,7 @@ public class Action {
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		//going through all 5 issue_mapping_annotations
+		System.out.println("Instantiate Issue-mappings");
 		for (int i=1; i<=5;i++) { 
 			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
 			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
@@ -167,6 +168,7 @@ public class Action {
 			ntmapper.instantiateToNTDataproperties(dataannotations, readIssues);
 			ntmapper.instantiateToNTObjectproperties(objectannotations, readIssues);
 		}
+		System.out.println("\n\n");
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -175,24 +177,25 @@ public class Action {
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		//going through all 6 user_mapping_annotations
-//		//for (int i=1; i<=6;i++) { 
-//			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
-//			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
-//			mapping.setClassmapping("wif_user_1_cmap");
-//			//mapping.setClassIdent("identifier");
-//			mapping.setObjectpropertymapping("wif_user_1_opmap");
-//			mapping.setDatapropertymapping("wif_user_1_dpmap");
-//			
-//			// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
-//			classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
-//			dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
-//			objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
-//				
-//			ntmapper.instantiateToNTClasses(classannotations, readUser );
-//			ntmapper.instantiateToNTDataproperties(dataannotations, readUser);
-//			ntmapper.instantiateToNTObjectproperties(objectannotations, readUser);
-//		//}
-
+		System.out.println("Instantiate User-mappings");
+		for (int i=1; i<=6;i++) { 
+			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
+			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
+			mapping.setClassmapping("wif_user_"+i+"_cmap");
+			//mapping.setClassIdent("identifier");
+			mapping.setObjectpropertymapping("wif_user_"+i+"_opmap");
+			mapping.setDatapropertymapping("wif_user_"+i+"_dpmap");
+			
+			// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
+			classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
+			dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+			objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+				
+			ntmapper.instantiateToNTClasses(classannotations, readUser );
+			ntmapper.instantiateToNTDataproperties(dataannotations, readUser);
+			ntmapper.instantiateToNTObjectproperties(objectannotations, readUser);
+		}
+		System.out.println("\n\n");
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
 		//			parse nt file, adding prefixes and import statements and converting to ttl format
@@ -208,6 +211,7 @@ public class Action {
 		ntparse.setPrefix("", instanceIRI);
 		ntparse.setPrefix("oshpd", mapping.getIRIString());
 		ntparse.setPrefix("skills", skillIRI);
+		ntparse.setPrefix("owl", "http://www.w3.org/2002/07/owl");
 		ntparse.readNTModel();
 		ntparse.setOntologyIRI(instanceIRI);
 		ntparse.addImport(mapping.getIRIString());
