@@ -101,19 +101,10 @@ public class Action {
 		//Loading the ontology, here: from web
 		mapping.loadOnto();
 		mapping.mergeOntology(skillIRI);
-		/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
-		 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
-		mapping.setClassmapping("wif_issue_3_cmap");
-		//mapping.setClassIdent("identifier");
-		mapping.setObjectpropertymapping("wif_issue_3_opmap");
-		mapping.setDatapropertymapping("wif_issue_3_dpmap");
-		
-		// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
-		ArrayList<ArrayList<String>> classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
-		ArrayList<ArrayList<String>> dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
-		ArrayList<ArrayList<String>> objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
-		
-		
+		//annotation arrays for later instaniation
+		ArrayList<ArrayList<String>> classannotations=null;
+		ArrayList<ArrayList<String>> dataannotations = null;
+		ArrayList<ArrayList<String>> objectannotations = null;
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -135,6 +126,11 @@ public class Action {
 		readIssues.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_issues_anonym.json");
 		readIssues.open();
 		
+		JSONReader readUser=new JSONReader();
+		//set the file to read and open it
+		readIssues.setFile("C://Springboot-Repository//Skillmatch//Skillmatching//data//sampledata_user_anonym.json");
+		readIssues.open();
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
 		//			setup json2ntmapper
@@ -145,10 +141,65 @@ public class Action {
 		//setting iris for instantiation
 		ntmapper.setInstanceIRI(instanceIRI);
 		ntmapper.setMappingIRI(mapping.getIRI().toString());
-		//mapping the annotations to NT
-		ntmapper.instantiateToNTClasses(classannotations, readIssues );
-		ntmapper.instantiateToNTDataproperties(dataannotations, readIssues);
-		ntmapper.instantiateToNTObjectproperties(objectannotations, readIssues);
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//
+		//			Instantiate issue-mappings
+		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//going through all 5 issue_mapping_annotations
+		for (int i=1; i<=5;i++) { 
+			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
+			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
+			mapping.setClassmapping("wif_issue_"+i+"_cmap");
+			//mapping.setClassIdent("identifier");
+			mapping.setObjectpropertymapping("wif_issue_"+i+"_opmap");
+			mapping.setDatapropertymapping("wif_issue_"+i+"_dpmap");
+			
+			// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
+			classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
+			dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+			objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+				
+			ntmapper.instantiateToNTClasses(classannotations, readIssues );
+			ntmapper.instantiateToNTDataproperties(dataannotations, readIssues);
+			ntmapper.instantiateToNTObjectproperties(objectannotations, readIssues);
+		}
+		
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//
+		//			Instantiate user-mappings
+		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//going through all 6 user_mapping_annotations
+//		//for (int i=1; i<=6;i++) { 
+//			/*Define what mapping annotations should be looked for (in case there are more mappings in the ontology).
+//			 * Mappings can be named differently if the ontology is used to map several sources of different structure.*/
+//			mapping.setClassmapping("wif_user_1_cmap");
+//			//mapping.setClassIdent("identifier");
+//			mapping.setObjectpropertymapping("wif_user_1_opmap");
+//			mapping.setDatapropertymapping("wif_user_1_dpmap");
+//			
+//			// Extract the pointers from the mapping annotations and iris of the respecting concepts as lists
+//			classannotations = mapping.getClassesAnnotations(); //Format: [[classmapping pointer][rdfsType][classIRI]]
+//			dataannotations = mapping.getDatapropertiesAnnotations(); //Format: dataproertyIRI|datapropertymapping pointer
+//			objectannotations = mapping.getObjectpropertiesAnnotations(); //Format: objectproperty IRI|objectpropertymapping pointer
+//				
+//			ntmapper.instantiateToNTClasses(classannotations, readUser );
+//			ntmapper.instantiateToNTDataproperties(dataannotations, readUser);
+//			ntmapper.instantiateToNTObjectproperties(objectannotations, readUser);
+//		//}
+
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//
+		//			parse nt file, adding prefixes and import statements and converting to ttl format
+		//
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+		
 		//Set output string for file
 		String ntoutput="C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.nt";
 		ntmapper.setNToutputLocation(ntoutput);
@@ -163,17 +214,10 @@ public class Action {
 		//ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
 		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
 		ntparse.parseNT(instanceIRI);
-		/*
-		for (int i=0; i<classannotations.get(0).size();i++) { 
-			ArrayList<ArrayList<String>> jsondata = readIssues.parsePointer(classannotations.get(0).get(i));
-			for (int j=0; j<jsondata.get(0).size();j++) {
-				
-			}
-			System.out.println(i);
-			System.out.println(jsondata);
-		}*/
+		
 		
 
 	
 	}
+	
 }
