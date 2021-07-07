@@ -2408,6 +2408,16 @@
         </DataOneOf>
     </DataPropertyRange>
     <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_1_cmap"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/project/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#wif_issue_5_cmap"/>
+        <AbbreviatedIRI>owl:Thing</AbbreviatedIRI>
+        <Literal>/data/issues/result/edges/~/node/id</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>oldskill:applyToolsForContentDevelopment</AbbreviatedIRI>
         <Literal>using_digital_tools_for_collaboration_content_creation_and_problem_solving</Literal>
