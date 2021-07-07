@@ -2429,7 +2429,7 @@
 Bonvoisin et al. (2018). &quot;How participative is open source hardware? Insights from online repository mining&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#wif_user_1_opmap"/>
+        <AnnotationProperty IRI="#wif_user_1_cmap"/>
         <IRI>#Contribution</IRI>
         <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/id</Literal>
     </AnnotationAssertion>
@@ -3250,7 +3250,7 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <Literal>/data/issues/result/edges/~/node/project/contributors/edges/~/node/user/profile/skills/~/name</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="#wif_user_1_opmap"/>
+        <AnnotationProperty IRI="#wif_user_1_cmap"/>
         <AbbreviatedIRI>skills:Skill_Entity</AbbreviatedIRI>
         <Literal>/data/profiles/result/edges/~/node/skills/~/name</Literal>
     </AnnotationAssertion>
