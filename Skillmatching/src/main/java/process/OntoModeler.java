@@ -441,6 +441,14 @@ System.out.println("\t"+opa.getDomain().toString());
 			System.out.println("Ontologies not merged.");
 		}
 	}
+	
+	public void createSubClass(String classiri, String subclassiri) {
+	    OWLClass clsA = onto_df.getOWLClass(IRI.create(classiri));
+	    OWLClass clsB = onto_df.getOWLClass(IRI.create(subclassiri));
+	    OWLAxiom axiom = onto_df.getOWLSubClassOfAxiom(clsA, clsB);
+	    AddAxiom addAxiom = new AddAxiom(onto, axiom);
+	    onto_man.applyChange(addAxiom);
+	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
@@ -495,5 +503,8 @@ System.out.println("\t"+opa.getDomain().toString());
 		return prefix;
 	}
 	
+	public OWLOntology getOnto() {
+		return onto;
+	}
 	
 }
