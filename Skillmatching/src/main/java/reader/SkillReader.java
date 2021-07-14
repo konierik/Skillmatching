@@ -114,6 +114,36 @@ public class SkillReader {
 		reader.close();
 		
 	}
+	public void instantiateTargetsAsClass() {
+		//read the json file
+		JsonStructure jsonStructure = reader.read();
+		//creating the json pointer to search for in the file
+		JsonPointer jsonPointer = Json.createPointer(pointer);
+		//Array to save results
+		JsonArray jsonArray=null;
+		//check if the pointer exists in the json file structure
+		if(jsonPointer.containsValue(jsonStructure)) {
+			//if pointer/data exists: 
+			//loading ontology from local file
+			try {
+				mod.loadOnto(ontofile);
+				//setSkillPrefix(mod.getIRIString());
+			} catch (OWLOntologyCreationException e) {
+				System.out.println("Ontology was not loaded: ");
+				e.printStackTrace();
+			}
+			//loading the pointed information as JsonArray
+			jsonArray=jsonPointer.getValue(jsonStructure).asJsonArray();
+			//running through the Array and looking for the values of the keys "skill_target" and "entity_type", than instantiating them as individuals of a class
+			for (int i=0; i<jsonArray.size();i++) {
+				String subclass=jsonArray.get(i).asJsonObject().getString(skill_target);
+				String Class=jsonArray.get(i).asJsonObject().getString(entity_type);
+				mod.createSubClass(skills+"#"+subclass, skills+"#"+Class);
+			}
+		}
+		reader.close();
+		
+	}
 	
 	
 	/**This method calls the saving function of the OntoModeler handling the ontology.
