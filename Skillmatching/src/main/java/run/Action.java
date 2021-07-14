@@ -229,6 +229,9 @@ public class Action {
 		}
 		System.out.println("\n\n");
 		
+		readIssues.close();
+		readUser.close();
+		readProjects.close();
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
 		//			parse nt file, adding prefixes and import statements and converting to ttl format
