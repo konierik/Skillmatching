@@ -48,6 +48,7 @@ public class JSON2NTmapper {
 						//instantiate the jth- value as an individual of class i
 						addNTStatement(instanceIRI+"#"+individual,rdfsType,classIRI);
 						//if the instance is from the skill ontology, it will be set as the same individual as the one in the skill ontology. so it will be accordingly hierarchized.
+						
 						if(classIRI.contentEquals("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#Skill_Entity")||classIRI.contentEquals("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl#Tag")) {
 							addNTStatement(instanceIRI+"#"+individual,"http://www.w3.org/2002/07/owl#sameAs","https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#"+individual);
 						}
@@ -175,6 +176,10 @@ public class JSON2NTmapper {
 		}
 	}
 	
+	public void openMappingOntology() {
+		mapping.setIRI(mappingIRI);
+		mapping.loadOnto();
+	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
