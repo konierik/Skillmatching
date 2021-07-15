@@ -35,9 +35,6 @@
         <Literal>Open Source Hardware Product Development (OSHPDP) schema</Literal>
     </Annotation>
     <Declaration>
-        <Class abbreviatedIRI="oldskill:Skills"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="oldskill:Topic"/>
     </Declaration>
     <Declaration>
@@ -66,9 +63,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Data_format"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DesignSkill"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Development"/>
@@ -164,9 +158,6 @@
         <Class IRI="#Role"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Skills"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Tag"/>
     </Declaration>
     <Declaration>
@@ -179,16 +170,7 @@
         <Class IRI="#Validation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#languages"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#mech_design"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#programming_languages"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Input/Ideas"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#Contribution_process_predecessor"/>
@@ -344,6 +326,9 @@
         <ObjectProperty IRI="#reviews"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#reviews_task"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#skill_of"/>
     </Declaration>
     <Declaration>
@@ -363,6 +348,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#task_created_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#task_has_review"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#task_of"/>
@@ -512,9 +500,6 @@
         <NamedIndividual IRI="#CSharp"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#DesignSkill"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Edit_and_commit"/>
     </Declaration>
     <Declaration>
@@ -575,9 +560,6 @@
         <NamedIndividual IRI="#VisualBasic"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#designMechanicalComponent"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#.art"/>
     </Declaration>
     <Declaration>
@@ -606,15 +588,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#.3dm"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#0_Contribution"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#0_Task_DesignSkill"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#C++"/>
@@ -795,43 +768,11 @@
         </ObjectMinCardinality>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Skills"/>
-        <ObjectSomeValuesFrom>
+        <Class abbreviatedIRI="skills:Skill_Entity"/>
+        <ObjectMinCardinality cardinality="1">
             <ObjectProperty abbreviatedIRI="skills:possible_action"/>
             <Class IRI="#User"/>
-        </ObjectSomeValuesFrom>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#author_of"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#stored_format"/>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#data_implies_skill"/>
-                    <Class IRI="#mech_design"/>
-                </ObjectSomeValuesFrom>
-            </ObjectSomeValuesFrom>
-        </ObjectSomeValuesFrom>
-        <ObjectHasValue>
-            <ObjectProperty IRI="#has_skill"/>
-            <NamedIndividual IRI="#designMechanicalComponent"/>
-        </ObjectHasValue>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#contributes"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#fulfills_task"/>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#requires_skill"/>
-                    <Class IRI="#mech_design"/>
-                </ObjectSomeValuesFrom>
-            </ObjectSomeValuesFrom>
-        </ObjectSomeValuesFrom>
-        <ObjectHasValue>
-            <ObjectProperty IRI="#has_skill"/>
-            <NamedIndividual IRI="#designMechanicalComponent"/>
-        </ObjectHasValue>
+        </ObjectMinCardinality>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Author"/>
@@ -869,10 +810,6 @@
                 <Class IRI="#Task"/>
             </ObjectMinCardinality>
         </ObjectUnionOf>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DesignSkill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Development"/>
@@ -915,20 +852,6 @@
         <Class IRI="#CAD_format"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MCAD_format"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#data_implies_skill"/>
-            <Class IRI="#mech_design"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MCAD_format"/>
-        <ObjectHasValue>
-            <ObjectProperty IRI="#data_implies_skill"/>
-            <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
-        </ObjectHasValue>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Member"/>
         <Class IRI="#User"/>
     </SubClassOf>
@@ -968,10 +891,6 @@
         <Class IRI="#Requirement_definition_process_phase"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Review"/>
-        <Class IRI="#Input/Ideas"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Review_document"/>
         <Class IRI="#Document"/>
     </SubClassOf>
@@ -980,36 +899,28 @@
         <Class IRI="#PLC_phase"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#languages"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#mech_design"/>
-        <Class IRI="#DesignSkill"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#programming_languages"/>
-        <Class IRI="#languages"/>
+        <Class abbreviatedIRI="skills:Languages"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Contribution"/>
-        <Class IRI="#Contribution_process_phase"/>
-        <Class IRI="#Data_format"/>
-        <Class IRI="#Document"/>
-        <Class IRI="#Documentation"/>
-        <Class IRI="#OSPD_process_phase"/>
-        <Class IRI="#PLC_phase"/>
-        <Class IRI="#Product_artefact"/>
-        <Class IRI="#Project"/>
-        <Class IRI="#Project_team"/>
-        <Class IRI="#Release"/>
-        <Class IRI="#Requirement"/>
-        <Class IRI="#Requirement_definition_process_phase"/>
-        <Class IRI="#Role"/>
-        <Class IRI="#Skills"/>
-        <Class IRI="#Task"/>
-        <Class IRI="#Input/Ideas"/>
-    </DisjointClasses>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#does_task"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#tagged_with"/>
+                <Class abbreviatedIRI="skills:Skill_Entity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectSomeValuesFrom>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="skills:skill_action"/>
+                <Class abbreviatedIRI="skills:Skill_Entity"/>
+            </ObjectSomeValuesFrom>
+            <DataHasValue>
+                <DataProperty abbreviatedIRI="skills:SkillEntity_level"/>
+                <Literal>suggested</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Project"/>
         <Class IRI="#User"/>
@@ -1029,10 +940,6 @@
     <ClassAssertion>
         <Class IRI="#programming_languages"/>
         <NamedIndividual IRI="#CSharp"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#DesignSkill"/>
-        <NamedIndividual IRI="#DesignSkill"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Contribution_process_phase"/>
@@ -1115,10 +1022,6 @@
         <NamedIndividual IRI="#VisualBasic"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#mech_design"/>
-        <NamedIndividual IRI="#designMechanicalComponent"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#MCAD_format"/>
         <NamedIndividual IRI="#.art"/>
     </ClassAssertion>
@@ -1157,18 +1060,6 @@
     <ClassAssertion>
         <Class IRI="#MCAD_format"/>
         <NamedIndividual IRI="#.3dm"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Contribution"/>
-        <NamedIndividual IRI="#0_Contribution"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#mech_design"/>
-        <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Task"/>
-        <NamedIndividual IRI="#0_Task_DesignSkill"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#programming_languages"/>
@@ -1263,16 +1154,6 @@
         <ObjectProperty IRI="#OSPD_process_successor"/>
         <NamedIndividual IRI="#Task_validation"/>
         <NamedIndividual IRI="#Task_contribution"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#fulfills_task"/>
-        <NamedIndividual IRI="#0_Contribution"/>
-        <NamedIndividual IRI="#0_Task_DesignSkill"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#requires_skill"/>
-        <NamedIndividual IRI="#0_Task_DesignSkill"/>
-        <NamedIndividual IRI="#0_Mechanical_Design_skill"/>
     </ObjectPropertyAssertion>
     <NegativeObjectPropertyAssertion>
         <ObjectProperty IRI="#OSPD_process_predecessor"/>
@@ -1580,6 +1461,10 @@
         <ObjectProperty IRI="#reviews"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#reviews_task"/>
+        <ObjectProperty IRI="#task_has_review"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#skill_tag_task"/>
         <ObjectProperty IRI="#task_tag_skill"/>
     </InverseObjectProperties>
@@ -1787,10 +1672,6 @@
         <Class IRI="#Member"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#needed_for"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#project_created_by"/>
         <Class IRI="#Project"/>
     </ObjectPropertyDomain>
@@ -1835,8 +1716,8 @@
         <Class IRI="#Review_document"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#skill_of"/>
-        <Class IRI="#Skills"/>
+        <ObjectProperty IRI="#reviews_task"/>
+        <Class IRI="#Review"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#skill_tag_task"/>
@@ -1860,6 +1741,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#task_created_by"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#task_has_review"/>
         <Class IRI="#Task"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1959,10 +1844,6 @@
         <Class IRI="#Task"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#data_implies_skill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#described_by_documentation"/>
         <Class IRI="#Documentation"/>
     </ObjectPropertyRange>
@@ -2013,10 +1894,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_member"/>
         <Class IRI="#Member"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#has_skill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_task"/>
@@ -2107,10 +1984,6 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#requires_skill"/>
-        <Class abbreviatedIRI="oldskill:Skills"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#requires_skill"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectInverseOf>
                 <ObjectProperty abbreviatedIRI="skills:skill_action"/>
@@ -2125,6 +1998,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#reviews"/>
         <Class IRI="#Contribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reviews_task"/>
+        <Class IRI="#Task"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#skill_of"/>
@@ -2153,6 +2030,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#task_created_by"/>
         <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#task_has_review"/>
+        <Class IRI="#Review"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#task_of"/>
@@ -2465,12 +2346,6 @@ Bonvoisin et al. (2018). &quot;How participative is open source hardware? Insigh
         <AnnotationProperty IRI="#wif_user_1_dpmap"/>
         <IRI>#Contribution_title</IRI>
         <Literal>/data/profiles/result/edges/~/node/contributions/edges/~/node/title</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#DesignSkill</IRI>
-        <Literal>throws author into Design skill:
-author_of some (Document and Document_file_extension value &quot;.stp&quot;)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3391,11 +3266,6 @@ In strict terms a documentation is a bundle of diverse documents, comparable to 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#written_by</IRI>
         <Literal>schema.org equivalent?</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Input/Ideas</IRI>
-        <Literal>dummy class, to hold ideas that might be useful and implemented later on</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="#wif_issue_1_dpmap"/>
