@@ -80,6 +80,15 @@ public class NTParser {
 	        System.err.println("cannot parse " + file+". Please set file/inputstream and outputstream.");;
 	    }
 	}
+	public void parseNT(String baseIRI, String language) {
+	    if (is != null) {
+	        //model.read(is, null, "N-TRIPLE");
+	        model.write(output, language,baseIRI);
+	        
+	    } else {
+	        System.err.println("cannot parse " + file+". Please set file/inputstream and outputstream.");;
+	    }
+	}
 	
 	public void readNTModel() {
 	    if (is != null) {
