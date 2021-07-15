@@ -55,7 +55,7 @@ public class CreateInstances {
 		//
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.ttl";
+		String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.owl";
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -195,8 +195,8 @@ public class CreateInstances {
 		ntparse.setOntologyIRI(instanceIRI);
 		ntparse.addImport(mapping.getIRIString());
 		ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
-		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
-		ntparse.parseNT(instanceIRI);
+		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.owl");
+		ntparse.parseNT(instanceIRI,"RDF/XML");
 		
 		
 		//infer asserted axioms of the new ontology:
@@ -207,7 +207,7 @@ public class CreateInstances {
 		//instance.mergeOntology(mapping.getIRIString());
 		instance.assertInferences();
 		try {
-			instance.saveOntology("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
+			instance.saveOntology("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.owl");
 		} catch (OWLOntologyStorageException e) {
 			e.printStackTrace();
 		} catch (OWLOntologyCreationException e) {
