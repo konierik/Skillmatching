@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import process.*;
 import reader.*;
@@ -112,7 +113,7 @@ public class Action {
 		//
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.ttl";
+		String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.owl";
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//
@@ -252,10 +253,26 @@ public class Action {
 		ntparse.setOntologyIRI(instanceIRI);
 		ntparse.addImport(mapping.getIRIString());
 		ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
-		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
-		ntparse.parseNT(instanceIRI);
+		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.owl");
+		ntparse.parseNT(instanceIRI,"RDF/XML");
 		
-		
+		//infer asserted axioms of the new ontology:
+		OntoModeler instance= new OntoModeler();
+		instance.setIRI(instanceIRI);
+		instance.loadOnto();
+		//instance.mergeOntology(skillIRI);
+		//instance.mergeOntology(mapping.getIRIString());
+		instance.assertInferences();
+		try {
+			instance.saveOntology("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances_inferred.owl");
+		} catch (OWLOntologyStorageException e) {
+			e.printStackTrace();
+		} catch (OWLOntologyCreationException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+			
 
 	
 	}

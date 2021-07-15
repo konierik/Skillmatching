@@ -3,6 +3,9 @@ package run;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+
 import process.JSON2NTmapper;
 import process.NTParser;
 import process.OntoModeler;
@@ -195,6 +198,23 @@ public class CreateInstances {
 		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
 		ntparse.parseNT(instanceIRI);
 		
+		
+		//infer asserted axioms of the new ontology:
+		OntoModeler instance= new OntoModeler();
+		instance.setIRI(instanceIRI);
+		instance.loadOnto();
+		//instance.mergeOntology(skillIRI);
+		//instance.mergeOntology(mapping.getIRIString());
+		instance.assertInferences();
+		try {
+			instance.saveOntology("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.ttl");
+		} catch (OWLOntologyStorageException e) {
+			e.printStackTrace();
+		} catch (OWLOntologyCreationException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 
 	

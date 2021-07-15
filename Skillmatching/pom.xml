@@ -68,6 +68,12 @@
 	    <artifactId>jsoup</artifactId>
 	    <version>1.13.1</version>
 	</dependency>
-
+	<!-- For reaoner hermit -->
+	<!-- https://mvnrepository.com/artifact/net.sf.trove4j/trove4j -->
+	<dependency>
+	    <groupId>net.sf.trove4j</groupId>
+	    <artifactId>trove4j</artifactId>
+	    <version>3.0.2</version>
+	</dependency>
   </dependencies>
 </project>
