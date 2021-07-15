@@ -4,7 +4,12 @@ package process;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.semanticweb.HermiT.Configuration;
+import org.semanticweb.HermiT.ReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.AddImport;
@@ -28,6 +33,12 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.OWLPropertyAssertionAxiom;
+import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
+import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
+import org.semanticweb.owlapi.util.InferredPropertyAssertionGenerator;
 import org.semanticweb.owlapi.util.OWLOntologyMerger;
 import org.semanticweb.owlapi.util.SimpleIRIMapper;
 
@@ -448,6 +459,22 @@ System.out.println("\t"+opa.getDomain().toString());
 	    OWLAxiom axiom = onto_df.getOWLSubClassOfAxiom(clsA, clsB);
 	    AddAxiom addAxiom = new AddAxiom(onto, axiom);
 	    onto_man.applyChange(addAxiom);
+	}
+	
+	public void assertInferences() {
+		OWLReasonerFactory reasonerFactory = new ReasonerFactory();
+		Configuration config= new Configuration();
+		OWLReasoner reasoner = reasonerFactory.createReasoner(onto);
+		reasoner.precomputeInferences(InferenceType.values());
+		InferredPropertyAssertionGenerator generator = new InferredPropertyAssertionGenerator();
+		Set<OWLPropertyAssertionAxiom<?, ?>> axioms = generator.createAxioms(onto_df, reasoner);
+		for (Iterator<OWLPropertyAssertionAxiom<?, ?>> it = axioms.iterator(); it.hasNext(); ) {
+			OWLPropertyAssertionAxiom<?, ?> ax = it.next();
+			System.out.println(ax+"\n");
+			onto.addAxiom(ax);
+			//AddAxiom addy= new AddAxiom(onto, ax);
+			//onto_man.applyChange(addy);
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
