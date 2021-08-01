@@ -64,7 +64,7 @@ public class JSONReader {
 	 * The pointer does not necessary have to include array markers (~), but due to the complex return type
 	 * it is recommended to use another function for getting a simple json value. 
 	 * @return The return type is a twofold ArrayList including strings. 
-	 * <br>Format: |pointer to the key|value of the pointer|<br>
+	 * <br>Format:[[pointer to the key][value of the pointer key]]<br>
 	 * Although the method is recursive, the return type is designed for a pointer with two array markers max.
 	 * In the case of more markers the return type is not trivial and difficult to read. For this it would be best to add Arrays (outPartThree,..., etc.)*/
 	public ArrayList<ArrayList<String>> parsePointer(String input){
@@ -92,6 +92,7 @@ public class JSONReader {
 			//check if the pointer exists: the domain and range (here without "") is added to the relating arrays
 			if(jsonPointer.containsValue(jsonStructure)) {
 					outPartOne.add(input);
+					//add value without ""
 					outPartTwo.add(jsonPointer.getValue(jsonStructure).toString().replace("\"", ""));
 			}else {
 				System.out.println("JsonPointer: "+input+"\nFound status: "+jsonPointer.containsValue(jsonStructure));
