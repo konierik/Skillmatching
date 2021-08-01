@@ -114,6 +114,8 @@ public class SkillReader {
 		reader.close();
 		
 	}
+	
+	
 	public void instantiateTargetsAsClass() {
 		//read the json file
 		JsonStructure jsonStructure = reader.read();
