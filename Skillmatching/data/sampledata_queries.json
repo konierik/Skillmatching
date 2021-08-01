@@ -11,7 +11,7 @@ query Issue() {
           description
           status
 		  
-		  creator { # returns type "User", author of the issue
+		  creator { 
           	id
             username
             profile{
@@ -22,7 +22,7 @@ query Issue() {
             }
           }
 		  
-          project { # returns type "Project", project that contains this issue
+          project { 
           	id
 			title
 			description
