@@ -51,9 +51,9 @@ import static org.semanticweb.owlapi.search.Searcher.annotations;
 public class OntoModeler {
 	
 	/**A string that contains the namespace & location of the OSHPD ontology representing a possible OSH project work landscape.*/
-	private String OSHPD ="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/OSHPD_schema.owl";
+	//private String OSHPD ="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/OSHPD_schema.owl";
 	/**A string that contains the namespace & location of the skills ontology that is imported into the OSHPD ontology*/
-	private String skills="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl";
+	//private String skills="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/skills.owl";
 	/**A string containing several prefixes used in the ontologies.*/
 	private String prefix="";	
 	
@@ -439,6 +439,8 @@ System.out.println("\t"+opa.getDomain().toString());
 		onto_man.applyChange(addAxiomChange);	
 	}
 	
+	/**Merges the mapping ontology with the ontology given in the parameter
+	 * @param OntologyIRItoMerge Iri of the ontology that should be merged with the existing ontology in the OntoModeler*/
 	public void mergeOntology(String OntologyIRItoMerge) {
 		try {
 			OWLOntology merge=onto_man.loadOntology(IRI.create(OntologyIRItoMerge));
@@ -453,6 +455,9 @@ System.out.println("\t"+opa.getDomain().toString());
 		}
 	}
 	
+	/**Method that creates a subclass axiom in the ontology.
+	 * @param classiri IRI of the superclass
+	 * @param subclassiri IRI of the subclass*/
 	public void createSubClass(String classiri, String subclassiri) {
 	    OWLClass clsA = onto_df.getOWLClass(IRI.create(classiri));
 	    OWLClass clsB = onto_df.getOWLClass(IRI.create(subclassiri));
@@ -461,6 +466,7 @@ System.out.println("\t"+opa.getDomain().toString());
 	    onto_man.applyChange(addAxiom);
 	}
 	
+	/**This method runs the hermit reasoner over the ontology and asserts all inferences the reasoner finds.*/
 	public void assertInferences() {
 		OWLReasonerFactory reasonerFactory = new ReasonerFactory();
 		Configuration config= new Configuration();

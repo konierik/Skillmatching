@@ -13,7 +13,13 @@ import reader.JSONReader;
 
 public class CreateInstances {
 
-	public static String skillIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl";
+	//variable for skill ontology iri
+	private static String skillIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl";
+	//variable for mapping ontology iri
+	private static String mappingIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl";
+	//variable for instance ontology iri
+	private static String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.owl";
+	
 	
 	public static void main (String[] args) throws IOException {
 		/*A mapping OntoModeler is created to instantiate Project 
@@ -39,7 +45,7 @@ public class CreateInstances {
 		// Creating an OntoModeler for the ontology holding the mappings
 		OntoModeler mapping=new OntoModeler();
 		//Setting the IRI of the ontology
-		mapping.setIRI("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl");
+		mapping.setIRI(mappingIRI);
 		//Loading the ontology, here: from web
 		mapping.loadOnto();
 		//merge the skill ontology into the Modeler, so every class, property and instance is accessible
@@ -48,14 +54,6 @@ public class CreateInstances {
 		ArrayList<ArrayList<String>> classannotations=null;
 		ArrayList<ArrayList<String>> dataannotations = null;
 		ArrayList<ArrayList<String>> objectannotations = null;
-		
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//
-		//			variables for instance ontology
-		//
-		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-		String instanceIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.owl";
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////////////////
 		//

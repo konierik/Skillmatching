@@ -31,37 +31,7 @@ public class NTParser {
 	public NTParser(InputStream streamy) {
 		setIntputStream(streamy);
 	}
-	
-	public static void main(String[] args) {
-		OntModel testmodel= ModelFactory.createOntologyModel();
-	    InputStream in = FileManager.get().open("https://github.com/konierik/O-N/raw/master/ontology/NTInstanceProperties.nt");
-	    OutputStream out = null;
-	    try {
-			out= new FileOutputStream(new File("C:\\Users\\konierik\\Desktop\\Family_test\\NTparseJENA.ttl"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	    
-	    if (in != null) {
-	        
-	    	testmodel.setDynamicImports(true);
-	        testmodel.addLoadedImport("https://github.com/konierik/O-N/raw/master/ontology/Family2.owl");
-	        testmodel.setNsPrefix("family", "https://github.com/konierik/O-N/raw/master/ontology/Family2.owl#");
-	        testmodel.setNsPrefix("", "https://github.com/konierik/O-N/raw/master/ontology/NTInstances.ttl#");
-	        testmodel.setNsPrefix("owl","http://www.w3.org/2002/07/owl#");
-	        testmodel.read(in, null, "N-TRIPLE");
-	        
-	        Ontology ont = testmodel.createOntology("https://github.com/konierik/O-N/raw/master/ontology/NTInstanceProperties.ttl");
-	        ont.addImport(testmodel.createResource("https://github.com/konierik/O-N/raw/master/ontology/Family2.owl"));
-	       
-	        testmodel.write(out, "TURTLE","https://github.com/konierik/O-N/raw/master/ontology/NTInstances.ttl");
-	        
-	    } else {
-	        System.err.println("cannot read " + "");;
-	    }
-	}
-	
-	
+		
 	public void parseNT() {
 	    if (is != null) {
 	        //model.read(is, null, "N-TRIPLE");
