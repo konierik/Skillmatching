@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1625692619115" name="duplicate:https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl" uri="on_OSHPDP_schema.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1625692619115" name="duplicate:https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl" uri="on_OSHPDP_schema2.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1625692619115" name="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl" uri="on_skills.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1626952586824" name="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl" uri="on_skills_classes.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1626952586824" name="duplicate:https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.owl" uri="on_Instances.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1626952586824" name="duplicate:https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_Instances.owl" uri="on_Instances_inferred.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1626952586824" name="duplicate:https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl" uri="on_OSHPDP_schema.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1626952586824" name="duplicate:https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl" uri="on_OSHPDP_schema2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1626952586824" name="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl" uri="on_skills.owl"/>
     </group>
 </catalog>
