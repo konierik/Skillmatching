@@ -23,7 +23,7 @@ public class NTParser {
 	private OutputStream output;
 	
 	
-	
+	//Conctructors
 	public NTParser(String file) {
 		setFile(file);
 	}
@@ -31,7 +31,9 @@ public class NTParser {
 	public NTParser(InputStream streamy) {
 		setIntputStream(streamy);
 	}
-		
+	
+	
+	/**Creates a turtle model out of the loaded NT intputstream*/
 	public void parseNT() {
 	    if (is != null) {
 	        //model.read(is, null, "N-TRIPLE");
@@ -41,6 +43,7 @@ public class NTParser {
 	        System.err.println("cannot parse " + file+". Please set file/inputstream and outputstream.");;
 	    }
 	}
+	/**Creates a turtle model out of the loaded NT intputstream and adds a base iri*/
 	public void parseNT(String baseIRI) {
 	    if (is != null) {
 	        //model.read(is, null, "N-TRIPLE");
@@ -50,6 +53,9 @@ public class NTParser {
 	        System.err.println("cannot parse " + file+". Please set file/inputstream and outputstream.");;
 	    }
 	}
+	/**Creates a model in a defined language out of the loaded NT intputstream and adds a base iri
+	 * @param language Language of the final file
+	 * @param baseIRI Base iri that should be added to the model*/
 	public void parseNT(String baseIRI, String language) {
 	    if (is != null) {
 	        //model.read(is, null, "N-TRIPLE");
@@ -60,6 +66,7 @@ public class NTParser {
 	    }
 	}
 	
+	/**Loads the set nt-file*/
 	public void readNTModel() {
 	    if (is != null) {
 	        model.read(is, null, "N-TRIPLE");
@@ -67,6 +74,22 @@ public class NTParser {
 	    	System.err.println("cannot read " + file+". Please set file/inputstream and outputstream.");;
 	    }
 	}
+	
+	/**Adds an import statement to the model
+	 * @param ontologyIRI ontology that should be imported.*/
+	public void addImport(String ontologyIRI) {
+//		model.setDynamicImports(true);
+//        model.addLoadedImport(ontologyIRI);
+		ontology.addImport(model.createResource(ontologyIRI));
+	       
+       
+	}
+	////////////////////////////////////////
+	//
+	//		setter
+	//
+	////////////////////////////////////////
+	
 	
 	public void setIntputStream(InputStream streamy) {
 		is=streamy;
@@ -96,13 +119,7 @@ public class NTParser {
 		
 	}
 	
-	public void addImport(String ontologyIRI) {
-//		model.setDynamicImports(true);
-//        model.addLoadedImport(ontologyIRI);
-		ontology.addImport(model.createResource(ontologyIRI));
-	       
-       
-	}
+
 
 	
 }
