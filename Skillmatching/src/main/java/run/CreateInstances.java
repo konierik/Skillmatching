@@ -186,15 +186,16 @@ public class CreateInstances {
 		String ntoutput="C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.nt";
 		ntmapper.setNToutputLocation(ntoutput);
 		ntmapper.toNTFile();
+		
 		NTParser ntparse=new NTParser(ntoutput);
-		ntparse.setPrefix("", instanceIRI);
+		ntparse.setPrefix(":", instanceIRI);
 		ntparse.setPrefix("oshpd", mapping.getIRIString());
 		ntparse.setPrefix("skills", skillIRI);
 		ntparse.setPrefix("owl", "http://www.w3.org/2002/07/owl");
 		ntparse.readNTModel();
 		ntparse.setOntologyIRI(instanceIRI);
 		ntparse.addImport(mapping.getIRIString());
-		ntparse.addImport("https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl");
+		ntparse.addImport(skillIRI);
 		ntparse.setOutput("C://Springboot-Repository//Skillmatch//Skillmatching//data//on_Instances.owl");
 		ntparse.parseNT(instanceIRI,"RDF/XML");
 		
