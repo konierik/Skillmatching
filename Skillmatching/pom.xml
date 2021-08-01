@@ -5,11 +5,11 @@
   <version>0.0.1-SNAPSHOT</version>
    <dependencies>
     <!-- slf4j logger -->
-  		<dependency>
+  	<!-- 	<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.25</version>
-		</dependency>
+		</dependency>-->
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
@@ -75,5 +75,50 @@
 	    <artifactId>trove4j</artifactId>
 	    <version>3.0.2</version>
 	</dependency>
+	
+	
+	<!-- Springboot API Web services -->
+
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.1.4.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+			<version>2.1.4.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>2.1.4.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-tomcat</artifactId>
+		   <version>2.0.7.RELEASE</version>
+		   <scope>provided</scope>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20190722</version>
+		</dependency>
+		
   </dependencies>
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+  
 </project>
