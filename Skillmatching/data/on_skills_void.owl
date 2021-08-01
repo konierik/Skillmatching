@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl">
+    <Prefix name="" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="oshpd" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/OSHPD_schema.owl#"/>
+    <Prefix name="skills" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal>Erik Paul Konietzko</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal>2021-04-28</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+        <Literal>GNU General Public License v3.0</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal>2021-05-19</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Skills Hierarchy</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brandname"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Languages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Machine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Skill_Entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cars_mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#classical_languages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#electrics_electronics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#furniture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ict"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mechanics"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#buildes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#designes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#distributes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estimates_costs_for"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#installs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#legal_information"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#maintains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#possible_action"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#product_pricing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#skill_action"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#skill_has_topic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teaches_about"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#technical_writing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#topic_of_skill"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#alternativeLabels"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#conceptType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#conceptUri"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#definition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hiddenLabels"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#inScheme"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#modifiedDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#preferredLabel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#reuseLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#scopeNote"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#skillType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#status"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="oshpd:wif-on-classmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="oshpd:wif-on-objectpropertymap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif-on-datapropertymap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif-on-identifier"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Brandname"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Languages"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Machine"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Material"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Topic"/>
+        <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cars_mobility"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cars_mobility"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#electrics_electronics"/>
+            <Class IRI="#ict"/>
+            <Class IRI="#mechanics"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#classical_languages"/>
+        <Class IRI="#Languages"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#electrics_electronics"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#furniture"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#furniture"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#electrics_electronics"/>
+            <Class IRI="#mechanics"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ict"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mechanics"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#buildes"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#designes"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#distributes"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#estimates_costs_for"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#installs"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#legal_information"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#maintains"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#operates"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#product_pricing"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#teaches_about"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#technical_writing"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#possible_action"/>
+        <ObjectProperty IRI="#skill_action"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#skill_has_topic"/>
+        <ObjectProperty IRI="#topic_of_skill"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#buildes"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#designes"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#distributes"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estimates_costs_for"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#installs"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#legal_information"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#maintains"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operates"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#possible_action"/>
+        <Class IRI="#Skill_Entity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#product_pricing"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#skill_action"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#teaches_about"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#topic_of_skill"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#designes"/>
+        <ObjectUnionOf>
+            <Class IRI="#Machine"/>
+            <Class IRI="#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estimates_costs_for"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Machine"/>
+            <Class IRI="#Material"/>
+            <Class IRI="#Process"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#installs"/>
+        <ObjectUnionOf>
+            <Class IRI="#Machine"/>
+            <Class IRI="#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#maintains"/>
+        <ObjectUnionOf>
+            <Class IRI="#Machine"/>
+            <Class IRI="#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operates"/>
+        <ObjectUnionOf>
+            <Class IRI="#Machine"/>
+            <Class IRI="#Tool"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#possible_action"/>
+        <Class abbreviatedIRI="oshpd:Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#skill_action"/>
+        <Class IRI="#Skill_Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#skill_has_topic"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teaches_about"/>
+        <Class IRI="#Skill_Entity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teaches_about"/>
+        <ObjectUnionOf>
+            <Class IRI="#Event"/>
+            <Class IRI="#Machine"/>
+            <Class IRI="#Process"/>
+            <Class IRI="#Tool"/>
+            <Class IRI="#Topic"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal>necessary for use case?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Languages</IRI>
+        <Literal>Albanian
+Arabic
+Armenian
+Azerbaijani
+Basque
+Belarusian
+Bengali
+Berber
+Bihari
+Bosnian
+Bulgarian
+Catalan
+Chinese
+communicate using non-verbal language
+Croatian
+Czech
+Danish
+Dutch
+English
+Estonian
+Finnish
+French
+Galician
+Georgian
+German
+Greek
+Gujarati
+Hebrew
+Hindi
+Hungarian
+Icelandic
+Irish
+Italian
+Japanese
+Javanese
+Kazakh
+Korean
+Kurdish
+Latvian
+Limburgish
+Lithuanian
+Macedonian
+Malay
+Maltese
+manage a good diction
+Marathi
+Montenegrin
+Norwegian
+Occitan
+Persian
+Polish
+Portuguese
+Punjabi
+Romani
+Romanian
+Russian
+Sardinian
+Serbian
+Slovak
+Slovenian
+Spanish
+speak dialect
+Swedish
+Tamil
+Telugu
+Turkish
+Ukrainian
+Urdu
+use body language
+use codes to communicate with taxi drivers
+Vietnamese
+Walloon
+Welsh
+Yiddish</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Skill_Entity</IRI>
+        <Literal>Skill entities are a result of WIF mining on data, if not commented other</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tool</IRI>
+        <Literal>difference between Machine? (automatic/manually?)
+Distinction necessary?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Topic</IRI>
+        <Literal>subclasses are topics of OPEN!NEXT, not WIF mining</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#classical_languages</IRI>
+        <Literal>Ancient Greek
+Latin
+Sanskrit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ict</IRI>
+        <Literal>information and communication technologies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#possible_action</IRI>
+        <Literal>This objectproterty describes possible skill actions that can be applied to a skill entity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#skill_action</IRI>
+        <Literal>This property describes what skill actions a person can do with a skill entity</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
