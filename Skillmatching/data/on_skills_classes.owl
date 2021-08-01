@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl"
+     xml:base="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl">
-    <Prefix name="" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl"/>
+     ontologyIRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl">
+    <Prefix name="" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="oshpd" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_OSHPDP_schema.owl#"/>
-    <Prefix name="skills" IRI="https://github.com/konierik/Skillmatching/raw/main/Skillmatching/data/on_skills.owl#"/>
+    <Prefix name="oshpd" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/OSHPD_schema.owl#"/>
+    <Prefix name="skills" IRI="https://github.com/OPEN-NEXT/WP3_Skillmatching/raw/main/ontology/on_skills.owl#"/>
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dc:creator"/>
@@ -43,6 +43,15 @@
         <Class IRI="#Brandname"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#C"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CAD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CSharp"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Event"/>
     </Declaration>
     <Declaration>
@@ -53,6 +62,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Materials"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Object"/>
@@ -70,22 +82,442 @@
         <Class IRI="#Topic"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#abs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#agriculture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#animation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#architecture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#arduino"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#art"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#artificial-reality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#autocad"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#autodesk"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#automation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#business"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#car"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cardboard"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#cars_mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#catia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ceramic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#circuit"/>
     </Declaration>
     <Declaration>
         <Class IRI="#classical_languages"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#clay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cnc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#coding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#communication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#community"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#covid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#covid19"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#css"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cutter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#design"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#designing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#development"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#digitalfabrication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#diy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#drawing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#drawings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#drone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dronecoria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#drones"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#education"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#electrics_electronics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#electronics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#energy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#engineering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#extruder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fablab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fabrication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#farming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fashion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#foam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#food"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fromonetomany"/>
     </Declaration>
     <Declaration>
         <Class IRI="#furniture"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#fusion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fusion360"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#grasshopper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hackaton"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hardware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#health"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#healthcare"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#home"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#html"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ict"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#injection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#innovation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#inventor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#iot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#java"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#javascript"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#laser-cutting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lasercut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#learning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#machining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#manufacturing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#marketing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mechanical"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#mechanics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#medical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#metal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#milling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#modelig"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mold"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#molding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#music"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#networking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#open-source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#opensource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#otto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ottodiy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#painting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pcb"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#photography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#photoshop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pla"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#plant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#plastic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#plywood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#print"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#printer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#prinying"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#production"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#programming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#prosthetics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#python"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#raspberry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#raspberrypi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#recycling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#research"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rhino"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#robot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#robotics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#simulations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sketchup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#solideorks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#solidworks"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#space"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sustainability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sustainable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#teaching"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#technology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#testing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#thinking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ventilator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#video"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#water"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#web"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#webinars"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#welding"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wikifactory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#woodworking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#writing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3d-modelling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3d-printer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3d-printing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3dmodelling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3dprinter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3dprinting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#360"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#buildes"/>
@@ -121,10 +553,16 @@
         <ObjectProperty IRI="#skill_action"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#skill_has_topic"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#teaches_about"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#technical_writing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#topic_of_skill"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#SkillEntity_id"/>
@@ -136,439 +574,10 @@
         <DataProperty IRI="#SkillEntity_name"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#C"/>
+        <NamedIndividual IRI="#machine"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CAD"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#CSharp"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Materials"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#abs"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#agriculture"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#analysis"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#animation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#architecture"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#arduino"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#art"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#artificial-reality"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#autocad"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#autodesk"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#automation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#business"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#car"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#cardboard"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#catia"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ceramic"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#circuit"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#clay"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#cnc"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#coding"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#communication"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#community"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#computer"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#covid"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#covid19"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#css"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#cutter"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#data"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#design"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#designing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#development"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#digitalfabrication"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#diy"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#drawing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#drawings"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#drone"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#dronecoria"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#drones"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#education"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#electronics"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#energy"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#engineering"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#extruder"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#fablab"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#fabrication"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#farming"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#fashion"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#foam"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#food"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#fromonetomany"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#furniture"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#fusion"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#fusion360"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#grasshopper"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#hackaton"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#hardware"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#health"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#healthcare"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#home"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#html"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#injection"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#innovation"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#inventor"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#iot"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#java"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#javascript"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#laser-cutting"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#lasercut"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#learning"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#machining"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#manufacturing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#marketing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mechanical"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#medical"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#metal"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#milling"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mobile"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#modelig"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#mold"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#molding"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#music"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#networking"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#open-source"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#opensource"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#otto"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ottodiy"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#painting"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#pcb"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#photography"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#photoshop"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#pi"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#pla"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#plant"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#plastic"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#plywood"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#print"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#printer"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#prinying"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#production"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#programming"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#prosthetics"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#python"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#raspberry"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#raspberrypi"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#recycling"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#research"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#rhino"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#robot"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#robotics"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#sand"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#science"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#simulations"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#sketchup"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#software"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#solideorks"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#solidworks"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#space"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#sustainability"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#sustainable"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#teaching"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#tech"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#technology"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#testing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#thinking"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ventilator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#video"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#water"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#web"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#webinars"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#welding"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#wikifactory"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#wood"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#woodworking"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#writing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#3d-modelling"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#3d-printer"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#3d-printing"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#3dmodelling"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#3dprinter"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#3dprinting"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#360"/>
+        <NamedIndividual IRI="#machine2"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:creator"/>
@@ -582,9 +591,53 @@
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
     </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="oshpd:wif-on-classmap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="oshpd:wif-on-objectpropertymap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif-on-datapropertymap"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#wif-on-identifier"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Skill_Entity"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#possible_action"/>
+            <Class abbreviatedIRI="oshpd:User"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Skill_Entity"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#SkillEntity_id"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#3d-printer"/>
+        <DataHasValue>
+            <DataProperty IRI="#SkillEntity_name"/>
+            <Literal>3d-printer</Literal>
+        </DataHasValue>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Brandname"/>
         <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#C"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CAD"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CSharp"/>
+        <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Event"/>
@@ -603,6 +656,10 @@
         <Class IRI="#Skill_Entity"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Materials"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Object"/>
         <Class IRI="#Skill_Entity"/>
     </SubClassOf>
@@ -617,6 +674,62 @@
     <SubClassOf>
         <Class IRI="#Topic"/>
         <Class IRI="#Skill_Entity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#abs"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#agriculture"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#analysis"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#animation"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#architecture"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#arduino"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#art"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#artificial-reality"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#autocad"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#autodesk"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#automation"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#business"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#car"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cardboard"/>
+        <Class IRI="#Material"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#cars_mobility"/>
@@ -631,12 +744,156 @@
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#catia"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ceramic"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#circuit"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#classical_languages"/>
         <Class IRI="#Languages"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#clay"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cnc"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#coding"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#communication"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#community"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#computer"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#covid"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#covid19"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#css"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cutter"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#design"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#designing"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#development"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#digitalfabrication"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#diy"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#drawing"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#drawings"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#drone"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dronecoria"/>
+        <Class IRI="#Brandname"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#drones"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#education"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#electrics_electronics"/>
         <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#electronics"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#energy"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#engineering"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#extruder"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fablab"/>
+        <Class IRI="#Brandname"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fabrication"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#farming"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fashion"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#foam"/>
+        <Class IRI="#Material"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#food"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fromonetomany"/>
+        <Class IRI="#Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#furniture"/>
@@ -650,593 +907,397 @@
         </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#fusion"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fusion360"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#grasshopper"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hackaton"/>
+        <Class IRI="#Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hardware"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#health"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#healthcare"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#home"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#html"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ict"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#injection"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#innovation"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#inventor"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#iot"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#java"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#javascript"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#laser-cutting"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lasercut"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#learning"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#machining"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#manufacturing"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#marketing"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mechanical"/>
         <Class IRI="#Topic"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#mechanics"/>
         <Class IRI="#Topic"/>
     </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#C"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#CAD"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#CSharp"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    <SubClassOf>
+        <Class IRI="#medical"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#Materials"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#metal"/>
         <Class IRI="#Material"/>
-        <NamedIndividual IRI="#abs"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#agriculture"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#milling"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#analysis"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#animation"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#architecture"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#arduino"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#art"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#artificial-reality"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#autocad"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#autodesk"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#automation"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#business"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobile"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#car"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Material"/>
-        <NamedIndividual IRI="#cardboard"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#modelig"/>
+        <Class IRI="#Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mold"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#catia"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Material"/>
-        <NamedIndividual IRI="#ceramic"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#circuit"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Material"/>
-        <NamedIndividual IRI="#clay"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#cnc"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#molding"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#coding"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#communication"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#music"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#community"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#computer"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#networking"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#covid"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Event"/>
-        <NamedIndividual IRI="#covid19"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#css"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#cutter"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#open-source"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#data"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#opensource"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#design"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#designing"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#development"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#digitalfabrication"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#diy"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#drawing"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#drawings"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#drone"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#otto"/>
         <Class IRI="#Brandname"/>
-        <NamedIndividual IRI="#dronecoria"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#drones"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#education"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#electronics"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#energy"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#engineering"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#extruder"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ottodiy"/>
         <Class IRI="#Brandname"/>
-        <NamedIndividual IRI="#fablab"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#painting"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#fabrication"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#farming"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#fashion"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Material"/>
-        <NamedIndividual IRI="#foam"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#food"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Event"/>
-        <NamedIndividual IRI="#fromonetomany"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#furniture"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pcb"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#fusion"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#photography"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#photoshop"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#fusion360"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#grasshopper"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Event"/>
-        <NamedIndividual IRI="#hackaton"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#hardware"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#health"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#healthcare"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#home"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#html"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#injection"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#innovation"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#inventor"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#iot"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#java"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#javascript"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#laser-cutting"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#lasercut"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#learning"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#machining"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#manufacturing"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#marketing"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#mechanical"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#medical"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Material"/>
-        <NamedIndividual IRI="#metal"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#milling"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pi"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#mobile"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#modelig"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#mold"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#molding"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#music"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#networking"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#open-source"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#opensource"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Brandname"/>
-        <NamedIndividual IRI="#otto"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Brandname"/>
-        <NamedIndividual IRI="#ottodiy"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Process"/>
-        <NamedIndividual IRI="#painting"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#pcb"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#photography"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#photoshop"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#pi"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pla"/>
         <Class IRI="#Material"/>
-        <NamedIndividual IRI="#pla"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#plant"/>
         <Class IRI="#Object"/>
-        <NamedIndividual IRI="#plant"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#plastic"/>
         <Class IRI="#Material"/>
-        <NamedIndividual IRI="#plastic"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#plywood"/>
         <Class IRI="#Material"/>
-        <NamedIndividual IRI="#plywood"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#print"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#print"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#printer"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#printer"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#prinying"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#prinying"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#production"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#production"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#programming"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#programming"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#prosthetics"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#prosthetics"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#python"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#python"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#raspberry"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#raspberry"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#raspberrypi"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#raspberrypi"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#recycling"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#recycling"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#research"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#research"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#rhino"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#rhino"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#robot"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#robot"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#robotics"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#robotics"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sand"/>
         <Class IRI="#Material"/>
-        <NamedIndividual IRI="#sand"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#science"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#science"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#simulations"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#simulations"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sketchup"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#sketchup"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#software"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#software"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#solideorks"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#solideorks"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#solidworks"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#solidworks"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#space"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#space"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sustainability"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#sustainability"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sustainable"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#sustainable"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#teaching"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#teaching"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tech"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#tech"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#technology"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#technology"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#testing"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#testing"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#thinking"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#thinking"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ventilator"/>
         <Class IRI="#Object"/>
-        <NamedIndividual IRI="#ventilator"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#video"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#video"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#water"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#water"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#web"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#web"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#webinars"/>
         <Class IRI="#Topic"/>
-        <NamedIndividual IRI="#webinars"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#welding"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#welding"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#wikifactory"/>
         <Class IRI="#Brandname"/>
-        <NamedIndividual IRI="#wikifactory"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#wood"/>
         <Class IRI="#Material"/>
-        <NamedIndividual IRI="#wood"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#woodworking"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#woodworking"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#writing"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#writing"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3d-modelling"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#3d-modelling"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3d-printer"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#3d-printer"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3d-printing"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#3d-printing"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3dmodelling"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#3dmodelling"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3dprinter"/>
         <Class IRI="#Machine"/>
-        <NamedIndividual IRI="#3dprinter"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3dprinting"/>
         <Class IRI="#Process"/>
-        <NamedIndividual IRI="#3dprinting"/>
-    </ClassAssertion>
-    <ClassAssertion>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#360"/>
         <Class IRI="#Tool"/>
-        <NamedIndividual IRI="#360"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Brandname"/>
+        <Class IRI="#Event"/>
+        <Class IRI="#Languages"/>
+        <Class IRI="#Machine"/>
+        <Class IRI="#Material"/>
+        <Class IRI="#Object"/>
+        <Class IRI="#Process"/>
+        <Class IRI="#Tool"/>
+        <Class IRI="#Topic"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Skill_Entity"/>
+        <NamedIndividual IRI="#machine"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#3d-printer"/>
+        <NamedIndividual IRI="#machine2"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#SkillEntity_name"/>
+        <NamedIndividual IRI="#machine"/>
+        <Literal>3d-printer</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#buildes"/>
         <ObjectProperty IRI="#skill_action"/>
@@ -1284,6 +1345,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#possible_action"/>
         <ObjectProperty IRI="#skill_action"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#skill_has_topic"/>
+        <ObjectProperty IRI="#topic_of_skill"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#buildes"/>
@@ -1333,6 +1398,10 @@
         <ObjectProperty IRI="#teaches_about"/>
         <Class abbreviatedIRI="oshpd:User"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#topic_of_skill"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#designes"/>
         <ObjectUnionOf>
@@ -1379,6 +1448,10 @@
         <Class IRI="#Skill_Entity"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#skill_has_topic"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#teaches_about"/>
         <Class IRI="#Skill_Entity"/>
     </ObjectPropertyRange>
@@ -1393,7 +1466,7 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <FunctionalDataProperty>
-        <DataProperty IRI="#SkillEntity_name"/>
+        <DataProperty IRI="#SkillEntity_id"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#SkillEntity_id"/>
